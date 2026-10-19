@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoMarquee from '../components/LogoMarquee.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<BaseLayout
+  title="Blogs - Eiko Visual - Your Branding Partner"
+  description="Kumpulan artikel dari tim kami untuk membantu Anda memahami cara membangun brand yang konsisten, website yang bekerja, dan strategi digital yang tepat sasaran."
+>
+  <!-- Hero Section -->
+  <section class="page-hero starry-bg">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="hero-img-wrap">
+          <img
+            src="/assets/heroes/blogs-hero.jpg"
+            alt="Blog & Artikel Eiko Visual"
+            width="800"
+            height="450"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="trusted-row">
+          <span class="floating-badge-yellow">Dipercaya oleh</span>
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-yellow.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+        </div>
+        <LogoMarquee />
+      </div>
+
+      <div class="hero-right">
+        <div class="floating-badge">
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-orange.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span class="floating-badge-orange">Blog &amp; Artikel</span>
+        </div>
+        <h1 class="has-gradient-text">Insight Seputar Brand, Website, dan Pemasaran Digital</h1>
+        <p>
+          Kumpulan artikel dari tim kami untuk membantu Anda memahami cara membangun brand yang konsisten, website yang bekerja, dan strategi digital yang tepat sasaran — ditulis untuk pemilik dan pengelola bisnis, bukan sekadar istilah teknis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <article class="blog-card">
+            <a href={`/${post.id}/`} class="blog-card-img">
+              <img src={post.data.featuredImage} alt={post.data.title} loading="lazy" />
+            </a>
+            <div class="blog-card-content">
+              <span class="blog-category">{post.data.category}</span>
+              <h3 class="blog-card-title">
+                <a href={`/${post.id}/`}>{post.data.title}</a>
+              </h3>
+              <p class="blog-card-excerpt">{post.data.description}</p>
+              <a href={`/${post.id}/`} class="eiko-btn eiko-btn-outline">
+                <span>Baca Artikel</span>
+                <span class="btn-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <ContactSection
+    badgeText="Studio"
+    heading="Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"
+    description="Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 80px 0 96px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .trusted-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .blog-grid-section {
+    padding: 80px 0;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .blog-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-6px);
+    border-color: #1A5FFF;
+  }
+
+  .blog-card-img {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .blog-card:hover .blog-card-img img {
+    transform: scale(1.04);
+  }
+
+  .blog-card-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .blog-category {
+    display: inline-block;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #FF5100;
+    background: rgba(255, 81, 0, 0.12);
+    border: 1px solid rgba(255, 81, 0, 0.3);
+    border-radius: 40px;
+    padding: 4px 12px;
+  }
+
+  .blog-card-title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .blog-card-title a:hover {
+    color: #417BFF;
+  }
+
+  .blog-card-excerpt {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #A7A7A7;
+    flex: 1;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid,
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

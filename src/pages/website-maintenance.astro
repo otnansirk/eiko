@@ -1,0 +1,207 @@
+---
+import ServiceDetailLayout from '../components/ServiceDetailLayout.astro';
+
+const features = [
+  {
+    "title": "Keamanan Ekstra Melawan Celah Siber",
+    "description": "Proteksi aktif terhadap ancaman malware, brute force attack, dan upaya peretasan ilegal yang dapat melumpuhkan operasional bisnis Anda seketika."
+  },
+  {
+    "title": "Kecepatan Akses Tanpa Hambatan",
+    "description": "Pembersihan cache berkala, optimasi skrip, dan kompresi media guna memastikan halaman terbuka dalam hitungan detik untuk mencegah tingginya angka bounce rate."
+  },
+  {
+    "title": "Stabilitas SEO dan Performa Mesin Pencari",
+    "description": "Pemantauan broken link, perbaikan error 404, serta pembaruan struktur teknis agar posisi situs Anda tetap aman di halaman hasil pencarian Google."
+  },
+  {
+    "title": "Pencadangan Data Berkala yang Aman",
+    "description": "Sistem backup otomatis secara rutin untuk memastikan seluruh basis data, aset visual, dan konten penting aman dari risiko kehilangan akibat human error maupun kerusakan server."
+  }
+];
+
+const categories = [
+  {
+    "badge": "Pembaruan Sistem",
+    "title": "Pembaruan Sistem & Plugin (Core Updates)",
+    "description": "Menjaga stabilitas infrastruktur website dengan memperbarui inti CMS, tema, serta plugin secara berkala untuk menutup celah kerentanan.",
+    "suitableFor": [
+      "Bisnis yang ingin menghindari risiko situs error atau rusak akibat komponen software yang kedaluwarsa.",
+      "Pemilik website berbasis WordPress atau custom CMS yang memerlukan manajemen skrip rutin tanpa repot.",
+      "Perusahaan yang mengutamakan kelancaran operasional digital tanpa gangguan teknis mendadak."
+    ],
+    "scopeLabel": "Paket Pembaruan Sistem Meliputi:",
+    "scopeItems": [
+      "Update Core CMS & Security Patches berkala",
+      "Pembaruan Tema & Lisensi Plugin resmi",
+      "Uji kompatibilitas sistem menyeluruh pasca-update",
+      "Penanganan konflik skrip dan error koding",
+      "Laporan status kesehatan komponen situs rutin",
+      "Pembersihan database ringan dari file sampah"
+    ],
+    "ctaHref": "https://wasap.at/ncRT30"
+  },
+  {
+    "badge": "Keamanan Website",
+    "title": "Monitoring Keamanan 24/7 & Firewall",
+    "description": "Pengawasan intensif terhadap lalu lintas mencurigakan, pemasangan proteksi firewall, dan pemindaian malware secara proaktif.",
+    "suitableFor": [
+      "Platform e-commerce atau situs perusahaan yang memproses transaksi dan menyimpan data sensitif pelanggan.",
+      "Pemilik bisnis yang ingin melindungi aset digital secara total dari ancaman peretasan dan malware berbahaya.",
+      "Situs web perusahaan yang membutuhkan jaminan operasional aktif 24 jam tanpa risiko downtime."
+    ],
+    "scopeLabel": "Paket Keamanan Meliputi:",
+    "scopeItems": [
+      "Pemindaian Malware & Vulnerability harian",
+      "Pemasangan & konfigurasi Web Application Firewall (WAF)",
+      "Proteksi sistem anti-brute force login",
+      "Penanganan darurat pemulihan jika terjadi serangan siber",
+      "Monitoring server uptime 24/7 secara real-time",
+      "Log pemantauan aktivitas akses mencurigakan"
+    ],
+    "ctaHref": "https://wasap.at/naf2Ib"
+  },
+  {
+    "badge": "Performa & Kecepatan",
+    "title": "Optimasi Kecepatan & Kinerja (Speed Optimization)",
+    "description": "Menjaga performa loading halaman tetap gesit untuk mempertahankan kenyamanan pengunjung dan mendukung performa SEO.",
+    "suitableFor": [
+      "Website dengan tingkat kunjungan tinggi yang menuntut waktu muat halaman instan.",
+      "Bisnis yang ingin menekan angka bounce rate (pengunjung kabur) akibat durasi loading yang lambat.",
+      "Situs yang ingin mempertahankan skor performa PageSpeed Insights di zona hijau demi posisi SEO Google."
+    ],
+    "scopeLabel": "Paket Optimasi Kecepatan Meliputi:",
+    "scopeItems": [
+      "Pembersihan cache server dan database bloat",
+      "Kompresi aset media dan gambar otomatis (WebP conversion)",
+      "Minifikasi skrip JavaScript & CSS",
+      "Integrasi & konfigurasi Content Delivery Network (CDN)",
+      "Audit berkala broken link & perbaikan redirect error",
+      "Pengujian performa dengan benchmark kecepatan lanjutan"
+    ],
+    "ctaHref": "https://wasap.at/w3PeBf"
+  },
+  {
+    "badge": "Pencadangan Data",
+    "title": "Manajemen Backup & Pemulihan Data",
+    "description": "Menjadwalkan salinan data situs secara rutin di server terpisah yang aman dan siap dipulihkan kapan saja dalam keadaan darurat",
+    "suitableFor": [
+      "Perusahaan yang tidak boleh kehilangan data transaksi, produk, atau konten penting sedetik pun.",
+      "Pemilik website yang mengutamakan mitigasi risiko atas potensi human error dari tim internal.",
+      "Bisnis yang membutuhkan kepastian jaminan pemulihan data instan (disaster recovery plan)."
+    ],
+    "scopeLabel": "Paket Backup Meliputi:",
+    "scopeItems": [
+      "Pencadangan database dan file sistem secara otomatis",
+      "Penyimpanan salinan arsip di cloud server terpisah yang aman",
+      "Uji coba pemulihan data (restore test) secara berkala",
+      "Penyediaan riwayat versi cadangan file berlapis",
+      "Protokol tanggap darurat pemulihan data cepat",
+      "Laporan status keamanan arsip data bulanan"
+    ],
+    "ctaHref": "https://wasap.at/w3PeBf"
+  }
+];
+
+const steps = [
+  {
+    "title": "Audit & Analisis Kesehatan Awal",
+    "description": "Tim ahli kami memeriksa kondisi keseluruhan website Anda, mulai dari celah keamanan, kecepatan muat, hingga struktur SEO-nya saat ini."
+  },
+  {
+    "title": "Konsultasi & Penentuan Paket",
+    "description": "Kami merekomendasikan cakupan layanan dan paket pemeliharaan yang paling relevan dengan kapasitas serta anggaran bisnis Anda."
+  },
+  {
+    "title": "Eksekusi Pengamanan & Setup Sistem",
+    "description": "Tim teknis mulai bekerja di balik layar melakukan sinkronisasi sistem, pemasangan proteksi, dan penjadwalan backup otomatis."
+  },
+  {
+    "title": "Laporan & Perawatan Berkelanjutan",
+    "description": "Anda akan menerima rekapitulasi laporan bulanan secara transparan sementara website Anda terus terpelihara dengan prima."
+  }
+];
+
+const supportServices = [
+  {
+    "badge": "Website Management",
+    "title": "Website Management",
+    "description": "Kelola konten, update rutin, dan optimasi performa website Anda secara berkala, supaya website tetap relevan dan berjalan optimal dari waktu ke waktu.",
+    "buttonText": "Lihat Layanan",
+    "href": "https://wasap.at/Sri9RQ"
+  },
+  {
+    "badge": "Website Development",
+    "title": "Website Development",
+    "description": "Pembangunan ulang atau pengembangan fitur lanjutan untuk skala bisnis yang bertumbuh pesat.",
+    "buttonText": "Lihat Layanan",
+    "href": "https://wasap.at/JGE6o2"
+  }
+];
+
+const faqs = [
+  {
+    "question": "Mengapa perusahaan atau bisnis Anda wajib menggunakan jasa website maintenance profesional?",
+    "answer": "<p>Website yang tidak dirawat secara berkala rentan terhadap celah keamanan siber, serangan malware, penurunan kecepatan loading, hingga broken link yang merusak peringkat SEO di Google. Layanan pemeliharaan dari Eiko Visual memastikan aset digital Anda selalu aman, stabil, dan berkinerja optimal tanpa mengganggu fokus operasional bisnis Anda.</p>"
+  },
+  {
+    "question": "Apa saja ruang lingkup utama yang dikerjakan dalam layanan pemeliharaan website ini?",
+    "answer": "<p>Ruang lingkup kami mencakup pembaruan rutin inti CMS dan plugin (core updates), monitoring keamanan 24/7 beserta pemasangan firewall (WAF), optimasi kecepatan muat halaman (speed optimization), manajemen backup dan pemulihan data berkala, serta pelaporan kesehatan situs secara transparan setiap bulan.</p>"
+  },
+  {
+    "question": "Apakah layanan website maintenance ini cocok untuk semua jenis platform website?",
+    "answer": "<p>Ya, Eiko Visual menangani berbagai platform populer seperti WordPress, WooCommerce, hingga custom website development. Setiap paket pemeliharaan disesuaikan secara spesifik dengan arsitektur teknologi dan skala kebutuhan bisnis Anda.</p>"
+  },
+  {
+    "question": "Bagaimana cara Eiko Visual menangani situasi darurat jika website tiba-tiba down atau diretas?",
+    "answer": "<p>Tim teknis kami langsung siaga melakukan mitigasi darurat melalui protokol pemulihan cepat (disaster recovery), pembersihan malware secara total, serta pemulihan data (restore) dari arsip backup aman terbaru yang kami simpan di cloud server terpisah.</p>"
+  },
+  {
+    "question": "Seberapa sering pembaruan sistem (updates) dan pencadangan data (backup) dilakukan?",
+    "answer": "<p>Frekuensi pembaruan dan pencadangan data disesuaikan dengan paket yang Anda pilih. Untuk paket Pro dan Enterprise, pembaruan komponen dan pencadangan data dilakukan secara rutin setiap minggu hingga setiap hari demi menjamin keamanan data transaksi dan konten perusahaan.</p>"
+  },
+  {
+    "question": "Apakah saya akan mendapatkan laporan berkala terkait kondisi kesehatan website saya?",
+    "answer": "<p>Tentu saja. Setiap bulan, klien akan menerima laporan analitik komprehensif yang mencakup status keamanan, riwayat pembaruan sistem, laporan performa kecepatan, serta catatan optimasi SEO teknis yang telah dikerjakan oleh tim kami.</p>"
+  },
+  {
+    "question": "Bagaimana cara memulai kerja sama maintenance website dengan Eiko Visual?",
+    "answer": "<p>Anda dapat mengklik tombol \"Konsultasikan Maintenance Website\" atau \"Konsultasi Sekarang\" di halaman ini. Tim kami akan melakukan audit awal (health check) pada website Anda, merekomendasikan paket yang paling efisien, dan langsung menjadwalkan proses pengamanan situs secepatnya.</p>"
+  }
+];
+
+const relatedServices = [
+  {
+    "title": "Brand Development",
+    "href": "/brand-development-details/"
+  },
+  {
+    "title": "Digital Marketing",
+    "href": "/digital-marketing-details/"
+  },
+  {
+    "title": "Aplikasi Mobile/Web",
+    "href": "/aplikasi-mobile-details/"
+  }
+];
+---
+
+<ServiceDetailLayout
+  seoTitle="Jasa Website Maintenance Profesional | Eiko Visual"
+  metaDescription="Layanan website maintenance profesional: update sistem, keamanan 24/7, optimasi kecepatan, dan backup data. Konsultasi dengan Eiko Visual sekarang."
+  serviceTitle="Website Maintenance"
+  heroDescription="Website profesional membutuhkan pemeliharaan berkala agar selalu aman, cepat, dan berfungsi optimal. Eiko Visual mengelola seluruh aspek teknis situs Anda sehingga performa bisnis digital tetap terjaga tanpa hambatan."
+  valuePropPrefix="Website Maintenance Menjadi Fondasi Utama"
+  valuePropHighlight="Keberhasilan Bisnis Jangka Panjang?"
+  valuePropSubheading="Pemeliharaan website secara berkala memastikan sistem tetap aman dari celah kerentanan, terhindar dari downtime, dan senantiasa memberikan pengalaman akses yang lancar bagi calon pelanggan Anda."
+  features={features}
+  categoriesHeadingHighlight="Website Maintenance"
+  categories={categories}
+  stepsHeadingHighlight="Website Maintenance."
+  steps={steps}
+  supportServices={supportServices}
+  faqs={faqs}
+  relatedServices={relatedServices}
+  ctaHeading="Amankan Investasi Digital Anda Sebelum Terjadi Kendala Fatal"
+  ctaDescription="Jangan biarkan gangguan teknis yang mendadak merusak reputasi dan potensi konversi penjualan bisnis Anda. Percayakan pemeliharaan jangka panjang aset digital Anda kepada tangan profesional di Eiko Visual."
+/>

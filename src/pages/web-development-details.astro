@@ -1,0 +1,176 @@
+---
+import ServiceDetailLayout from '../components/ServiceDetailLayout.astro';
+
+const props = {
+  "seoTitle": "Jasa Pembuatan Website Perusahaan | Eiko Visual",
+  "metaDescription": "Jasa pembuatan website company profile, landing page, hingga e-commerce. Harga sudah termasuk domain & hosting. Cek paket dan konsultasi",
+  "serviceTitle": "Website Development",
+  "heroDescription": "Desain estetis tanpa fondasi teknis yang solid tidak akan menghasilkan konversi optimal. Eiko Visual membangun website profesional yang cepat, responsif, dan dirancang untuk mendorong pertumbuhan bisnis Anda.",
+  "valuePropPrefix": "Website Development Menjadi",
+  "valuePropHighlight": "Fondasi Utama Keberhasilan Bisnis Jangka Panjang?",
+  "valuePropSubheading": "Pengembangan website yang terstruktur memastikan performa situs cepat, aman, mudah diakses di berbagai perangkat, dan siap mendukung strategi pemasaran digital Anda secara maksimal.",
+  "features": [
+    {
+      "title": "Performa Cepat & Responsif",
+      "description": "Membangun situs dengan kecepatan muat tinggi dan tampilan yang optimal di semua perangkat, baik ponsel maupun komputer."
+    },
+    {
+      "title": "Struktur SEO-Friendly Sejak Awal",
+      "description": "Penerapan arsitektur web, skema data, dan pengaturan teknis yang sesuai standar agar mudah terindeks di halaman pencarian Google."
+    },
+    {
+      "title": "Fokus Konversi & Pengalaman Pengguna",
+      "description": "Desain antarmuka (UI/UX) yang intuitif dan terarah guna mengarahkan pengunjung website menjadi pelanggan setia."
+    },
+    {
+      "title": "Standar Eksekusi Profesional",
+      "description": "Seluruh proses pengembangan kode dan fitur ditangani langsung oleh tim spesialis berpengalaman untuk menjaga keamanan dan kestabilan sistem."
+    }
+  ],
+  "categoriesHeadingHighlight": "Website Development",
+  "categories": [
+    {
+      "badge": "Landing Page",
+      "title": "Landing Page",
+      "description": "Satu halaman fokus untuk satu tujuan — mengarahkan pengunjung ke satu tindakan spesifik, seperti mengisi form atau menghubungi lewat WhatsApp.",
+      "suitableFor": [
+        "Bisnis yang butuh halaman promosi cepat untuk peluncuran produk/jasa.",
+        "Campaign iklan digital (Ads) yang membutuhkan pengumpulan leads terpusat.",
+        "Budget efisien namun tetap butuh tampilan mobile-friendly dan profesional."
+      ],
+      "scopeItems": [
+        "Desain satu halaman, dioptimalkan untuk mobile",
+        "Copywriting",
+        "Hosting & Domain 1 Tahun",
+        "Setup Google Analytics & Tag Manager",
+        "Tombol kontak langsung (WhatsApp/telepon)",
+        "1 Email Bisnis"
+      ],
+      "ctaHref": "https://wasap.at/ncRT30",
+      "scopeLabel": "Paket Landing Page:"
+    },
+    {
+      "badge": "Company Profile",
+      "title": "Website Company Profile",
+      "description": "Website multi-halaman yang menampilkan profil, layanan, dan portofolio bisnis Anda secara lengkap dan profesional.",
+      "suitableFor": [
+        "Perusahaan B2B, agensi, atau layanan profesional (hukum, arsitektur, dll).",
+        "Bisnis yang ingin membangun kredibilitas dan rasa percaya (trust) di mata investor atau klien besar.",
+        "Perusahaan yang butuh infrastruktur website multi-page berskala menengah."
+      ],
+      "scopeItems": [
+        "Desain multi-halaman (profil, layanan, portofolio, kontak)",
+        "Setup Google Search Console & SEO Dasar",
+        "Copywriting Komprehensif",
+        "Hosting & Domain (Kapasitas Lebih Besar)",
+        "2 Email Bisnis Kustom"
+      ],
+      "ctaHref": "https://wasap.at/naf2Ib",
+      "scopeLabel": "Paket Website Company Profile:"
+    },
+    {
+      "badge": "E-Commerce",
+      "title": "Website E-Commerce",
+      "description": "Toko online lengkap dengan katalog produk, sistem keranjang belanja, dan proses checkout — untuk bisnis yang menjual langsung lewat website.",
+      "suitableFor": [
+        "Brand ritel/produk fisik yang ingin lepas dari ketergantungan marketplace.",
+        "Bisnis yang membutuhkan sistem manajemen dan pembayaran otomatis 24/7.",
+        "Perusahaan yang siap melakukan ekspansi skala penjualan secara masif."
+      ],
+      "scopeItems": [
+        "Katalog produk & sistem keranjang belanja",
+        "Integrasi pembayaran otomatis",
+        "Pengelolaan stok & pelacakan pesanan",
+        "Hosting & Domain (Kapasitas Lebih Besar)",
+        "Struktur ramah SEO untuk halaman produk",
+        "2 Email Bisnis Kustom"
+      ],
+      "ctaHref": "https://wasap.at/w3PeBf",
+      "scopeLabel": "Paket Brand Identity:"
+    }
+  ],
+  "stepsHeadingHighlight": "Website Development.",
+  "steps": [
+    {
+      "title": "Website Audit/Discovery",
+      "description": "Memahami tujuan bisnis dan kebutuhan Anda, termasuk evaluasi website lama jika ada."
+    },
+    {
+      "title": "Website Strategy & Planning",
+      "description": "Menyusun struktur halaman, alur pengguna, dan kebutuhan teknis."
+    },
+    {
+      "title": "Website Design",
+      "description": "Merancang tampilan (UI/UX) yang selaras dengan identitas brand Anda."
+    },
+    {
+      "title": "Website Development",
+      "description": "Membangun website sesuai desain dan kebutuhan fungsional."
+    },
+    {
+      "title": "Website Maintenance & Management",
+      "description": "Merancang tampilan (UI/UX) yang selaras dengan identitas brand Anda."
+    }
+  ],
+  "supportServices": [
+    {
+      "badge": "Website Management",
+      "title": "Website Management",
+      "description": "Kelola konten, update rutin, dan optimasi performa website Anda secara berkala, supaya website tetap relevan dan berjalan optimal dari waktu ke waktu.",
+      "buttonText": "Lihat Layanan Management",
+      "href": "https://wasap.at/Sri9RQ"
+    },
+    {
+      "badge": "Website Maintenance",
+      "title": "Website Maintenance",
+      "description": "Pastikan website Anda tetap aman dan bebas dari gangguan teknis — pembaruan sistem, backup berkala, dan dukungan teknis saat dibutuhkan.",
+      "buttonText": "Lihat Layanan Maintenance",
+      "href": "https://wasap.at/UOGWS5"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Apakah harga paket sudah termasuk domain dan hosting?",
+      "answer": "Ya, setiap paket sudah termasuk domain dan hosting untuk tahun pertama — Anda tidak perlu mengurus atau membayar keduanya secara terpisah saat website selesai dibangun."
+    },
+    {
+      "question": "Bagaimana saya menentukan jenis website yang cocok untuk bisnis saya?",
+      "answer": "Kalau Anda sedang menjalankan kampanye iklan untuk satu produk/promo, Landing Page paling pas. Kalau butuh kehadiran digital resmi untuk perusahaan, pilih Company Profile. Kalau ingin menjual produk langsung secara online, E-Commerce adalah pilihannya. Kalau masih ragu, tim kami bisa membantu menentukan di sesi konsultasi gratis."
+    },
+    {
+      "question": "Apakah website sudah termasuk Website Maintenance?",
+      "answer": "Belum — maintenance adalah layanan terpisah yang bisa ditambahkan setelah website Anda live, supaya Anda hanya membayar untuk yang benar-benar dibutuhkan."
+    },
+    {
+      "question": "Apakah website yang dibangun sudah terintegrasi dengan kebutuhan digital marketing?",
+      "answer": "Untuk paket Company Profile dan E-Commerce, ya — sudah termasuk integrasi Google Analytics, Search Console, dan Tag Manager, supaya performa website bisa dipantau sejak awal dan siap mendukung kampanye digital marketing Anda."
+    },
+    {
+      "question": "Berapa lama waktu pengerjaannya?",
+      "answer": "Tergantung jenis website — mulai 1 minggu untuk Landing Page, sampai 4–6 minggu untuk E-Commerce, tergantung kompleksitas fitur dan kecepatan masukan dari sisi Anda."
+    }
+  ],
+  "relatedServices": [
+    {
+      "title": "Brand Development",
+      "href": "/brand-development-details/"
+    },
+    {
+      "title": "Digital Marketing",
+      "href": "/digital-marketing-details/"
+    },
+    {
+      "title": "Aplikasi Mobile/Web",
+      "href": "/aplikasi-mobile-details/"
+    },
+    {
+      "title": "Studio",
+      "href": "/services/"
+    }
+  ],
+  "ctaHeading": "Saatnya Website Anda Bekerja Satu Arah dengan Brand Anda",
+  "ctaDescription": "Ceritakan kondisi website Anda saat ini. Tim kami akan mempelajarinya dan membahas langkah yang tepat."
+};
+---
+
+<ServiceDetailLayout {...props} />

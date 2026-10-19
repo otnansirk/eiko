@@ -1,0 +1,144 @@
+---
+import ServiceDetailLayout from '../components/ServiceDetailLayout.astro';
+
+const features = [
+  {
+    "title": "Fungsionalitas Andal & Responsif",
+    "description": "Membangun performa aplikasi yang stabil, cepat, serta kompatibel di berbagai perangkat genggam maupun platform web."
+  },
+  {
+    "title": "Antarmuka Intuitif & Ramah Pengguna",
+    "description": "Desain alur navigasi (UI/UX) yang sederhana dan mudah dipahami, memastikan kenyamanan maksimal bagi pengguna awam sekalipun."
+  },
+  {
+    "title": "Skalabilitas & Keamanan Sistem",
+    "description": "Perancangan arsitektur aplikasi yang aman serta siap dikembangkan seiring dengan pertumbuhan dan ekspansi bisnis Anda."
+  },
+  {
+    "title": "Standar Eksekusi Profesional",
+    "description": "Seluruh proses pengembangan kode dan fitur ditangani langsung oleh tim spesialis berpengalaman untuk menjaga kualitas standar perusahaan Anda."
+  }
+];
+
+const categories = [
+  {
+    "badge": "Pengembangan Mobile",
+    "title": "Custom Mobile App Development",
+    "description": "Membangun aplikasi seluler khusus berbasis Android dan iOS yang dirancang presisi untuk menjawab kebutuhan operasional maupun model bisnis perusahaan Anda.",
+    "suitableFor": [
+      "Bisnis atau perusahaan yang ingin memperluas jangkauan layanan langsung ke perangkat genggam pelanggan.",
+      "Korporasi yang membutuhkan sistem operasional internal khusus berbasis aplikasi seluler.",
+      "Brand yang ingin memberikan pengalaman transaksi dan interaksi yang lebih cepat dan eksklusif."
+    ],
+    "scopeLabel": "Cakupan Layanan Meliputi:",
+    "scopeItems": [
+      "Perancangan Arsitektur Aplikasi (Android/iOS)",
+      "Integrasi Sistem Pembayaran & API Pihak Ketiga",
+      "Pengembangan Fitur Interaktif & Fungsionalitas",
+      "Pengujian Kualitas (QA) & Uji Coba Performa",
+      "Penyusunan Alur Pengguna (User Flow) yang Optimal",
+      "Dukungan Teknis Pasca Peluncuran Aplikasi"
+    ],
+    "ctaHref": "https://wasap.at/rGMLGk"
+  },
+  {
+    "badge": "Sistem Berbasis Web",
+    "title": "Web Application Development",
+    "description": "Mengembangkan sistem aplikasi berbasis web yang interaktif, cepat, dan handal untuk mendukung otomatisasi proses bisnis serta manajemen data perusahaan.",
+    "suitableFor": [
+      "Perusahaan yang ingin beralih dari pencatatan manual ke sistem digital terintegrasi",
+      "Bisnis yang membutuhkan platform dasbor (dashboard) khusus untuk mengelola data operasional.",
+      "Startup atau penyedia layanan digital yang memerlukan sistem berbasis web berperforma tinggi."
+    ],
+    "scopeLabel": "Cakupan Layanan Meliputi:",
+    "scopeItems": [
+      "Pengembangan Sistem Aplikasi Berbasis Web",
+      "Pembuatan Dasbor Manajemen & Laporan Data",
+      "Optimalisasi Kecepatan Muat & Responsivitas",
+      "Pengamanan Sistem & Perlindungan Data Sensitif",
+      "Integrasi Basis Data (Database) Perusahaan",
+      "Pemeliharaan Sistem & Pembaruan Berkala"
+    ],
+    "ctaHref": "https://wasap.at/wo7w1n"
+  },
+  {
+    "badge": "Desain & Alur Pengguna",
+    "title": "UI/UX Design & User Flow Optimization",
+    "description": "Merancang antarmuka visual dan alur navigasi yang menarik, intuitif, serta sangat mudah dioperasikan oleh siapa saja, termasuk kalangan awam.",
+    "suitableFor": [
+      "Aplikasi atau website yang memiliki tingkat kerumitan tinggi namun ingin dibuat sederhana bagi pengguna.",
+      "Bisnis yang ingin meningkatkan kenyamanan serta kepuasan pengguna saat bernavigasi.",
+      "Perusahaan yang ingin menyelaraskan estetika visual produk digital dengan identitas merek."
+    ],
+    "scopeLabel": "Cakupan Layanan Meliputi:",
+    "scopeItems": [
+      "Penyusunan Alur Navigasi (User Flow) Pengguna",
+      "Pembuatan Wireframe & Purwarupa (Prototype)",
+      "Desain Antarmuka (User Interface) Visual",
+      "Optimalisasi Kemudahan Penggunaan (Usability)",
+      "Personalisasi Elemen Desain Sesuai Identitas Brand",
+      "Evaluasi Pengalaman Pengguna (UX Research & Audit)"
+    ],
+    "ctaHref": "https://wasap.at/9e9pQT"
+  }
+];
+
+const steps = [
+  {
+    "title": "App Discovery",
+    "description": "Memahami kebutuhan bisnis dan pengguna untuk menentukan fitur aplikasi yang tepat."
+  },
+  {
+    "title": "App Strategy & Planning",
+    "description": "Menyusun roadmap fitur dan arsitektur aplikasi."
+  },
+  {
+    "title": "App Design",
+    "description": "Merancang tampilan dan pengalaman pengguna (UI/UX) yang konsisten dengan brand."
+  },
+  {
+    "title": "App Development",
+    "description": "Membangun aplikasi mobile dan/atau web sesuai rencana."
+  },
+  {
+    "title": "App Maintenance & Support",
+    "description": "Memastikan aplikasi tetap berjalan optimal dan mendukung kebutuhan pengguna setelah peluncuran."
+  }
+];
+
+const faqs = [];
+
+const relatedServices = [
+  {
+    "title": "Brand Development",
+    "href": "/brand-development-details/"
+  },
+  {
+    "title": "Digital Marketing",
+    "href": "/digital-marketing-details/"
+  },
+  {
+    "title": "Web Development",
+    "href": "/web-development-details/"
+  }
+];
+---
+
+<ServiceDetailLayout
+  seoTitle="Jasa Pembuatan Aplikasi Mobile & Web | Eiko Visual"
+  metaDescription="Jasa pembuatan aplikasi mobile dan web app custom untuk kebutuhan bisnis Anda. Dari analisis kebutuhan hingga peluncuran. Diskusikan proyek Anda."
+  serviceTitle="Mobile & Web Apps Development"
+  heroDescription="Transformasikan ide bisnis Anda menjadi aplikasi digital yang andal dan mudah digunakan. Eiko Visual merancang dan mengembangkan solusi aplikasi berbasis web serta seluler yang responsif untuk memperluas jangkauan operasional Anda."
+  valuePropPrefix="Mengapa Aplikasi Mobile & Web Menjadi Fondasi Utama"
+  valuePropHighlight="Keberhasilan Bisnis Jangka Panjang?"
+  valuePropSubheading="Ekosistem aplikasi yang dikembangkan dengan matang memudahkan interaksi pelanggan, mengoptimalkan efisiensi proses operasional internal, dan memperkuat daya saing bisnis di era digital."
+  features={features}
+  categoriesHeadingHighlight="Mobile & Web Apps Development"
+  categories={categories}
+  stepsHeadingHighlight="Aplikasi."
+  steps={steps}
+  faqs={faqs}
+  relatedServices={relatedServices}
+  ctaHeading="Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"
+  ctaDescription="Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."
+/>

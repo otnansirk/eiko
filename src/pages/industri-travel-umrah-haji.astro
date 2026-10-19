@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const challenges = [
+  "Branding terasa \"biasa saja\", sulit bersaing dengan travel besar yang sudah lebih dulu dikenal",
+  "Materi promosi antar cabang/agen sering tidak konsisten",
+  "Calon jemaah ragu karena kesan profesional dan kepercayaan belum terbangun dari kesan pertama",
+];
+
+const services = [
+  { label: "Branding", title: "Branding & Identitas Visual" },
+  { label: "Website", title: "Pembuatan Website" },
+  { label: "Aplikasi", title: "Pembuatan Aplikasi" },
+];
+
+const faqs = [
+  { question: "Apakah tim Anda paham konteks bisnis travel umrah dan haji?", answer: "<p>Ya. Kami sudah menangani proyek identitas visual untuk biro travel umrah dan memahami sensitivitas industri ini — mulai dari kepercayaan jemaah hingga nuansa spiritual yang perlu tercermin di setiap materi.</p>", open: true },
+  { question: "Berapa lama proses pembuatan company profile untuk biro travel umrah?", answer: "<p>Umumnya 3–6 minggu, tergantung cakupan proyek dan jumlah revisi yang disepakati.</p>" },
+  { question: "Apakah bisa menangani banyak cabang/agen sekaligus?", answer: "<p>Bisa. Kami menyusun brand guideline yang memastikan konsistensi identitas di semua cabang dan agen, bukan cuma di kantor pusat.</p>" },
+  { question: "Apakah ada paket gabungan branding + website?", answer: "<p>Ada. Paket gabungan lebih efisien dibanding memesan terpisah, dan dikerjakan oleh tim yang sama untuk menjaga konsistensi.</p>" },
+];
+---
+
+<BaseLayout
+  title="Jasa Branding Jabodetabek untuk Startup, Corporate | Eiko Visual"
+  description="Bangun identitas brand yang konsisten dan profesional bersama Eiko Visual. Melayani startup, perusahaan menengah, dan institusi pendidikan di Jabodetabek."
+>
+  <section class="page-hero starry-bg">
+    <div class="container hero-inner">
+      <div class="floating-badge">
+        <span class="floating-badge-orange">Digital Agency</span>
+      </div>
+      <h1 class="has-gradient-text">Partner Branding &amp; Digital untuk Travel Umrah &amp; Haji Skala Nasional</h1>
+      <p>Kami membantu biro travel umrah dan haji membangun kepercayaan calon jemaah lewat identitas visual yang konsisten di setiap titik kontak — dari kantor pusat sampai cabang.</p>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">Tantangan yang Sering Dihadapi Biro Travel Umrah</h2>
+      <div class="card-grid">
+        {challenges.map((c, i) => (
+          <div class="info-card">
+            <span class="num">{String(i + 1).padStart(2, "0")}</span>
+            <p>{c}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">Layanan Kami untuk Travel Umrah &amp; Haji</h2>
+      <div class="card-grid">
+        {services.map((s) => (
+          <div class="info-card">
+            <span class="num">{s.label}</span>
+            <h4>{s.title}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <div class="case-card">
+        <h3>Studi Kasus</h3>
+        <h3 class="has-gradient-text">PT Bismillah Cahaya Utama — Identitas yang Dibangun dari Cahaya</h3>
+        <p>Kami membantu Bismillah Cahaya Utama menerjemahkan makna nama merek mereka menjadi identitas visual yang membangun rasa penunjuk arah dan kepercayaan bagi jemaah, diterapkan konsisten dari signage kantor hingga seragam pembimbing.</p>
+        <a href="/bismillah-cahaya-utama-project-details/" class="eiko-btn">
+          <span>Lihat studi kasus lengkap</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    leftHeading="Masih<br> Ada Pertanyaan?"
+    rightHeadingPrefix="Pertanyaan Umum yang"
+    rightHeadingHighlight="Sering Diajukan"
+    faqs={faqs}
+  />
+
+  <ContactSection
+    badgeText="Branding"
+    heading="Siap Membangun Kepercayaan Jemaah Lewat Identitas yang Kuat?"
+    description="Ceritakan kebutuhan branding biro travel umroh & haji Anda — tim kami akan menyiapkan penawaran dalam 2 hari kerja tanpa komitmen di awal."
+  />
+</BaseLayout>
+
+<style>
+  .page-hero { padding: 80px 0 96px; }
+  .hero-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; max-width: 900px; }
+  .block-section { padding: 72px 0; }
+  .section-heading-center { text-align: center; margin-bottom: 48px; }
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card-grid.two { grid-template-columns: repeat(2, 1fr); }
+  .info-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 28px;
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .info-card:hover { transform: translateY(-8px); border-color: #1A5FFF; }
+  .info-card .num { font-size: 14px; color: #417BFF; font-weight: 600; }
+  .info-card h4 { font-size: 22px; font-weight: 600; }
+  .info-card p { color: #A7A7A7; font-size: 16px; line-height: 1.6; }
+  .prose { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; text-align: center; color: #A7A7A7; }
+  .case-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.15);
+    border-radius: 40px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .cta-block { margin-top: 48px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  @media (max-width: 1024px) { .card-grid, .card-grid.two { grid-template-columns: 1fr; } .case-card { padding: 28px; } }
+</style>

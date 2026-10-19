@@ -1,0 +1,165 @@
+---
+import ServiceDetailLayout from '../components/ServiceDetailLayout.astro';
+
+const features = [
+  {
+    "title": "Penargetan Audiens Akurat & Tepat",
+    "description": "Memetakan karakteristik pasar dan calon konsumen secara spesifik guna memastikan anggaran pemasaran tersalurkan ke target yang paling potensial."
+  },
+  {
+    "title": "Strategi Kampanye Terukur & Efektif",
+    "description": "Mengandalkan analisis data dan metrik performa secara berkala untuk mengoptimalkan hasil konversi tanpa pemborosan biaya."
+  },
+  {
+    "title": "Pesan Pemasaran Relevan & Persuasif",
+    "description": "Menyusun materi kampanye dan penawaran yang mudah dipahami oleh konsumen awam untuk membangun ketertarikan instan pada produk Anda."
+  },
+  {
+    "title": "Standar Eksekusi Profesional",
+    "description": "Seluruh operasional kampanye dan pengelolaan iklan ditangani langsung oleh tim spesialis berpengalaman untuk menjaga performa pertumbuhan bisnis Anda."
+  }
+];
+
+const categories = [
+  {
+    "badge": "Paid Acquisition",
+    "title": "Paid Acquisition & Meta Ads Management",
+    "description": "Mengelola kampanye iklan berbayar secara presisi di platform Meta untuk mendatangkan prospek dan konversi penjualan yang terukur bagi bisnis Anda.",
+    "suitableFor": [
+      "Bisnis yang ingin mempercepat perolehan prospek atau penjualan produk secara instan.",
+      "Perusahaan yang ingin mengoptimalkan anggaran iklan agar tidak salah sasaran.",
+      "Brand yang ingin menjangkau profil konsumen secara spesifik berdasarkan data demografi dan perilaku."
+    ],
+    "scopeLabel": "Cakupan Layanan Meliputi:",
+    "scopeItems": [
+      "Riset Audiens & Penentuan Target Pasar",
+      "Perancangan Strategi Kampanye Iklan Berbayar",
+      "Pengaturan Piksel & Pelacakan Konversi",
+      "Optimasi Anggaran & Evaluasi Performa Harian",
+      "Pembuatan Salinan Iklan (Ad Copy) Persuasif",
+      "Laporan Hasil Kampanye Secara Berkala"
+    ],
+    "ctaHref": "https://wasap.at/kSb8kl"
+  },
+  {
+    "badge": "Optimalisasi Konversi",
+    "title": "Conversion Rate Optimization (CRO)",
+    "description": "Meningkatkan persentase pengunjung situs agar melakukan tindakan nyata, mulai dari pengisian formulir hingga pembelian produk.",
+    "suitableFor": [
+      "Bisnis yang memiliki trafik pengunjung tinggi namun angka penjualan atau prospeknya masih rendah.",
+      "Perusahaan yang ingin memaksimalkan fungsi halaman landas (landing page) yang sudah ada.",
+      "Brand yang ingin memperbaiki alur pengalaman pengguna demi mendongkrak omzet."
+    ],
+    "scopeLabel": "Cakupan Layanan Meliputi:",
+    "scopeItems": [
+      "Audit Performa & Jalur Konversi Halaman",
+      "Analisis Perilaku Pengunjung Website",
+      "Optimalisasi Tata Letak & Tombol Aksi (CTA)",
+      "Pengujian Elemen Halaman untuk Konversi Maksimal",
+      "Penyusunan Penawaran yang Lebih Relevan",
+      "Peningkatan Performa Akses Pengguna"
+    ],
+    "ctaHref": "https://wasap.at/vpvnke"
+  },
+  {
+    "badge": "Strategi & Saluran Pemasaran",
+    "title": "Marketing Strategy & Funneling",
+    "description": "Menyusun jalur perjalanan konsumen secara terstruktur dari tahap pengenalan hingga loyalitas jangka panjang terhadap merek Anda.",
+    "suitableFor": [
+      "Bisnis baru yang ingin meluncurkan produk dengan arah pemasaran yang jelas dan terarah.",
+      "Perusahaan yang ingin merapikan tahapan komunikasi dari prospek hingga menjadi pelanggan setia.",
+      "Brand yang merasa arah pemasarannya kurang terstruktur dan tidak menghasilkan konversi."
+    ],
+    "scopeLabel": "Cakupan Layanan Meliputi:",
+    "scopeItems": [
+      "Pemetaan Tahapan Perjalanan Pelanggan (Customer Journey)",
+      "Perumusan Strategi Saluran Pemasaran (Marketing Funnel)",
+      "Penentuan Pesan Utama di Setiap Tahapan",
+      "Integrasi Saluran Digital yang Digunakan",
+      "Evaluasi Efektivitas Titik Sentuh Konsumen",
+      "Penyusunan Panduan Rencana Aksi Pemasaran"
+    ],
+    "ctaHref": "https://wasap.at/QSjcqi"
+  }
+];
+
+const steps = [
+  {
+    "title": "Marketing Audit",
+    "description": "Menganalisis kondisi kampanye, data performa masa lalu, serta kesiapan aset digital Anda saat ini"
+  },
+  {
+    "title": "Marketing Strategy",
+    "description": "Merumuskan rencana taktis, pemilihan platform, dan alokasi anggaran yang paling efektif untuk bisnis Anda"
+  },
+  {
+    "title": "Campaign Planning & Content",
+    "description": "Mempersiapkan materi kampanye, penawaran, serta kerangka pesan yang persuasif dan mudah dipahami"
+  },
+  {
+    "title": "Campaign Execution",
+    "description": "Menjalankan penayangan iklan dan kampanye digital secara langsung dengan pemantauan ketat"
+  },
+  {
+    "title": "Performance Optimization",
+    "description": "Melakukan evaluasi metrik, penyesuaian strategi, dan pengoptimalan hasil secara berkala demi konversi terbaik"
+  }
+];
+
+const faqs = [
+  {
+    "question": "Layanan digital marketing apa saja yang disediakan oleh Eiko Visual?",
+    "answer": "<p>Kami berfokus pada strategi akuisisi berbayar (Paid Acquisition), pengelolaan iklan Meta, optimalisasi tingkat konversi (CRO), serta perumusan jalur pemasaran (funneling) yang terukur untuk mendatangkan prospek bisnis secara konsisten.</p>"
+  },
+  {
+    "question": "Bagaimana Eiko Visual membantu meningkatkan ROI dari iklan digital saya?",
+    "answer": "<p>Kami tidak hanya berfokus pada statistik awal seperti reach atau impressions, tetapi pada indikator utama pertumbuhan bisnis Anda (qualified leads dan konversi penawaran). Melalui pendekatan berulang yang terukur, kami mengoptimalkan target audiens, funnel penawaran, serta creative copywriting untuk memastikan anggaran iklan Anda efisien dan menghasilkan ROI yang terukur.</p>"
+  },
+  {
+    "question": "Apakah Eiko Visual menyediakan layanan audit pemasaran jika bisnis saya sudah memiliki tim sendiri?",
+    "answer": "<p>Ya. Layanan Marketing Audit kami dirancang untuk mengevaluasi efektivitas kampanye, struktur funnel, serta identifikasi masalah (bottlenecks) pada strategi pemasaran Anda saat ini. Kami memberikan rekomendasi berbasis data yang objektif yang dapat langsung dieksekusi oleh tim internal Anda maupun dipadukan dengan layanan kami.</p>"
+  },
+  {
+    "question": "Berapa lama hasil dari strategi digital marketing bisa terlihat?",
+    "answer": "<p>Hasil kampanye iklan berbayar (seperti Meta Ads / Google Ads) umumnya mulai memperlihatkan indikator performa awal dalam 1–2 minggu pertama masa penyesuaian (learning phase). Untuk hasil yang stabil dan teroptimasi penuh, evaluasi menyeluruh serta penyesuaian strategi dilakukan secara berkala pada bulan ke-1 hingga bulan ke-3.</p>"
+  },
+  {
+    "question": "Bagaimana jika bisnis saya belum memiliki strategi pemasaran yang jelas?",
+    "answer": "<p>Kami siap membantu dari tahap paling awal melalui penyusunan Marketing Strategy. Tim Eiko Visual akan menganalisis posisi bisnis Anda di pasar, memetakan buyer persona, serta menentukan channel pemasaran dan alokasi anggaran yang paling tepat sebelum kampanye mulai dijalankan.</p>"
+  }
+];
+
+const relatedServices = [
+  {
+    "title": "Brand Development",
+    "href": "/brand-development-details/"
+  },
+  {
+    "title": "Web Development",
+    "href": "/web-development-details/"
+  },
+  {
+    "title": "Aplikasi Mobile/Web",
+    "href": "/aplikasi-mobile-details/"
+  }
+];
+---
+
+<ServiceDetailLayout
+  seoTitle="Jasa Digital Marketing untuk Perusahaan | Eiko Visual"
+  metaDescription="Jasa digital marketing terarah dan terukur: strategi konten, media sosial, dan iklan untuk menjangkau pelanggan yang tepat. Konsultasi sekarang."
+  serviceTitle="Digital Marketing"
+  heroDescription="Kehadiran produk terbaik tidak akan maksimal tanpa strategi akuisisi yang tepat sasaran. Eiko Visual membantu merancang dan menjalankan kampanye pemasaran digital yang terukur untuk mendatangkan konversi bisnis secara konsisten."
+  valuePropPrefix="Mengapa Digital Marketing Menjadi Fondasi Utama"
+  valuePropHighlight="Keberhasilan Bisnis Jangka Panjang?"
+  valuePropSubheading="Strategi pemasaran digital yang matang memastikan bisnis Anda menjangkau audiens yang tepat, memaksimalkan anggaran iklan secara efektif, dan mendorong pertumbuhan omzet secara berkelanjutan."
+  features={features}
+  categoriesHeadingHighlight="Digital Marketing"
+  categories={categories}
+  stepsHeadingHighlight="Digital Marketing."
+  steps={steps}
+  faqs={faqs}
+  relatedServices={relatedServices}
+  ctaHeading="Saatnya Pemasaran Digital Anda Bekerja Satu Arah dengan Brand Anda"
+  ctaDescription="Ceritakan kondisi pemasaran digital Anda saat ini. Tim kami akan mempelajarinya dan membahas langkah yang tepat"
+/>

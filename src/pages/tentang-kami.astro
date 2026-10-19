@@ -1,0 +1,381 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoMarquee from '../components/LogoMarquee.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const aboutFaqs = [
+  {
+    question: "Apa yang membedakan Eiko Visual dari studio desain lain?",
+    answer: "<p>Kami tidak hanya mengerjakan desain, tapi membangun brand Anda secara menyeluruh — mulai dari identitas, website, sampai pemasaran digital — dalam satu sistem yang konsisten dan bisa diukur hasilnya.</p>",
+  },
+  {
+    question: "Apa saja layanan yang ditangani Eiko Visual?",
+    answer: "<p>Kami fokus pada empat layanan utama: Brand Development, Digital Marketing, Website (development, maintenance, dan management), serta Aplikasi Mobile/Web — semuanya dikerjakan dalam satu arah yang sama.</p>",
+    open: true,
+  },
+  {
+    question: "Bisakah kami memesan satu layanan saja sesuai kebutuhan?",
+    answer: "<p>Bisa. Tapi hasil terbaik muncul saat brand, website, dan pemasaran digital berjalan bersama dalam satu arah yang sama.</p>",
+  },
+  {
+    question: "Berapa lama rata-rata durasi pengerjaan proyek?",
+    answer: "<p>Branding and standard web projects typically take 2–4 weeks, while complex web applications and custom illustration systems range from 4–8 weeks depending on scope.</p>",
+  },
+  {
+    question: "Bagaimana cara memulai proyek dengan Eiko Visual?",
+    answer: "<p>Simply reach out through our contact form or email us at project@eikovisual.com. We will schedule an initial discovery call to discuss your goals and project requirements.</p>",
+  },
+];
+
+const teamMembers = [
+  { name: "Riyan Ilham", role: "Brand Strategist" },
+  { name: "Febi Grasinaz", role: "Founder & Digital Marketing" },
+  { name: "Krisnanto", role: "Full-Stack Developer" },
+  { name: "Firmansyah", role: "Graphic Designer" },
+];
+---
+
+<BaseLayout
+  title="Tentang Kami - Eiko Visual - Your Branding Partner"
+  description="Kami adalah Partner Anda dalam Menjaga Brand Tetap Konsisten. Kami mendampingi Anda dari briefing awal sampai brand Anda siap dipakai di semua media."
+>
+  <!-- Hero Section -->
+  <section class="page-hero starry-bg">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="hero-img-wrap">
+          <img
+            src="/assets/heroes/about-hero.jpg"
+            alt="Tentang Eiko Visual"
+            width="800"
+            height="500"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="trusted-row">
+          <span class="floating-badge-yellow">Dipercaya oleh</span>
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-yellow.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+        </div>
+        <LogoMarquee />
+      </div>
+
+      <div class="hero-right">
+        <div class="floating-badge">
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-orange.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span class="floating-badge-orange">Tentang Kami</span>
+        </div>
+        <h1 class="has-gradient-text">Kami adalah Partner Anda dalam Menjaga Brand Tetap Konsisten</h1>
+        <p>
+          Kami akan mendampingi Anda dari briefing awal sampai brand Anda siap dipakai di semua media, supaya Anda tidak menjalankannya sendirian.
+        </p>
+        <a
+          href="/assets/documents/company-profile-eiko-visual.pdf"
+          class="eiko-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Download Company Proffile</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misi & Visi Section -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-top">
+        <div class="mission-badge">
+          <img src="/assets/icons/sparkle-plus.webp" alt="" width="36" height="36" />
+          <span>Misi &amp; Visi Kami</span>
+        </div>
+        <h3 class="gradient-para mission-statement">
+          Kami punya tujuan yang jelas: setiap proyek dirancang berdasarkan target bisnis Anda, lalu diterapkan secara konsisten di semua media dari branding, website, sampai pemasaran digitalnya supaya lebih mudah menghasilkan pelanggan baru.
+        </h3>
+      </div>
+
+      <div class="mission-bottom">
+        <div class="mission-stats">
+          <div class="count-box">
+            <div class="count-box-number">60+</div>
+            <div class="count-box-title">Proyek berhasil diselesaikan</div>
+          </div>
+          <div class="count-box">
+            <div class="count-box-number">24h</div>
+            <div class="count-box-title">24/7 Respons cepat dari tim kami</div>
+          </div>
+        </div>
+
+        <div class="about-showcase-card">
+          <h2>Eiko Visual</h2>
+          <span class="showcase-divider">©</span>
+          <h2>Kreatif &amp; Branding</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Komitmen Kami Section -->
+  <section class="commitment-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">
+        Komitmen Kami <span>untuk Brand Anda</span>
+      </h2>
+
+      <div class="count-boxes-grid">
+        <div class="count-box">
+          <div class="count-box-title">Proyek diselesaikan</div>
+          <div class="count-box-number">150</div>
+        </div>
+        <div class="count-box">
+          <div class="count-box-title">4 Layanan Terpadu</div>
+          <div class="count-box-number">4</div>
+        </div>
+        <div class="count-box">
+          <div class="count-box-title">Klien puas dengan hasil akhir</div>
+          <div class="count-box-number">96%</div>
+        </div>
+        <div class="count-box">
+          <div class="count-box-title">Tahun pengalaman</div>
+          <div class="count-box-number">3+</div>
+        </div>
+      </div>
+
+      <div class="commitment-bottom">
+        <h3 class="gradient-para">
+          Eiko Visual membantu bisnis berkembang lewat brand yang utuh dan konsisten — mulai dari identitas visual, website, pemasaran digital, sampai aplikasi, semuanya dalam satu standar yang sama.
+        </h3>
+        <a href="/services/" class="eiko-btn">
+          <span>Lihat Layanan Kami</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tim Kami Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">
+        Tim Kami Menjaga <span>Konsistensi Brand Anda</span>
+      </h2>
+
+      <div class="team-grid">
+        {teamMembers.map((member) => (
+          <div class="team-card">
+            <h5>{member.name}</h5>
+            <h6>{member.role}</h6>
+          </div>
+        ))}
+      </div>
+
+      <div class="team-cta">
+        <h3>Punya tantangan branding di perusahaan Anda?<br />Mari kita bahas bersama.</h3>
+        <a href="/contact/" class="eiko-btn">
+          <span>Jadwalkan Diskusi</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FaqSection
+    leftHeading="Masih Ada<br> Pertanyaan Lain?"
+    faqs={aboutFaqs}
+    defaultOpenIndex={1}
+  />
+
+  <!-- Contact Section -->
+  <ContactSection
+    badgeText="Studio"
+    heading="Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"
+    description="Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 80px 0 96px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .trusted-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mission-section,
+  .commitment-section,
+  .team-section {
+    padding: 88px 0;
+  }
+
+  .mission-top {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 56px;
+  }
+
+  .mission-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+
+  .mission-statement {
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.45;
+  }
+
+  .mission-bottom {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 32px;
+  }
+
+  .mission-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-showcase-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.15);
+    border-radius: 40px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .showcase-divider {
+    font-size: 48px;
+    color: #417BFF;
+    font-weight: 600;
+  }
+
+  .section-heading-center {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .commitment-bottom,
+  .team-cta {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .team-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 28px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-8px);
+    border-color: #1A5FFF;
+  }
+
+  .team-card h5 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .team-card h6 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #A7A7A7;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid,
+    .mission-top,
+    .mission-bottom {
+      grid-template-columns: 1fr;
+    }
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

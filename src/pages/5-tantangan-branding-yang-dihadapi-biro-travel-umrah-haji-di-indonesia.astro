@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const challenges = [
+  { title: "Menembus Stigma \"Travel Bodong\"", body: "Isu travel umrah bermasalah cukup sering diberitakan media di Indonesia, meski kenyataannya hanya sebagian kecil dari total biro yang bermasalah. Sayangnya, stigma ini menempel ke seluruh industri secara tidak adil. Calon jamaah jadi lebih waspada, dan brand yang identitas visualnya terlihat asal-asalan akan langsung dicurigai — tidak peduli seberapa baik layanan sebenarnya." },
+  { title: "Menonjol di Tengah Paket yang Terlihat Serupa", body: "Buka lima brosur travel umrah berbeda, dan sering kali kamu akan menemukan penawaran yang terdengar mirip: hotel bintang lima dekat Masjidil Haram, pembimbing berpengalaman, makan 3x sehari. Branding yang kuat membantu calon jamaah membedakan biro Anda dari kompetitor sebelum mereka sempat membandingkan detail paket satu per satu." },
+  { title: "Konsistensi di banyak titik sentuh", body: "Calon jamaah bertemu brand Anda lewat brosur, akun media sosial, website, hingga saat bertemu langsung dengan tim pembimbing di lapangan. Kalau identitas visualnya berubah-ubah — logo beda ukuran, warna beda tone, gaya komunikasi tidak konsisten — kepercayaan yang susah payah dibangun bisa runtuh di titik sentuh terakhir." },
+  { title: "Menjangkau audiens lintas generasi", body: "Calon jamaah bisa datang dari usia lanjut yang lebih mempercayai brosur cetak dan rekomendasi dari mulut ke mulut, sampai keluarga muda yang mencari semua informasi lewat Instagram dan website. Branding travel umrah yang efektif harus bisa berbicara ke kedua audiens ini tanpa kehilangan kredibilitas di salah satu sisi." },
+];
+
+const topics = [
+  { label: "Branding", title: "Kenapa Branding Jadi Kunci Kepercayaan Calon Jamaah Umrah?" },
+  { label: "Branding", title: "Berapa Biaya Branding untuk Biro Travel Umrah? Ini Kisarannya" },
+];
+
+const faqs = [
+  { question: "Apa saja yang termasuk dalam jasa branding travel umroh dari Eiko Visual?", answer: "<p>Riset & strategi brand, desain logo, sistem identitas visual, brand guideline, company profile, desain website, hingga materi promosi cetak dan digital.</p>", open: true },
+  { question: "Berapa lama proses branding untuk biro travel umroh biasanya selesai?", answer: "<p>Tergantung cakupan proyek — dari logo saja hingga rebranding menyeluruh dengan website. Estimasi timeline disampaikan setelah kebutuhan Anda dikonsultasikan.</p>" },
+  { question: "Apakah Eiko Visual bisa membantu company profile untuk kebutuhan legalitas atau kerja sama mitra?", answer: "<p>Kami membantu dari sisi desain dan penyusunan visual company profile agar terlihat profesional. Untuk syarat dan proses perizinan resmi seperti PPIU, sebaiknya dikonfirmasi langsung ke Kementerian Agama karena itu di luar cakupan jasa desain kami.</p>" },
+  { question: "Berapa kali revisi yang disediakan?", answer: "<p>Jumlah revisi mengikuti ketentuan yang disepakati dalam kontrak kerja di awal proyek.</p>" },
+];
+---
+
+<BaseLayout
+  title="Jasa Branding Jabodetabek untuk Startup, Corporate | Eiko Visual"
+  description="Bangun identitas brand yang konsisten dan profesional bersama Eiko Visual. Melayani startup, perusahaan menengah, dan institusi pendidikan di Jabodetabek."
+>
+  <section class="page-hero starry-bg">
+    <div class="container hero-inner">
+      <div class="floating-badge">
+        <span class="floating-badge-orange">Digital Agency</span>
+      </div>
+      <h1 class="has-gradient-text">5 Tantangan Branding yang Dihadapi Biro Travel Umrah &amp; Haji di Indonesia</h1>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">Kepercayaan adalah Aset Terbesar Biro Travel Umroh &amp; Haji</h2>
+      <div class="prose">
+        <p>Bisnis travel umrah dan haji punya satu keunikan yang jarang dimiliki industri lain: calon pelanggannya sedang mempertaruhkan uang dalam jumlah besar untuk sebuah perjalanan ibadah — momen yang sangat personal dan penuh makna. Ini membuat branding di industri ini jauh lebih sensitif dibanding sekadar "terlihat menarik". Berikut lima tantangan branding yang paling sering dihadapi biro travel umrah &amp; haji di Indonesia, berdasarkan pengalaman Eiko Visual menangani proyek di industri ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <div class="card-grid two">
+        {challenges.map((c, i) => (
+          <div class="info-card">
+            <span class="num">{String(i + 1).padStart(2, "0")}</span>
+            <h4>{c.title}</h4>
+            <p>{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">Kesimpulan Dari <span>Eiko Visual</span></h2>
+      <div class="prose">
+        <p>Kelima tantangan di atas bukan hal yang bisa diselesaikan hanya dengan logo baru. Dibutuhkan pendekatan branding yang memang memahami konteks industri ini — bukan pendekatan generik yang dipakai untuk semua jenis bisnis. Eiko Visual sudah menangani tantangan-tantangan ini langsung untuk biro travel umrah &amp; haji, dan siap membantu biro Anda melakukan hal yang sama.</p>
+        <div class="cta-block"><a href="/contact/" class="eiko-btn">
+          <span>Jadwalkan Konsultasi</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">Jelajahi Topik <span>Terbaru</span></h2>
+      <div class="prose" style="margin-bottom: 32px;"><p>Punya pertanyaan spesifik? Berikut panduan yang mungkin membantu Anda:</p></div>
+      <div class="card-grid two">
+        {topics.map((t) => (
+          <div class="info-card">
+            <span class="num">{t.label}</span>
+            <h4>{t.title}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    leftHeading="Masih<br> Ada Pertanyaan?"
+    rightHeadingPrefix="Pertanyaan Umum yang"
+    rightHeadingHighlight="Sering Diajukan"
+    faqs={faqs}
+  />
+
+  <ContactSection
+    badgeText="Branding"
+    heading="Siap Membangun Kepercayaan Calon Jamaah Sejak Kesan Pertama?"
+    description="Ceritakan kebutuhan branding biro travel umroh & haji Anda — tim kami akan menyiapkan penawaran dalam 2 hari kerja tanpa komitmen di awal."
+  />
+</BaseLayout>
+
+<style>
+  .page-hero { padding: 80px 0 96px; }
+  .hero-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; max-width: 900px; }
+  .block-section { padding: 72px 0; }
+  .section-heading-center { text-align: center; margin-bottom: 48px; }
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card-grid.two { grid-template-columns: repeat(2, 1fr); }
+  .info-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 28px;
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .info-card:hover { transform: translateY(-8px); border-color: #1A5FFF; }
+  .info-card .num { font-size: 14px; color: #417BFF; font-weight: 600; }
+  .info-card h4 { font-size: 22px; font-weight: 600; }
+  .info-card p { color: #A7A7A7; font-size: 16px; line-height: 1.6; }
+  .prose { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; text-align: center; color: #A7A7A7; }
+  .case-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.15);
+    border-radius: 40px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .cta-block { margin-top: 48px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  @media (max-width: 1024px) { .card-grid, .card-grid.two { grid-template-columns: 1fr; } .case-card { padding: 28px; } }
+</style>

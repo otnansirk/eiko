@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoMarquee from '../components/LogoMarquee.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const portfolioCards = [
+  {
+    image: "/assets/projects/babah-rot/babah-rot-showcase.png",
+    category: "Brand Development",
+    title: "Bumi Babah Rot",
+    href: "/babah-rot-project-details/",
+  },
+  {
+    image: "/assets/projects/unsuda/unsuda-card.png",
+    category: "Brand Strategy",
+    title: "Universitas Sunan Drajat",
+    href: "/unsuda-project-details/",
+  },
+  {
+    image: "/assets/projects/sakoo/sakoo-card.jpg",
+    category: "Web Apps",
+    title: "Sakoo Apps",
+    href: "/sakoo-apps-project-details/",
+  },
+  {
+    image: "/assets/projects/bismillah/bismillah-card.png",
+    category: "Brand Development",
+    title: "PT Bismillah Cahaya Utama",
+    href: "/bismillah-cahaya-utama-project-details/",
+  },
+  {
+    image: "/assets/projects/pravikara/pravikara-card.png",
+    category: "Brand Strategy",
+    title: "Pravikara Innovation Consulting",
+    href: "/pravikira-project-details/",
+  },
+];
+---
+
+<BaseLayout
+  title="Projects - Eiko Visual - Your Branding Partner"
+  description="Jelajahi berbagai portofolio proyek branding, pengembangan website, dan strategi pemasaran digital yang telah kami kerjakan untuk membantu pertumbuhan bisnis klien."
+>
+  <!-- Hero Section -->
+  <section class="page-hero starry-bg">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="floating-badge">
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-orange.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span class="floating-badge-orange">Creative &amp; Branding</span>
+        </div>
+        <div class="hero-img-wrap">
+          <img
+            src="/assets/heroes/projects-hero.jpg"
+            alt="Portofolio Proyek Eiko Visual"
+            width="800"
+            height="500"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="trusted-row">
+          <span class="floating-badge-yellow">Dipercaya oleh</span>
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-yellow.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+        </div>
+        <LogoMarquee />
+      </div>
+
+      <div class="hero-right">
+        <div class="floating-badge">
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-orange.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span class="floating-badge-orange">Portofolio Kami</span>
+        </div>
+        <h1>Rekam Jejak Portofolio Proyek Eiko Visual</h1>
+        <p>
+          Jelajahi berbagai portofolio proyek branding, pengembangan website, dan strategi pemasaran digital yang telah kami kerjakan untuk membantu pertumbuhan bisnis klien.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects 2x2 Grid -->
+  <section class="projects-grid-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-heading-center">
+        Beberapa <span>Projects Kami.</span>
+      </h2>
+
+      <div class="portfolio-grid">
+        {portfolioCards.map((card) => (
+          <article class="portfolio-card">
+            <div class="portfolio-card-img">
+              <img src={card.image} alt={card.title} loading="lazy" />
+            </div>
+            <div class="portfolio-card-body">
+              <h4 class="gradient-para portfolio-cat">{card.category}</h4>
+              <h3>{card.title}</h3>
+              <a href={card.href} class="eiko-btn">
+                <span>Selengkapnya</span>
+                <span class="btn-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <ContactSection
+    badgeText="Studio"
+    heading="Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"
+    description="Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 80px 0 96px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .trusted-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .projects-grid-section {
+    padding: 88px 0;
+  }
+
+  .section-heading-center {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .portfolio-card {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 40px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .portfolio-card:hover {
+    border-color: #1A5FFF;
+    transform: translateY(-6px);
+  }
+
+  .portfolio-card-img {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 6px solid rgba(255, 255, 255, 0.14);
+    aspect-ratio: 16 / 10;
+  }
+
+  .portfolio-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .portfolio-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .portfolio-cat {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid,
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoMarquee from '../components/LogoMarquee.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const serviceRows = [
+  {
+    badge: "Brand Development",
+    title: "Brand Development",
+    description:
+      "Fondasi identitas brand Anda mulai dari logo, positioning, panduan visual, sampai tone of voice supaya setiap materi yang dibuat perusahaan Anda punya standar yang sama. Dan tim akan menggunakannya secara konsisten.",
+    href: "/brand-development-details/",
+  },
+  {
+    badge: "Website Development",
+    title: "Website Development",
+    description:
+      "Website yang dibangun untuk mendukung tujuan bisnis Anda, bukan sekadar tampil bagus lalu dirawat dan dikelola supaya terus berjalan optimal.",
+    href: "/web-development-details/",
+  },
+  {
+    badge: "Digital Marketing",
+    title: "Digital Marketing",
+    description:
+      "Strategi pemasaran digital yang diarahkan untuk mendatangkan pelanggan nyata, dengan hasil yang bisa dipantau dan dievaluasi.",
+    href: "/digital-marketing-details/",
+  },
+  {
+    badge: "Aplikasi",
+    title: "Aplikasi Mobile/Web",
+    description:
+      "Aplikasi yang memperluas jangkauan brand Anda, dibangun dengan identitas dan pengalaman yang sama dengan website dan materi brand lainnya.",
+    href: "/aplikasi-mobile-details/",
+  },
+];
+
+const serviceFaqs = [
+  {
+    question: "Kenapa konsistensi brand penting bagi perusahaan?",
+    answer:
+      "<p>Semakin besar perusahaan, semakin banyak tim yang membuat materi sendiri-sendiri. Tanpa standar yang sama, brand yang terbentuk tidak mudah diingat, dan tampilan yang beragam menunjukkan perusahaan yang tampak kurang terorganisir.</p>",
+  },
+  {
+    question: "Apa saja layanan yang ditangani Eiko Visual?",
+    answer:
+      "<p>Kami fokus pada empat layanan utama: Brand Development, Digital Marketing, Website (development, maintenance, dan management), serta Aplikasi Mobile/Web — semuanya dikerjakan dalam satu arah yang sama.</p>",
+    open: true,
+  },
+  {
+    question: "Bisakah kami memesan satu layanan saja sesuai kebutuhan?",
+    answer:
+      "<p>Bisa. Tapi hasil terbaik muncul saat brand, website, dan pemasaran digital berjalan bersama dalam satu arah — karena itulah pelanggan Anda melihat brand yang sama, di mana pun mereka bertemu Anda.</p>",
+  },
+  {
+    question: "Berapa lama rata-rata durasi pengerjaan proyek?",
+    answer:
+      "<p>Branding and standard web projects typically take 2–4 weeks, while complex web applications and custom illustration systems range from 4–8 weeks depending on scope.</p>",
+  },
+  {
+    question: "Bagaimana cara memulai proyek dengan Eiko Visual?",
+    answer:
+      "<p>Simply reach out through our contact form or email us at project@eikovisual.com. We will schedule an initial discovery call to discuss your goals and project requirements.</p>",
+  },
+];
+---
+
+<BaseLayout
+  title="Services - Eiko Visual - Your Branding Partner"
+  description="Brand Development, Website, Digital Marketing, dan Aplikasi Mobile/Web kami kerjakan dalam satu sistem yang sama — supaya hasilnya konsisten dan bisa diukur."
+>
+  <!-- Hero Section -->
+  <section class="page-hero starry-bg">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="hero-img-wrap">
+          <img
+            src="/assets/heroes/services-hero.jpg"
+            alt="Layanan Eiko Visual"
+            width="800"
+            height="500"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="trusted-row">
+          <span class="floating-badge-yellow">Dipercaya oleh</span>
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-yellow.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+        </div>
+        <LogoMarquee />
+      </div>
+
+      <div class="hero-right">
+        <div class="floating-badge">
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-orange.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span class="floating-badge-orange">Layanan Kami</span>
+        </div>
+        <h1 class="has-gradient-text">Layanan Kami Saling Terhubung</h1>
+        <p>
+          Brand Development, Website, Digital Marketing, dan Aplikasi Mobile/Web kami kerjakan dalam satu sistem yang sama — supaya hasilnya konsisten dan bisa diukur.
+        </p>
+        <a href="/contact/" class="eiko-btn">
+          <span>Jadwalkan Diskusi</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Service Rows -->
+  <section class="services-list-section">
+    <div class="container services-rows">
+      {serviceRows.map((row) => (
+        <div class="service-row">
+          <div class="service-row-badge">
+            <img
+              class="badge-cursor-icon"
+              src="/assets/icons/cursor-orange.webp"
+              alt=""
+              width="34"
+              height="34"
+            />
+            <span class="floating-badge-orange">{row.badge}</span>
+          </div>
+
+          <div class="service-box service-row-card">
+            <h3>{row.title}</h3>
+            <p>{row.description}</p>
+            <a href={row.href} class="eiko-btn">
+              <span>Selengkapnya</span>
+              <span class="btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FaqSection
+    leftHeading="Masih Ada<br> Pertanyaan Lain??"
+    faqs={serviceFaqs}
+    defaultOpenIndex={1}
+  />
+
+  <!-- Contact Section -->
+  <ContactSection
+    badgeText="Branding"
+    heading="Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"
+    description="Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."
+  />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 80px 0 96px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .trusted-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .services-list-section {
+    padding: 88px 0;
+  }
+
+  .services-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .service-row-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .service-row-card {
+    gap: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-grid,
+    .service-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoMarquee from '../components/LogoMarquee.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const features = [
+  {
+    title: "Brand Mascot & Character Design",
+    description: "Original character concepts and poses designed to represent your brand personality and create immediate audience connection.",
+  },
+  {
+    title: "Custom UI & Brand Icon Sets",
+    description: "Pixel-perfect vector icon libraries engineered for web interfaces, mobile apps, and corporate presentations.",
+  },
+  {
+    title: "Vector Visual Assets",
+    description: "Scalable graphic elements, infographics, and custom visual components tailored for landing pages and marketing collateral.",
+  },
+];
+
+const packages = [
+  {
+    name: "Essential",
+    subtitle: "For Focused Web & UI Assets",
+    price: "IDR 1,850,000",
+    period: "/ Project",
+    features: [
+      "Custom Icon Set (10 Icons)",
+      "Up to 2 Spot Vector Assets",
+      "Brand Color Alignment",
+      "Vector Source Files (AI, SVG, PNG)",
+      "2 Revision Rounds",
+    ],
+    ctaText: "Choose Essential",
+    ctaHref: "https://wasap.at/XS2Jk3",
+  },
+  {
+    name: "Growth",
+    subtitle: "For Apps & Campaign Branding",
+    price: "IDR 3.500.000",
+    period: "/ Project",
+    featured: true,
+    features: [
+      "Custom Icon Set (25 Icons)",
+      "1 Brand Mascot / Character (2 Poses)",
+      "Up to 5 Web/App Vector Assets",
+      "Vector Source Files (AI, SVG, PNG)",
+      "3 Revision Rounds",
+    ],
+    ctaText: "Choose Growth",
+    ctaHref: "https://wasap.at/XS2Jk3",
+  },
+  {
+    name: "Scale",
+    subtitle: "For Full Product & Enterprise Systems",
+    price: "IDR 5.800.000",
+    period: "/ Project",
+    features: [
+      "Full Icon System (50+ Custom Icons)",
+      "Multi-Pose Character Design (5 Poses)",
+      "Web & Mobile App Asset Library",
+      "Asset Style Guide Documentation",
+      "Vector Source Files (AI, SVG, PNG)",
+      "Unlimited Revision Rounds",
+    ],
+    ctaText: "Choose Scale",
+    ctaHref: "https://wasap.at/XS2Jk3",
+  },
+];
+
+const steps = [
+  { title: "Research & Style Definition", description: "We review your brand guidelines and UI requirements to define icon grid styles, stroke weights, and character direction." },
+  { title: "Concept & Sketching", description: "Our team drafts initial character poses and key icon concepts for early review and structural feedback." },
+  { title: "Vectorization & Color System", description: "We convert approved sketches into clean vector paths, applying your exact brand color palette and icon styles." },
+  { title: "UI Integration & Scalability Test", description: "We test icons and character assets across various screen resolutions and layout sizes to ensure crisp rendering." },
+  { title: "Export & Handover", description: "Delivering complete vector libraries (AI, SVG, WebP, PNG) organized for developers and designers, with 100% full copyright ownership." },
+];
+
+const faqs = [
+  {
+    question: "What formats are the icon sets and character assets delivered in?",
+    answer: "<p>All assets are provided in clean, scalable vector formats (SVG, AI, EPS) along with resolution-ready WebP and PNG files for direct web and mobile app integration.</p>",
+  },
+  {
+    question: "Are the custom icons optimized for fast website and app performance?",
+    answer: "<p>Yes, our SVG icon sets and vector assets are lightweight and clean-coded, ensuring fast page load speeds and smooth rendering on retina displays.</p>",
+  },
+  {
+    question: "How many character poses or icon concepts do we get to review initially?",
+    answer: "<p>We present 2 to 3 character pose sketches and initial icon style samples during Step 02 so you can approve the style direction before full vector execution.</p>",
+  },
+  {
+    question: "Who owns the copyright to the character designs and icon libraries?",
+    answer: "<p>You retain 100% full copyright ownership and commercial usage rights for all custom icons, characters, and master files once final payment is completed.</p>",
+  },
+];
+---
+
+<BaseLayout
+  title="Custom Illustration Services: Icons & Characters | Eiko Visual"
+  description="Tailored character designs, custom icon sets, and vector assets engineered to strengthen visual identity, improve UI usability, and elevate brand storytelling."
+>
+  <section class="anim-hero starry-bg">
+    <div class="container anim-hero-inner">
+      <div class="anim-hero-text">
+        <div class="floating-badge">
+          <img class="badge-cursor-icon" src="/assets/icons/cursor-orange.webp" alt="" width="34" height="34" />
+          <span class="floating-badge-orange">Service Details</span>
+        </div>
+        <h1>Custom Illustration</h1>
+        <p class="anim-hero-desc">
+          Tailored character designs, custom icon sets, and vector assets engineered to strengthen visual identity, improve UI usability, and elevate brand storytelling.
+        </p>
+        <a href="https://wasap.at/XS2Jk3" class="eiko-btn" target="_blank" rel="noopener">
+          <span>Get a Free Consultation</span>
+          <span class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+        </a>
+      </div>
+      <div class="anim-hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 320" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="illGrad" x1="0" y1="0" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#417BFF" />
+              <stop offset="1" stop-color="#FF8A3D" />
+            </linearGradient>
+          </defs>
+          <circle cx="160" cy="160" r="140" stroke="url(#illGrad)" stroke-opacity="0.35" stroke-dasharray="4 8" />
+          <rect x="95" y="90" width="130" height="150" rx="40" fill="#121117" stroke="url(#illGrad)" stroke-width="3" />
+          <circle cx="135" cy="150" r="10" fill="#fff" /><circle cx="185" cy="150" r="10" fill="#fff" />
+          <circle cx="137" cy="152" r="4" fill="#030208" /><circle cx="187" cy="152" r="4" fill="#030208" />
+          <path d="M135 195 Q160 215 185 195" stroke="url(#illGrad)" stroke-width="4" stroke-linecap="round" />
+          <path d="M160 90 V62" stroke="url(#illGrad)" stroke-width="4" stroke-linecap="round" /><circle cx="160" cy="55" r="8" fill="url(#illGrad)" />
+          <rect x="40" y="200" width="44" height="44" rx="12" fill="#121117" stroke="#417BFF" stroke-width="2.5" />
+          <path d="M52 222 L62 232 L76 212" stroke="#417BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="240" y="70" width="44" height="44" rx="12" fill="#121117" stroke="#FF8A3D" stroke-width="2.5" />
+          <path d="M262 82 L266 92 L277 93 L269 100 L271 111 L262 105 L253 111 L255 100 L247 93 L258 92 Z" fill="#FF8A3D" />
+          <rect x="240" y="210" width="44" height="44" rx="12" fill="#121117" stroke="#00E431" stroke-width="2.5" />
+          <path d="M252 232 H272 M262 222 V242" stroke="#00E431" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+    <div class="container hero-marquee-block">
+      <div class="trusted-row">
+        <span class="floating-badge-yellow">Trusted by</span>
+        <img class="badge-cursor-icon" src="/assets/icons/cursor-yellow.webp" alt="" width="34" height="34" />
+      </div>
+      <LogoMarquee />
+    </div>
+  </section>
+
+  <section class="anim-section">
+    <div class="container anim-intro">
+      <h2 class="has-gradient-text">
+        Strengthen Your Visual Identity with <span>Custom Icon Sets & Characters</span>
+      </h2>
+      <p>Generic stock icons and template graphics often dilute brand identity. Custom illustrations give your business a distinct visual voice that enhances user experience and simplifies complex ideas.</p>
+      <p>At Eiko Visual, we build custom icon systems, brand mascots, and vector visual assets designed specifically to integrate seamlessly across your website, mobile apps, and marketing materials.</p>
+    </div>
+  </section>
+
+  <section class="anim-section">
+    <div class="container">
+      <h2 class="has-gradient-text anim-title">What You <span>Get</span></h2>
+      <div class="anim-features">
+        {features.map((f) => (
+          <div class="anim-card">
+            <h3>{f.title}</h3>
+            <p>{f.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="anim-section">
+    <div class="container">
+      <h2 class="has-gradient-text anim-title">Custom Illustration <span>Packages.</span></h2>
+      <div class="anim-packages">
+        {packages.map((plan) => (
+          <div class:list={["anim-package", { featured: plan.featured }]}>
+            <h4>{plan.name}</h4>
+            <p class="anim-sub">{plan.subtitle}</p>
+            <div class="anim-price">
+              <h3>{plan.price}</h3>
+              <span>{plan.period}</span>
+            </div>
+            <ul class="anim-list">
+              {plan.features.map((feat) => (
+                <li><span class="check-icon">✓</span><span>{feat}</span></li>
+              ))}
+            </ul>
+            <a href={plan.ctaHref} class="eiko-btn" target="_blank" rel="noopener">
+              <span>{plan.ctaText}</span>
+              <span class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="anim-section">
+    <div class="container">
+      <h2 class="has-gradient-text anim-title">Our Illustration <span>Workflow</span></h2>
+      <div class="anim-steps">
+        {steps.map((step, idx) => (
+          <div class="anim-card">
+            <span class="anim-step-num">0{idx + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    leftHeading="Have <br> More Questions?"
+    leftButtonText="Contact Us"
+    rightHeadingPrefix="Find Answers to"
+    rightHeadingHighlight="Frequently Asked Questions"
+    faqs={faqs}
+  />
+
+  <ContactSection
+    badgeText="Studio"
+    heading="Ready to give your brand its own visual language?"
+    description="Tell us about your product and we will propose the right illustration system for it."
+  />
+</BaseLayout>
+
+<style>
+  .anim-hero { padding: 80px 0 96px; }
+  .anim-hero-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+  .anim-hero-text { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; min-width: 0; }
+  .anim-hero-desc { max-width: 640px; font-size: 18px; line-height: 1.7; }
+  .anim-hero-art { max-width: 380px; width: 100%; justify-self: center; min-width: 0; }
+  .hero-marquee-block { margin-top: 64px; display: flex; flex-direction: column; gap: 16px; }
+  .trusted-row { display: flex; align-items: center; gap: 8px; }
+  .anim-section { padding: 72px 0; }
+  .anim-intro { display: flex; flex-direction: column; gap: 20px; max-width: 880px; }
+  .anim-intro p { line-height: 1.7; color: #D4D4D8; }
+  .anim-title { margin-bottom: 48px; }
+  .anim-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .anim-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+  .anim-card { background-color: #121117; border: 1px solid rgba(234, 234, 234, 0.14); border-radius: 28px; padding: 32px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .anim-card p { color: #A7A7A7; line-height: 1.6; font-size: 15px; }
+  .anim-step-num { color: #417BFF; font-weight: 700; font-size: 14px; }
+  .anim-packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .anim-package { background-color: #121117; border: 1px solid rgba(234, 234, 234, 0.14); border-radius: 36px; padding: 40px 32px; display: flex; flex-direction: column; gap: 24px; }
+  .anim-package.featured { border-color: #1A5FFF; box-shadow: 0 20px 50px rgba(26, 95, 255, 0.15); }
+  .anim-sub { font-size: 14px; line-height: 1.5; color: #A7A7A7; }
+  .anim-price { display: flex; align-items: baseline; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  .anim-list { list-style: none; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .anim-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #D4D4D8; }
+  .check-icon { color: #00E431; font-weight: 700; }
+  @media (max-width: 1024px) {
+    .anim-hero-inner, .anim-features, .anim-packages, .anim-steps { grid-template-columns: 1fr; }
+  }
+</style>

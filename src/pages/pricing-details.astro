@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const pricingPlans = [
+  {
+    name: "Standard",
+    subtitle: "Produksi | Produksi Timeline: Est. 7 hari kerja. 08.00-16.00 , Senin – Sabtu (WIB)",
+    price: "IDR 2.499.000",
+    period: "/ Project",
+    features: [
+      "Konsultasi",
+      "Riset & Melakukan Strategi",
+      "Project management board for task tracking",
+      "4x rounds of revision",
+      "Direct communication (WhatsApp/Email)",
+      "Average 48-hour delivery",
+      "Fixed timeline, confirmed upfront",
+      "Weekly updates and progress reports",
+      "Full ownership of final files",
+    ],
+    ctaText: "Start a Project",
+    ctaHref: "https://wasap.at/NZoUCm",
+  },
+  {
+    name: "Premium",
+    subtitle: "Produksi | Produksi Timeline: Est. 7 hari kerja. 08.00-16.00 , Senin – Sabtu (WIB)",
+    price: "IDR 4.450.000",
+    period: "/ Project",
+    featured: true,
+    features: [
+      "Dedicated design lead + project manager",
+      "Research & Strategy phase included",
+      "1x active project, unified across all services",
+      "Project management board for task tracking",
+      "Priority timeline coordination",
+      "Direct communication (WhatsApp/Email)",
+      "Unified visual system across every deliverable",
+      "Weekly updates and progress reports",
+      "Full ownership of final files",
+    ],
+    ctaText: "Get a Custom Quote",
+    ctaHref: "https://wasap.at/nRhm7Q",
+  },
+  {
+    name: "Premium",
+    subtitle: "Produksi | Produksi Timeline: Est. 7 hari kerja. 08.00-16.00 , Senin – Sabtu (WIB)",
+    price: "IDR 8.500.000",
+    period: "/ Project",
+    features: [
+      "Dedicated design lead + project manager",
+      "Research & Strategy phase included",
+      "1x active project, unified across all services",
+      "Project management board for task tracking",
+      "Priority timeline coordination",
+      "Direct communication (WhatsApp/Email)",
+      "Unified visual system across every deliverable",
+      "Weekly updates and progress reports",
+      "Full ownership of final files",
+    ],
+    ctaText: "Get a Custom Quote",
+    ctaHref: "https://wasap.at/nRhm7Q",
+  },
+];
+
+const pricingFaqs = [
+  {
+    question: "Apakah Anda melayani startup atau brand besar?",
+    answer:
+      "<p>Ya, Eiko Visual melayani baik startup yang baru membangun identitas dari nol maupun brand atau perusahaan besar yang butuh rebranding atau ekspansi sistem visual. Pendekatan kami disesuaikan dengan tahap pertumbuhan bisnis Anda — startup biasanya butuh fondasi identitas yang kuat untuk memulai, sementara brand yang sudah mapan lebih fokus pada konsistensi dan penguatan sistem yang sudah ada.</p>",
+  },
+  {
+    question: "Apa saja yang termasuk dalam paket identitas merek?",
+    answer:
+      "<p>Paket identitas lengkap mencakup desain logo, sistem tipografi, palet warna, dan panduan visual (brand guideline) — semua yang dibutuhkan agar identitas merek Anda tetap konsisten di setiap titik kontak.</p>",
+    open: true,
+  },
+  {
+    question: "Bagaimana pendekatan Anda terhadap harga dan anggaran?",
+    answer:
+      "<p>Kami transparan soal harga sejak awal — setiap paket punya cakupan dan harga yang jelas tanpa biaya tersembunyi. Untuk kebutuhan yang lebih spesifik atau proyek dengan cakupan gabungan (misal branding + website), kami menyediakan penawaran khusus (custom quote) yang disesuaikan dengan anggaran dan kebutuhan bisnis Anda, dibahas langsung di tahap konsultasi awal.</p>",
+  },
+  {
+    question: "Apakah Anda menyediakan dukungan berkelanjutan setelah proyek selesai?",
+    answer:
+      "<p>Ya, kami menyediakan pendampingan setelah proyek selesai untuk revisi minor atau pertanyaan teknis dalam periode yang disepakati. Untuk kebutuhan dukungan jangka panjang di luar periode tersebut, kami juga membuka opsi kerja sama lanjutan sesuai kebutuhan Anda.</p>",
+  },
+];
+---
+
+<BaseLayout
+  title="Pricing - Eiko Visual - Your Branding Partner"
+  description="Paket Harga yang Fleksibel untuk Setiap Visual yang Berdampak. Pilih satu layanan spesifik atau sistem branding lengkap."
+>
+  <section class="pricing-hero starry-bg">
+    <div class="container pricing-hero-inner">
+      <div class="floating-badge">
+        <img
+          class="badge-cursor-icon"
+          src="/assets/icons/cursor-orange.webp"
+          alt=""
+          width="34"
+          height="34"
+        />
+        <span class="floating-badge-orange">Pricing Plan</span>
+      </div>
+      <h1 class="has-gradient-text">
+        Paket Harga yang Fleksibel <span>untuk Setiap Visual yang Berdampak.</span>
+      </h1>
+      <p>
+        Pilih satu layanan spesifik atau sistem branding lengkap, setiap paket dimulai dari strategi, bukan sekadar eksekusi.
+      </p>
+    </div>
+  </section>
+
+  <section class="pricing-cards-section">
+    <div class="container">
+      <h2 class="has-gradient-text pricing-section-title">
+        Paket Branding untuk <span>Bisnis Anda.</span>
+      </h2>
+
+      <div class="pricing-grid">
+        {pricingPlans.map((plan) => (
+          <div class:list={["pricing-card", { featured: plan.featured }]}>
+            <h4>{plan.name}</h4>
+            <p class="pricing-sub">{plan.subtitle}</p>
+            <div class="pricing-price">
+              <h3>{plan.price}</h3>
+              <span>{plan.period}</span>
+            </div>
+            <ul class="pricing-features">
+              {plan.features.map((feat) => (
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+            <a href={plan.ctaHref} class="eiko-btn" target="_blank" rel="noopener">
+              <span>{plan.ctaText}</span>
+              <span class="btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    leftHeading="Masih <br> Ada Pertanyaan?"
+    rightHeadingPrefix="Find answers to common"
+    rightHeadingHighlight="questions"
+    faqs={pricingFaqs}
+    defaultOpenIndex={1}
+  />
+
+  <ContactSection
+    badgeText="Digital Agency"
+    heading="Jika brand Anda terasa ketinggalan zaman atau website Anda belum memberikan dampak yang diharapkan, Eiko Visual siap mengubah identitas digital Anda dengan presisi dan gaya yang tepat."
+    description=""
+  />
+</BaseLayout>
+
+<style>
+  .pricing-hero {
+    padding: 88px 0 72px;
+    text-align: center;
+  }
+
+  .pricing-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 880px;
+  }
+
+  .pricing-cards-section {
+    padding: 80px 0;
+  }
+
+  .pricing-section-title {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .pricing-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 36px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .pricing-card.featured {
+    border-color: #1A5FFF;
+    box-shadow: 0 20px 50px rgba(26, 95, 255, 0.15);
+  }
+
+  .pricing-sub {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #A7A7A7;
+  }
+
+  .pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: #D4D4D8;
+  }
+
+  .check-icon {
+    color: #00E431;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

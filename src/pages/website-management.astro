@@ -1,0 +1,189 @@
+---
+import ServiceDetailLayout from '../components/ServiceDetailLayout.astro';
+
+const props = {
+  "seoTitle": "Jasa Branding & Identitas Visual Perusahaan | Eiko Visual",
+  "metaDescription": "Bangun identitas brand yang kuat dan konsisten — logo, panduan brand, hingga strategi visual. Konsultasi branding gratis bersama Eiko Visual.",
+  "serviceTitle": "Website Management",
+  "heroDescription": "Memiliki website saja tidak cukup untuk mendatangkan konversi. Eiko Visual menghadirkan layanan manajemen website menyeluruh—mulai dari pembaruan konten, pengelolaan produk, hingga optimasi struktur situs—agar brand Anda selalu relevan dan aktif di mata pelanggan.",
+  "valuePropPrefix": "Mengapa Website Management Menjadi",
+  "valuePropHighlight": "Fondasi Utama Keberhasilan Bisnis Jangka Panjang?",
+  "valuePropSubheading": "Pengelolaan website yang konsisten memastikan performa teknis tetap stabil, keamanan data terjaga, dan visibilitas SEO Anda terus meningkat di mesin pencari Google.",
+  "features": [
+    {
+      "title": "Pengelolaan Konten Aktif & Terjadwal",
+      "description": "Memastikan informasi produk, artikel blog, dan materi promosi perusahaan Anda selalu diperbarui secara konsisten tanpa membebani tenaga internal tim Anda."
+    },
+    {
+      "title": "Optimasi SEO & Visibilitas Organik",
+      "description": "Penataan struktur halaman, kata kunci, dan metadata secara berkala guna mendongkrak peringkat situs korporat Anda di halaman pencarian Google."
+    },
+    {
+      "title": "Manajemen Etalase & Produk Akurat",
+      "description": "Pengelolaan katalog produk dan e-commerce yang presisi, mulai dari pembaruan harga, stok, hingga tata letak etalase demi memaksimalkan konversi penjualan."
+    },
+    {
+      "title": "Efisiensi Waktu & Standar Profesional",
+      "description": "Seluruh pembaruan tata letak, estetika visual, dan navigasi web ditangani langsung oleh tim spesialis berpengalaman untuk menjaga citra profesional perusahaan."
+    }
+  ],
+  "categoriesHeadingHighlight": "Website Management",
+  "categories": [
+    {
+      "badge": "Manajemen Konten",
+      "title": "Pembaruan & Publikasi Konten Berkala (Content Updates)",
+      "description": "Memastikan informasi perusahaan, artikel blog, portofolio, dan banner promosi selalu segar serta terbarui secara konsisten.",
+      "suitableFor": [
+        "Bisnis yang rutin mengadakan promo, event, atau peluncuran produk baru dan butuh publikasi cepat.",
+        "Perusahaan yang ingin menjaga aktivitas blog tetap aktif demi mendatangkan trafik organik dari Google.",
+        "Tim internal yang tidak memiliki sumber daya khusus untuk memperbarui teks dan visual web secara rutin."
+      ],
+      "scopeItems": [
+        "Pembaruan teks, artikel, dan siaran pers perusahaan",
+        "Unggah dan penataan banner promosi serta aset visual web",
+        "Penjadwalan publikasi konten strategis bulanan",
+        "Penyuntingan tata letak paragraf agar ramah pembaca (readability)",
+        "Pemeriksaan akurasi informasi dan kontak bisnis",
+        "Penyesuaian bahasa dan copywriting halaman promo"
+      ],
+      "ctaHref": "https://wasap.at/jq9ewf"
+    },
+    {
+      "badge": "Katalog Produk",
+      "title": "Pengelolaan Katalog Produk & E-Commerce Management",
+      "description": "Penataan etalase digital, pembaruan harga, penambahan stok produk baru, hingga optimalisasi deskripsi jual.",
+      "suitableFor": [
+        "Toko online atau e-commerce dengan perputaran produk dan variasi stok yang tinggi",
+        "Bisnis ritel yang ingin memastikan informasi harga dan spesifikasi produk selalu akurat bagi pembeli.",
+        "Perusahaan yang ingin memaksimalkan konversi penjualan lewat tata letak etalase produk yang rapi."
+      ],
+      "scopeItems": [
+        "Input dan pembaruan data produk (foto, spesifikasi, varian)",
+        "Pengaturan kategori produk dan filter pencarian toko",
+        "Penyesuaian harga promo, diskon, dan kupon belanja",
+        "Optimalisasi deskripsi produk ramah SEO (pencarian Google)",
+        "Manajemen ketersediaan stok dan status produk habis",
+        "Pengujian alur checkout transaksi secara berkala"
+      ],
+      "ctaHref": "https://wasap.at/1ZE2xQ"
+    },
+    {
+      "badge": "Optimasi SEO",
+      "title": "Optimasi On-Page SEO & Struktur Informasi",
+      "description": "Menyusun meta title, meta description, heading tag, dan struktur konten agar mudah menduduki halaman utama Google.",
+      "suitableFor": [
+        "Website bisnis yang ingin mendatangkan lebih banyak pengunjung potensial secara organik tanpa biaya iklan terus-menerus.",
+        "Brand yang artikel atau halaman produknya belum menduduki peringkat optimal di mesin pencari.",
+        "Perusahaan yang ingin membangun otoritas merek yang kuat di ranah digital."
+      ],
+      "scopeItems": [
+        "Riset kata kunci (keyword research) bisnis terkait",
+        "Penulisan dan optimasi Meta Title & Meta Description",
+        "Restrukturisasi Hierarki Heading (H1, H2, H3)",
+        "Optimasi alt text pada gambar pendukung konten",
+        "Pemasangan internal link antar halaman strategis",
+        "Evaluasi performa indeks halaman via Google Search Console"
+      ],
+      "ctaHref": "https://wasap.at/QwHHHv"
+    },
+    {
+      "badge": "Tata Letak & UX",
+      "title": "Penataan Layout & Peningkatan Pengalaman Pengguna (UI/UX Maintenance)",
+      "description": "Mempercantik tampilan visual halaman, merapikan tata letak elemen, dan memastikan kenyamanan navigasi pengunjung.",
+      "suitableFor": [
+        "Website yang memiliki rasio pentalan (bounce rate) tinggi karena pengunjung cepat bosan atau bingung.",
+        "Bisnis yang ingin melakukan penyegaran visual kecil (minor redesign) tanpa harus membangun ulang dari nol.",
+        "Pemilik situs yang ingin memastikan tampilan halaman tetap responsif sempurna di perangkat seluler."
+      ],
+      "scopeItems": [
+        "Penataan ulang tata letak section agar lebih estetik dan rapi",
+        "Perbaikan tombol aksi (Call to Action / CTA) agar lebih memancing konversi",
+        "Penyesuaian tampilan responsif khusus pengguna smartphone & tablet",
+        "Integrasi formulir kontak interaktif dan tombol WhatsApp langsung",
+        "Pengujian alur navigasi menu utama website",
+        "Perapian spasi dan konsistensi elemen visual merek"
+      ],
+      "ctaHref": "https://wasap.at/Qt3knM"
+    }
+  ],
+  "stepsHeadingHighlight": "Website Management.",
+  "steps": [
+    {
+      "title": "Brief & Diskusi Kebutuhan Konten",
+      "description": "Kami memetakan jenis konten, jadwal publikasi, serta target pemasaran yang ingin dicapai oleh bisnis Anda."
+    },
+    {
+      "title": "Audit Awal Struktur Website",
+      "description": "Tim kami meninjau kondisi tata letak dan performa SEO halaman Anda saat ini sebagai acuan kerja."
+    },
+    {
+      "title": "Eksekusi Pengelolaan & Publikasi Rutin",
+      "description": "Tim spesialis kami mulai bekerja mengunggah konten, merapikan etalase produk, dan mengoptimalkan halaman sesuai jadwal."
+    },
+    {
+      "title": "Evaluasi & Laporan Bulanan",
+      "description": "Anda menerima rekapitulasi progres pengelolaan secara transparan untuk memantau perkembangan performa situs."
+    }
+  ],
+  "supportServices": [
+    {
+      "badge": "Website Management",
+      "title": "Website Maintenance",
+      "description": "Pemeliharaan sistem, keamanan 24/7, dan backup data rutin agar website selalu aman dari risiko teknis.",
+      "buttonText": "Lihat Layanan",
+      "href": "https://wasap.at/cQDaHv"
+    },
+    {
+      "badge": "Digital Marketing",
+      "title": "Digital Marketing",
+      "description": "Strategi pemasaran berbayar dan akuisisi pelanggan untuk melipatgandakan konversi penjualan website Anda.",
+      "buttonText": "Lihat Layanan",
+      "href": "https://wasap.at/JRAcpK"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Apa perbedaan utama antara layanan Website Management dan Website Maintenance?",
+      "answer": "Website Management berfokus pada pengelolaan dan pembaruan isi konten, tata letak, etalase produk, serta optimasi SEO halaman web. Sedangkan Website Maintenance berfokus pada aspek teknis di balik layar seperti keamanan server, pembaruan sistem (core updates), pencegahan malware, dan backup data. Keduanya saling melengkapi untuk performa website yang sempurna."
+    },
+    {
+      "question": "Apakah saya bisa mengajukan permintaan pembaruan konten secara mendadak (misalnya untuk promo kilat)?",
+      "answer": "Tentu saja. Melalui paket Pro dan Enterprise, tim kami menyediakan slot prioritas untuk penanganan konten promosi kilat atau pembaruan mendesak sesuai ketentuan paket yang disepakati."
+    },
+    {
+      "question": "Apakah layanan manajemen ini termasuk penulisan artikel SEO untuk blog perusahaan?",
+      "answer": "Ya, dalam ruang lingkup layanan manajemen konten dan optimasi SEO, kami dapat membantu menyusun, menyunting, serta mempublikasikan artikel blog yang ramah mesin pencari guna meningkatkan kunjungan organik ke website Anda."
+    },
+    {
+      "question": "Bagaimana cara menyerahkan data atau materi konten kepada tim Eiko Visual?",
+      "answer": "Kami menyediakan sistem komunikasi terpusat (melalui Trello atau platform kolaborasi pilihan) di mana tim Anda dapat mengirimkan materi teks, gambar, atau katalog produk, dan tim kami langsung mengeksekusinya di website."
+    },
+    {
+      "question": "Bagaimana cara memulai layanan Website Management bersama Eiko Visual?",
+      "answer": "Cukup klik tombol \"Konsultasikan Website Management\" atau \"Konsultasi Sekarang\" di halaman ini. Tim kami akan berdiskusi mengenai kebutuhan spesifik bisnis Anda dan merumuskan rencana pengelolaan yang paling efektif."
+    }
+  ],
+  "relatedServices": [
+    {
+      "title": "Brand Development",
+      "href": "/brand-development-details/"
+    },
+    {
+      "title": "Digital Marketing",
+      "href": "/digital-marketing-details/"
+    },
+    {
+      "title": "Aplikasi Mobile/Web",
+      "href": "/aplikasi-mobile-details/"
+    },
+    {
+      "title": "Studio",
+      "href": "/services/"
+    }
+  ],
+  "ctaHeading": "Jaga Website Anda Tetap Aktif, Relevan, dan Menghasilkan Konversi",
+  "ctaDescription": "Jangan biarkan website perusahaan Anda tampak pasif di mata calon pelanggan. Serahkan pengelolaannya kepada tangan profesional di Eiko Visual dan saksikan pertumbuhan bisnis digital Anda melesat."
+};
+---
+
+<ServiceDetailLayout {...props} />
