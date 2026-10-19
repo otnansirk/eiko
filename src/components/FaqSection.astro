@@ -1,0 +1,122 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+  open?: boolean;
+}
+
+interface Props {
+  leftHeading?: string;
+  leftButtonText?: string;
+  leftButtonHref?: string;
+  rightHeadingPrefix?: string;
+  rightHeadingHighlight?: string;
+  rightHeadingSuffix?: string;
+  faqs: FaqItem[];
+  defaultOpenIndex?: number;
+}
+
+const {
+  leftHeading = "Apakah Ada<br>Pertanyaan lain?",
+  leftButtonText = "Hubungi Kami",
+  leftButtonHref = "/contact/",
+  rightHeadingPrefix = "Jawaban untuk",
+  rightHeadingHighlight = "Pertanyaan Anda",
+  rightHeadingSuffix = "",
+  faqs,
+  defaultOpenIndex = 0,
+} = Astro.props;
+---
+
+<section class="faq-section">
+  <div class="container faq-grid">
+    <div class="faq-left-card">
+      <h3 class="faq-left-title" set:html={leftHeading} />
+      <a href={leftButtonHref} class="eiko-btn">
+        <span>{leftButtonText}</span>
+        <span class="btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="faq-right">
+      <h2 class="has-gradient-text faq-right-heading">
+        {rightHeadingPrefix} <span>{rightHeadingHighlight}</span> {rightHeadingSuffix}
+      </h2>
+
+      <div class="faq-accordion-list">
+        {faqs.map((item, idx) => (
+          <details class="faq-card" name="eiko-faq" open={item.open !== undefined ? item.open : idx === defaultOpenIndex}>
+            <summary class="faq-summary">
+              <span>{item.question}</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg class="faq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5.00098V19.001" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.99805 12H18.998" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg class="faq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M4.99805 12H18.998" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-body" set:html={item.answer} />
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 96px 0;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .faq-left-card {
+    background-color: #121117;
+    background-image:
+      linear-gradient(180deg, rgba(18, 17, 23, 0.35) 0%, rgba(18, 17, 23, 0.92) 100%),
+      url("/assets/heroes/faq-astronaut.png");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 32px;
+    padding: 44px 36px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 28px;
+  }
+
+  .faq-left-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #FFFFFF;
+  }
+
+  .faq-right-heading {
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 1024px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+    .faq-left-card {
+      min-height: 280px;
+    }
+  }
+</style>

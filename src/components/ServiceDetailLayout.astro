@@ -1,0 +1,590 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LogoMarquee from './LogoMarquee.astro';
+import FaqSection from './FaqSection.astro';
+import ContactSection from './ContactSection.astro';
+
+interface FeatureItem {
+  title: string;
+  description: string;
+}
+
+interface CategoryItem {
+  badge: string;
+  title: string;
+  description: string;
+  suitableFor: string[];
+  scopeLabel?: string;
+  scopeItems: string[];
+  ctaHref: string;
+}
+
+interface StepItem {
+  title: string;
+  description: string;
+}
+
+interface RelatedService {
+  title: string;
+  href: string;
+}
+
+interface SupportService {
+  badge: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  href: string;
+}
+
+interface ProjectShowcase {
+  image: string;
+  category: string;
+  title: string;
+  href: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  seoTitle: string;
+  metaDescription: string;
+  serviceTitle: string;
+  heroDescription: string;
+  heroCtaHref?: string;
+  valuePropPrefix: string;
+  valuePropHighlight: string;
+  valuePropSubheading: string;
+  features: FeatureItem[];
+  projects?: ProjectShowcase[];
+  categoriesHeadingPrefix?: string;
+  categoriesHeadingHighlight: string;
+  categories: CategoryItem[];
+  stepsHeadingHighlight: string;
+  steps: StepItem[];
+  supportServices?: SupportService[];
+  faqs: FaqItem[];
+  relatedServices: RelatedService[];
+  ctaHeading: string;
+  ctaDescription: string;
+}
+
+const {
+  seoTitle,
+  metaDescription,
+  serviceTitle,
+  heroDescription,
+  heroCtaHref = "https://wasap.at/XS2Jk3",
+  valuePropPrefix,
+  valuePropHighlight,
+  valuePropSubheading,
+  features,
+  projects,
+  categoriesHeadingPrefix = "Kategori Layanan",
+  categoriesHeadingHighlight,
+  categories,
+  stepsHeadingHighlight,
+  steps,
+  supportServices,
+  faqs,
+  relatedServices,
+  ctaHeading,
+  ctaDescription,
+} = Astro.props;
+---
+
+<BaseLayout title={seoTitle} description={metaDescription}>
+  <!-- Section 1: Hero -->
+  <section class="service-hero starry-bg">
+    <div class="container service-hero-inner">
+      <div class="floating-badge">
+        <img
+          class="badge-cursor-icon"
+          src="/assets/icons/cursor-orange.webp"
+          alt=""
+          width="34"
+          height="34"
+        />
+        <span class="floating-badge-yellow">Layanan</span>
+      </div>
+
+      <h1>{serviceTitle}</h1>
+      <p class="service-hero-desc" set:html={heroDescription} />
+
+      <a href={heroCtaHref} class="eiko-btn" target="_blank" rel="noopener">
+        <span>Konsultasi Sekarang</span>
+        <span class="btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+
+      <div class="hero-marquee-block">
+        <LogoMarquee />
+        <div class="trusted-row trusted-row-right">
+          <img
+            class="badge-cursor-icon"
+            src="/assets/icons/cursor-orange.webp"
+            alt=""
+            width="34"
+            height="34"
+          />
+          <span class="floating-badge-orange">Dipercaya oleh</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Value Proposition -->
+  <section class="value-prop-section">
+    <div class="container value-prop-inner">
+      <h2 class="has-gradient-text">
+        {valuePropPrefix} <span>{valuePropHighlight}</span>
+      </h2>
+      <h3 class="gradient-para value-prop-sub">{valuePropSubheading}</h3>
+    </div>
+  </section>
+
+  <!-- Section 3: Keunggulan Eiko Visual -->
+  <section class="keunggulan-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-title-mb">
+        Keunggulan <span>Eiko Visual</span>
+      </h2>
+
+      <div class="features-4-grid">
+        {features.map((feat) => (
+          <div class="service-box feature-card">
+            <div class="service-box-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#417BFF" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>{feat.title}</h3>
+            <p>{feat.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Projects Showcase (e.g. Brand Development) -->
+  {projects && projects.length > 0 && (
+    <section class="service-projects-section">
+      <div class="container">
+        <h2 class="has-gradient-text section-title-mb">
+          Beberapa <span>Projects Kami.</span>
+        </h2>
+        <div class="projects-2-grid">
+          {projects.map((proj) => (
+            <a href={proj.href} class="service-project-card">
+              <div class="sp-img">
+                <img src={proj.image} alt={proj.title} loading="lazy" />
+              </div>
+              <div class="sp-info">
+                <h5>{proj.category}</h5>
+                <h3>{proj.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Section 4: Kategori Layanan -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-title-mb">
+        {categoriesHeadingPrefix} <span>{categoriesHeadingHighlight}</span>
+      </h2>
+
+      <div class="categories-stack">
+        {categories.map((cat) => (
+          <div class="category-card">
+            <div class="category-header">
+              <div class="floating-badge">
+                <img
+                  class="badge-cursor-icon"
+                  src="/assets/icons/cursor-orange.webp"
+                  alt=""
+                  width="32"
+                  height="32"
+                />
+                <span class="floating-badge-orange">{cat.badge}</span>
+              </div>
+              <h3>{cat.title}</h3>
+              <p set:html={cat.description} />
+            </div>
+
+            <div class="category-columns">
+              <div class="cat-col">
+                <h4>Cocok untuk siapa:</h4>
+                <ul class="cat-list">
+                  {cat.suitableFor.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="cat-col">
+                <h4>{cat.scopeLabel || "Cakupan Layanan Meliputi:"}</h4>
+                <ul class="cat-list scope-list">
+                  {cat.scopeItems.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <a href={cat.ctaHref} class="eiko-btn" target="_blank" rel="noopener">
+              <span>Konsultasi Sekarang</span>
+              <span class="btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Tahapan Layanan -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="steps-header">
+        <h2 class="has-gradient-text">
+          Tahapan Layanan <span>{stepsHeadingHighlight}</span>
+        </h2>
+        <a href="/services/" class="eiko-btn">
+          <span>Lihat Semua Layanan</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="steps-grid">
+        {steps.map((step, idx) => (
+          <div class="service-box step-card">
+            <span class="step-num">0{idx + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Support Services -->
+  {supportServices && supportServices.length > 0 && (
+    <section class="support-services-section">
+      <div class="container">
+        <h2 class="has-gradient-text section-title-mb">
+          Lengkapi Website Anda dengan <span>Layanan Pendukung</span>
+        </h2>
+        <div class="support-2-grid">
+          {supportServices.map((sup) => (
+            <div class="service-box support-card">
+              <div class="floating-badge">
+                <img
+                  class="badge-cursor-icon"
+                  src="/assets/icons/cursor-orange.webp"
+                  alt=""
+                  width="32"
+                  height="32"
+                />
+                <span class="floating-badge-orange">{sup.badge}</span>
+              </div>
+              <h3>{sup.title}</h3>
+              <p>{sup.description}</p>
+              <a href={sup.href} class="eiko-btn" target="_blank" rel="noopener">
+                <span>{sup.buttonText}</span>
+                <span class="btn-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ Section -->
+  {faqs.length > 0 && <FaqSection faqs={faqs} />}
+
+  <!-- Related Services -->
+  <section class="related-services-section">
+    <div class="container">
+      <h2 class="has-gradient-text section-title-mb">
+        Layanan Lain yang <span>Bisa Melengkapi</span>
+      </h2>
+      <div class="related-services-grid">
+        {relatedServices.map((rel) => (
+          <div class="service-box related-service-card">
+            <h3>{rel.title}</h3>
+            <a href={rel.href} class="eiko-btn eiko-btn-outline">
+              <span>Lihat Layanan</span>
+              <span class="btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <ContactSection
+    badgeText="Studio"
+    heading={ctaHeading}
+    description={ctaDescription}
+  />
+</BaseLayout>
+
+<style>
+  .service-hero {
+    padding: 80px 0 96px;
+  }
+
+  .service-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .service-hero-desc {
+    max-width: 780px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #A7A7A7;
+  }
+
+  .hero-marquee-block {
+    width: 100%;
+    margin-top: 28px;
+    position: relative;
+  }
+
+  .trusted-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .trusted-row-right {
+    margin-top: 12px;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 40px;
+  }
+
+  .value-prop-section,
+  .keunggulan-section,
+  .service-projects-section,
+  .categories-section,
+  .steps-section,
+  .support-services-section,
+  .related-services-section {
+    padding: 80px 0;
+  }
+
+  .value-prop-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 960px;
+  }
+
+  .value-prop-sub {
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.5;
+  }
+
+  .section-title-mb {
+    margin-bottom: 48px;
+  }
+
+  .features-4-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    gap: 14px;
+  }
+
+  .projects-2-grid,
+  .support-2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .service-project-card {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 32px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sp-img {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+
+  .sp-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sp-info h5 {
+    color: #417BFF;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .categories-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .category-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 40px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .category-header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .category-columns {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cat-col h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+  }
+
+  .cat-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cat-list li {
+    position: relative;
+    padding-left: 24px;
+    color: #A7A7A7;
+  }
+
+  .cat-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00E431;
+    font-weight: 700;
+  }
+
+  .steps-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .step-card {
+    gap: 14px;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(65, 123, 255, 0.15);
+    color: #417BFF;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .support-card {
+    gap: 18px;
+  }
+
+  .related-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .related-service-card {
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .features-4-grid,
+    .projects-2-grid,
+    .support-2-grid,
+    .category-columns,
+    .related-services-grid {
+      grid-template-columns: 1fr;
+    }
+    .category-card {
+      padding: 32px 24px;
+    }
+  }
+</style>

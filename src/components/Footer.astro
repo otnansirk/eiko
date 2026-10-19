@@ -1,0 +1,155 @@
+---
+---
+
+<footer class="site-footer starry-bg">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <h6 class="footer-email-label">Our Email</h6>
+      <h2 class="footer-email-link">
+        <a href="mailto:project@eikovisual.com">project@eikovisual.com</a>
+      </h2>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-list">
+            <li><a href="/tentang-kami/">About Us</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/blogs/">Blog &amp; News</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Contact Us</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:project@eikovisual.com">project@eikovisual.com</a></li>
+            <li><span>Depok, West Java. Indonesia 16451</span></li>
+            <li><a href="tel:+6285870339246">+62-858-7033-9246</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Follow on</h3>
+          <ul class="footer-list">
+            <li><a href="https://www.instagram.com/eikovisual/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/showcase/eikovisual/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://dribbble.com/EikoVisual" target="_blank" rel="noopener">Dribbble</a></li>
+            <li><a href="https://www.behance.net/eikovisualid" target="_blank" rel="noopener">Behance</a></li>
+            <li><a href="https://clutch.co/profile/eiko-visual" target="_blank" rel="noopener">Clutch.co</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2026. All Rights Reserved Eiko Visual.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 120px 0 40px;
+    border-top: 1px solid rgba(234, 234, 234, 0.12);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    max-width: 444px;
+  }
+
+  .footer-email-label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #A7A7A7;
+  }
+
+  .footer-email-link {
+    font-size: clamp(28px, 3.8vw, 48px);
+    font-weight: 500;
+    line-height: 1.25;
+    color: #FFFFFF;
+    margin-top: 20px;
+    word-break: break-word;
+  }
+
+  .footer-email-link a:hover {
+    color: #417BFF;
+  }
+
+  .footer-right {
+    flex: 1;
+    max-width: 583px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 120px;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .footer-col-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  .footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-list li,
+  .footer-list a {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #A7A7A7;
+  }
+
+  .footer-list a:hover {
+    color: #FFFFFF;
+  }
+
+  .footer-copyright p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+
+  @media (max-width: 767px) {
+    .site-footer {
+      padding: 72px 0 32px;
+    }
+    .footer-columns {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .footer-right {
+      gap: 48px;
+    }
+  }
+</style>
