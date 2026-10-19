@@ -1,0 +1,568 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  const posts = await getCollection('blog');
+
+  const projectPaths = projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { type: 'project' as const, entry: project, allPosts: posts },
+  }));
+
+  const postPaths = posts.map((post) => ({
+    params: { slug: post.id },
+    props: { type: 'blog' as const, entry: post, allPosts: posts },
+  }));
+
+  return [...projectPaths, ...postPaths];
+}
+
+const { type, entry, allPosts } = Astro.props;
+const rendered = type === 'blog' ? await render(entry) : null;
+const Content = rendered?.Content;
+---
+
+{type === 'project' ? (
+  <BaseLayout
+    title={entry.data.seoTitle}
+    description={entry.data.metaDescription || entry.data.summaryText}
+    ogImage={entry.data.cardImage}
+  >
+    <!-- Project Hero -->
+    <section class="project-hero starry-bg">
+      <div class="container project-hero-inner">
+        <div class="project-hero-badges">
+          <span class="pill-badge">{entry.data.yearBadge}</span>
+          <div class="floating-badge">
+            <img
+              class="badge-cursor-icon"
+              src="/assets/icons/cursor-orange.webp"
+              alt=""
+              width="34"
+              height="34"
+            />
+            <span class="floating-badge-orange">Project Details</span>
+          </div>
+        </div>
+
+        <h1 class="has-gradient-text project-hero-title">
+          {entry.data.heroTitlePrefix} <span>{entry.data.heroTitleHighlight}</span>
+        </h1>
+
+        <a href="/contact/" class="eiko-btn">
+          <span>Konsultasi Sekarang</span>
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Project Body -->
+    <section class="project-detail-body">
+      <div class="container project-detail-stack">
+        <!-- Top Gallery -->
+        <div class="project-gallery-2">
+          {entry.data.topGallery.map((imgUrl: string, idx: number) => (
+            <div class="gallery-img-card">
+              <img
+                src={imgUrl}
+                alt={`${entry.data.title} - Gallery ${idx + 1}`}
+                fetchpriority={idx === 0 ? "high" : undefined}
+                loading={idx === 0 ? undefined : "lazy"}
+              />
+            </div>
+          ))}
+        </div>
+
+        <!-- Ringkasan Proyek -->
+        <div class="project-section-block">
+          <h3>Ringkasan Proyek</h3>
+          <p>{entry.data.summaryText}</p>
+
+          <div class="client-meta-grid">
+            <div class="client-meta-card">
+              <span class="meta-label">Klien</span>
+              <strong>{entry.data.clientName}</strong>
+            </div>
+            <div class="client-meta-card">
+              <span class="meta-label">Layanan</span>
+              <strong>{entry.data.clientScope}</strong>
+            </div>
+            <div class="client-meta-card">
+              <span class="meta-label">Tanggal</span>
+              <strong>{entry.data.projectDate}</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Gallery Row 1 -->
+        <div class="project-gallery-2">
+          {entry.data.middleGalleryRow1.map((imgUrl: string, idx: number) => (
+            <div class="gallery-img-card">
+              <img src={imgUrl} alt={`${entry.data.title} - Showcase ${idx + 1}`} loading="lazy" />
+            </div>
+          ))}
+        </div>
+
+        <!-- Tantangan Kami -->
+        <div class="project-section-block">
+          <h3>Tantangan Kami</h3>
+          <p>{entry.data.challengeText}</p>
+
+          <ul class="deliverables-grid">
+            {entry.data.deliverables.map((item: string) => (
+              <li class="deliverable-pill">
+                <span class="deliverable-dot"></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Middle Gallery Row 2 (Optional) -->
+        {entry.data.middleGalleryRow2 && entry.data.middleGalleryRow2.length > 0 && (
+          <div class="project-gallery-2">
+            {entry.data.middleGalleryRow2.map((imgUrl: string, idx: number) => (
+              <div class="gallery-img-card">
+                <img src={imgUrl} alt={`${entry.data.title} - Detail ${idx + 1}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        )}
+
+        <!-- Solusi Kami -->
+        <div class="project-section-block">
+          <h3>{entry.data.solutionHeading}</h3>
+          <p set:html={entry.data.solutionHtml} />
+
+          <div class="value-points-grid">
+            {entry.data.valuePoints.map((vp: { title: string; description: string }) => (
+              <div class="value-point-card">
+                <div class="vp-check">✓</div>
+                <div>
+                  <h4>{vp.title}</h4>
+                  <p>{vp.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <ContactSection
+      badgeText={entry.data.ctaBadge2}
+      heading={entry.data.ctaHeading}
+      description={entry.data.ctaDescription}
+    />
+
+    <!-- Optional Related Articles (e.g. Babah Rot) -->
+    {entry.data.relatedArticleSlugs && entry.data.relatedArticleSlugs.length > 0 && (
+      <section class="related-articles-section">
+        <div class="container">
+          <h2 class="has-gradient-text related-heading">
+            {entry.data.relatedArticlesHeadingPrefix} <span>{entry.data.relatedArticlesHeadingHighlight}</span>
+          </h2>
+          <div class="related-grid">
+            {allPosts
+              .filter((p) => entry.data.relatedArticleSlugs?.includes(p.id))
+              .map((post) => (
+                <article class="related-card">
+                  <a href={`/${post.id}/`} class="related-img">
+                    <img src={post.data.featuredImage} alt={post.data.title} loading="lazy" />
+                  </a>
+                  <div class="related-body">
+                    <span class="blog-cat-pill">{post.data.category}</span>
+                    <h3><a href={`/${post.id}/`}>{post.data.title}</a></h3>
+                  </div>
+                </article>
+              ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </BaseLayout>
+) : (
+  <BaseLayout
+    title={entry.data.seoTitle}
+    description={entry.data.description}
+    ogImage={entry.data.featuredImage}
+  >
+    <!-- Blog Post Hero -->
+    <article class="blog-post-page">
+      <header class="blog-post-hero starry-bg">
+        <div class="container-narrow blog-hero-inner">
+          <div class="floating-badge">
+            <img
+              class="badge-cursor-icon"
+              src="/assets/icons/cursor-orange.webp"
+              alt=""
+              width="34"
+              height="34"
+            />
+            <span class="floating-badge-orange">Blog &amp; Artikel</span>
+          </div>
+
+          <h1 class="blog-post-title">{entry.data.title}</h1>
+
+          <div class="blog-author-meta">
+            <img
+              src={entry.data.authorAvatar}
+              alt={entry.data.author}
+              width="48"
+              height="48"
+              class="author-avatar"
+            />
+            <div>
+              <strong>{entry.data.author}</strong>
+              <span>{entry.data.authorRole}</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container-narrow blog-post-container">
+        <div class="blog-featured-img">
+          <img
+            src={entry.data.featuredImage}
+            alt={entry.data.title}
+            fetchpriority="high"
+          />
+        </div>
+
+        <div class="blog-prose">
+          {Content && <Content />}
+        </div>
+      </div>
+
+      {entry.data.faqs && entry.data.faqs.length > 0 && (
+        <FaqSection
+          rightHeadingPrefix="Pertanyaan yang"
+          rightHeadingHighlight="Sering Diajukan"
+          faqs={entry.data.faqs}
+        />
+      )}
+
+      <ContactSection
+        badgeText="Digital Agency"
+        heading={entry.data.ctaHeading || "Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"}
+        description={entry.data.ctaDescription || "Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."}
+      />
+    </article>
+  </BaseLayout>
+)}
+
+<style>
+  .project-hero,
+  .blog-post-hero {
+    padding: 80px 0 64px;
+  }
+
+  .project-hero-inner,
+  .blog-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .project-hero-badges {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .project-hero-title {
+    max-width: 960px;
+  }
+
+  .project-detail-body {
+    padding: 72px 0;
+  }
+
+  .project-detail-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .project-gallery-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .gallery-img-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .gallery-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-section-block {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 32px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .client-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  .client-meta-card {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 20px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .meta-label {
+    font-size: 13px;
+    color: #A7A7A7;
+  }
+
+  .client-meta-card strong {
+    color: #FFFFFF;
+    font-size: 17px;
+  }
+
+  .deliverables-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .deliverable-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 40px;
+    padding: 10px 18px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .deliverable-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF5100;
+    flex-shrink: 0;
+  }
+
+  .value-points-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  .value-point-card {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 24px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .vp-check {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 228, 49, 0.15);
+    color: #00E431;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .value-point-card h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .related-articles-section {
+    padding: 40px 0 96px;
+  }
+
+  .related-heading {
+    margin-bottom: 40px;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .related-card {
+    background-color: #121117;
+    border: 1px solid rgba(234, 234, 234, 0.14);
+    border-radius: 28px;
+    overflow: hidden;
+  }
+
+  .related-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-cat-pill {
+    font-size: 12px;
+    font-weight: 600;
+    color: #FF5100;
+    text-transform: uppercase;
+  }
+
+  /* Blog Prose Styling */
+  .blog-author-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .author-avatar {
+    border-radius: 50%;
+  }
+
+  .blog-author-meta strong {
+    display: block;
+    color: #FFFFFF;
+  }
+
+  .blog-author-meta span {
+    font-size: 14px;
+    color: #A7A7A7;
+  }
+
+  .blog-post-container {
+    padding: 48px 20px 64px;
+  }
+
+  .blog-featured-img {
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .blog-prose {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #D4D4D8;
+  }
+
+  .blog-prose :global(h2) {
+    font-size: 32px;
+    margin: 48px 0 20px;
+  }
+
+  .blog-prose :global(h3) {
+    font-size: 24px;
+    margin: 36px 0 16px;
+  }
+
+  .blog-prose :global(h4) {
+    font-size: 20px;
+    margin: 28px 0 12px;
+    color: #FFFFFF;
+  }
+
+  .blog-prose :global(p) {
+    margin-bottom: 20px;
+  }
+
+  .blog-prose :global(ul),
+  .blog-prose :global(ol) {
+    margin: 0 0 24px 24px;
+  }
+
+  .blog-prose :global(li) {
+    margin-bottom: 10px;
+  }
+
+  .blog-prose :global(a) {
+    color: #417BFF;
+    text-decoration: underline;
+  }
+
+  .blog-prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    background: #121117;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .blog-prose :global(th),
+  .blog-prose :global(td) {
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: left;
+  }
+
+  .blog-prose :global(th) {
+    background: rgba(65, 123, 255, 0.15);
+    color: #FFFFFF;
+  }
+
+  .blog-prose :global(blockquote) {
+    background: #121117;
+    border-left: 4px solid #417BFF;
+    padding: 20px 24px;
+    border-radius: 0 16px 16px 0;
+    margin: 28px 0;
+  }
+
+  .blog-prose :global(img) {
+    border-radius: 16px;
+    margin: 28px 0;
+  }
+
+  @media (max-width: 1024px) {
+    .project-gallery-2,
+    .client-meta-grid,
+    .value-points-grid,
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+    .project-section-block {
+      padding: 28px 22px;
+    }
+  }
+</style>
