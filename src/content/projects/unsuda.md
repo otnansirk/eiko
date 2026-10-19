@@ -1,0 +1,50 @@
+---
+title: "Universitas Sunan Drajat"
+seoTitle: "Unsuda Project Details - Eiko Visual - Your Branding Partner"
+metaDescription: "Eiko Visual bekerja sama dengan UNSUDA (Universitas Sunan Drajat) menyusun strategi identitas visual untuk universitas yang mencerminkan nilai-nilai pendidikan Islam dan budaya lokal."
+slug: "unsuda-project-details"
+cardTitle: "Universitas Sunan Drajat"
+cardSummary: "Universitas yang memasuki babak baru membutuhkan identitas visual yang mencerminkan nilai pendidikan Islam dan warisan budaya lokal."
+cardImage: "/assets/projects/unsuda/unsuda-card.png"
+cardTags:
+  - "Brand Strategy"
+  - "Visual Identity"
+  - "Education"
+order: 3
+featuredOnHome: false
+yearBadge: "©2025"
+heroTitlePrefix: "Branding Universitas Sunan Drajat:"
+heroTitleHighlight: "Identitas yang Berakar pada Makna Lokal."
+topGallery:
+  - "/assets/projects/unsuda/unsuda-top-1.png"
+  - "/assets/projects/unsuda/unsuda-top-2.png"
+summaryText: "Eiko Visual bekerja sama dengan UNSUDA (Universitas Sunan Drajat), menyusun strategi identitas visual untuk universitas yang tengah memasuki babak baru sebagai institusi — mencerminkan nilai-nilai pendidikan Islam sekaligus tetap berakar pada warisan budaya lokal."
+clientName: "UNSUDA (Universitas Sunan Drajat)"
+clientScope: "Visual Identity Universitas"
+projectDate: "24 Juli 2025"
+middleGalleryRow1:
+  - "/assets/projects/unsuda/unsuda-mid-1.png"
+  - "/assets/projects/unsuda/unsuda-mid-2.png"
+challengeText: "Saat UNSUDA memasuki babak baru sebagai universitas, kampus ini butuh identitas visual yang bisa “bicara” ke dua audiens sekaligus — calon mahasiswa dan orang tua dari latar belakang umum, sekaligus komunitas akademik dan kampus yang menuntut kredibilitas institusional. Tanpa identitas yang khas, UNSUDA berisiko tenggelam di tengah lautan branding akademik yang formal dan seragam."
+deliverables:
+  - "Background Pendidikan"
+  - "Brand Personality"
+  - "Strategic Effects on Visual Style"
+  - "Logo Design"
+  - "Visual Brand Strategy"
+  - "Target Audience"
+  - "Visual Concept"
+  - "Color & Typography"
+solutionHeading: "Solusi Kami"
+solutionHtml: "Eiko Visual mendekati proyek ini dengan menanamkan identitas pada empat arah strategis: lebih modern, khas dan mudah dikenali, formal namun tetap ramah, serta kaya akan makna lokal. Logo yang dihasilkan memadukan bentuk Mahkota Serat Palem, Tangan Terbuka, dan Lentera menjadi satu simbol — merepresentasikan filosofi lokal Sunan Drajat lewat bentuk visual. Dipadukan dengan hijau dan kuning sebagai warna utama serta tipografi Classica untuk headline, identitas ini diterapkan konsisten di signage, platform digital, hingga kendaraan operasional kampus."
+valuePoints:
+  - title: "Tim berpengalaman"
+    description: "Kami bekerja sama dengan tim UNSUDA untuk memahami visi, nilai, dan tujuan institusi — menjadi fondasi identitas brand yang baru."
+  - title: "Desain yang berakar budaya"
+    description: "Setiap keputusan visual menghormati akar lokal institusi, sambil mendukung pertumbuhannya menuju identitas akademik yang baru."
+  - title: "Pendekatan yang konsisten"
+    description: "Kami fokus pada konsistensi brand jangka panjang, bukan sekadar hasil desain yang selesai sekali jadi."
+ctaBadge2: "Studio"
+ctaHeading: "Saatnya Brand Anda Tampil Konsisten di Setiap Titik Pertemuan dengan Pelanggan"
+ctaDescription: "Ceritakan brand Anda, kami bantu rancang dari identitas sampai strategi pemasarannya."
+---
