@@ -49,7 +49,7 @@ const googleFontsUrl = "https://fonts.googleapis.com/css2?family=Inter+Tight:wgh
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href={googleFontsUrl} media="print" onload="const l=this;requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(()=>{l.media='all'},50)))" />
+    <link rel="stylesheet" href={googleFontsUrl} media="print" onload="const l=this;if(document.readyState==='complete'){setTimeout(()=>{l.media='all'},50)}else{window.addEventListener('load',()=>setTimeout(()=>{l.media='all'},50))}" />
     <noscript>
       <link rel="stylesheet" href={googleFontsUrl} />
     </noscript>
