@@ -5,7 +5,7 @@ metaDescription: "Eiko Visual bekerja sama dengan UNSUDA (Universitas Sunan Draj
 slug: "unsuda-project-details"
 cardTitle: "Universitas Sunan Drajat"
 cardSummary: "Universitas yang memasuki babak baru membutuhkan identitas visual yang mencerminkan nilai pendidikan Islam dan warisan budaya lokal."
-cardImage: "/assets/projects/unsuda/unsuda-card.png"
+cardImage: "/assets/projects/unsuda/unsuda-card.webp"
 cardTags:
   - "Brand Strategy"
   - "Visual Identity"
@@ -16,15 +16,15 @@ yearBadge: "©2025"
 heroTitlePrefix: "Branding Universitas Sunan Drajat:"
 heroTitleHighlight: "Identitas yang Berakar pada Makna Lokal."
 topGallery:
-  - "/assets/projects/unsuda/unsuda-top-1.png"
-  - "/assets/projects/unsuda/unsuda-top-2.png"
+  - "/assets/projects/unsuda/unsuda-top-1.webp"
+  - "/assets/projects/unsuda/unsuda-top-2.webp"
 summaryText: "Eiko Visual bekerja sama dengan UNSUDA (Universitas Sunan Drajat), menyusun strategi identitas visual untuk universitas yang tengah memasuki babak baru sebagai institusi — mencerminkan nilai-nilai pendidikan Islam sekaligus tetap berakar pada warisan budaya lokal."
 clientName: "UNSUDA (Universitas Sunan Drajat)"
 clientScope: "Visual Identity Universitas"
 projectDate: "24 Juli 2025"
 middleGalleryRow1:
-  - "/assets/projects/unsuda/unsuda-mid-1.png"
-  - "/assets/projects/unsuda/unsuda-mid-2.png"
+  - "/assets/projects/unsuda/unsuda-mid-1.webp"
+  - "/assets/projects/unsuda/unsuda-mid-2.webp"
 challengeText: "Saat UNSUDA memasuki babak baru sebagai universitas, kampus ini butuh identitas visual yang bisa “bicara” ke dua audiens sekaligus — calon mahasiswa dan orang tua dari latar belakang umum, sekaligus komunitas akademik dan kampus yang menuntut kredibilitas institusional. Tanpa identitas yang khas, UNSUDA berisiko tenggelam di tengah lautan branding akademik yang formal dan seragam."
 deliverables:
   - "Background Pendidikan"

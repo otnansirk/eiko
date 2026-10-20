@@ -6,7 +6,7 @@ date: "2026-10-03"
 category: "Branding"
 author: "Eiko Visual"
 authorRole: "Brand Strategist"
-featuredImage: "/assets/blog/mining-brand-identity.png"
+featuredImage: "/assets/blog/mining-brand-identity.webp"
 faqs:
   - question: "Apakah brand guideline benar-benar perlu?"
     answer: "Perlu, terutama jika banyak pihak ikut membuat materi perusahaan. Guideline menjaga tampilan tetap seragam walau dikerjakan orang berbeda."

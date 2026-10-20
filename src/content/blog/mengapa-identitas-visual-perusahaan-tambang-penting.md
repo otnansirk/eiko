@@ -6,7 +6,7 @@ date: "2026-10-03"
 category: "Branding"
 author: "Eiko Visual"
 authorRole: "Brand Strategist"
-featuredImage: "/assets/blog/mining-brand-identity.png"
+featuredImage: "/assets/blog/mining-brand-identity.webp"
 ---
 
 Banyak pemilik perusahaan tambang berpikir branding adalah urusan produk konsumen. Sabun, minuman, atau pakaian butuh brand. Tambang cukup bekerja dengan baik, dan hasilnya akan berbicara sendiri.

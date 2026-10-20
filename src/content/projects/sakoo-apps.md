@@ -5,7 +5,7 @@ metaDescription: "Eiko Visual bekerja sama dengan Sakoo, asisten keuangan lewat 
 slug: "sakoo-apps-project-details"
 cardTitle: "Sakoo Apps"
 cardSummary: "Asisten keuangan lewat chat WhatsApp membutuhkan identitas visual yang simpel dan mudah dipercaya."
-cardImage: "/assets/projects/sakoo/sakoo-card.jpg"
+cardImage: "/assets/projects/sakoo/sakoo-card.webp"
 cardTags:
   - "Web Apps"
   - "Visual Identity"
@@ -16,15 +16,15 @@ yearBadge: "©2025"
 heroTitlePrefix: "Asisten Keuangan yang Dibangun"
 heroTitleHighlight: "Melalui Chat."
 topGallery:
-  - "/assets/projects/sakoo/sakoo-top-1.jpg"
-  - "/assets/projects/sakoo/sakoo-card.jpg"
+  - "/assets/projects/sakoo/sakoo-top-1.webp"
+  - "/assets/projects/sakoo/sakoo-card.webp"
 summaryText: "Eiko Visual bekerja sama dengan Sakoo, asisten keuangan lewat chat WhatsApp, untuk membuat identitas visual bagi produk yang bikin orang tidak perlu lagi buka aplikasi terpisah untuk mencatat keuangan."
 clientName: "Sakoo"
 clientScope: "Visual Identity Aplikasi Keuangan"
 projectDate: "11 Agustus 2025"
 middleGalleryRow1:
-  - "/assets/projects/sakoo/sakoo-mid-1.jpg"
-  - "/assets/projects/sakoo/sakoo-mid-2.png"
+  - "/assets/projects/sakoo/sakoo-mid-1.webp"
+  - "/assets/projects/sakoo/sakoo-mid-2.webp"
 challengeText: "Banyak orang gagal mencatat keuangannya bukan karena malas, tapi karena aplikasi yang ribet — harus buka aplikasi, cari-cari tombol, isi form. Sakoo ingin tampil beda: cukup chat di WhatsApp, aplikasi yang sudah dipakai orang tiap hari. Identitas visualnya perlu terasa simpel dan bisa dipercaya, tapi tetap tidak terkesan terlalu “teknis” — mengingat Sakoo masih produk AI yang baru diuji ke pengguna."
 deliverables:
   - "Product Positioning"
