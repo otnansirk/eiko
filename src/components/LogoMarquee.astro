@@ -1,15 +1,15 @@
 ---
 const logos = [
-  { src: "/assets/clients/erhaje.svg", alt: "SPK", width: 70, height: 70 },
-  { src: "/assets/clients/ghanisa.svg", alt: "Porin Group", width: 73, height: 70 },
-  { src: "/assets/clients/hadeha.svg", alt: "RBS", width: 70, height: 70 },
-  { src: "/assets/clients/ihbs.svg", alt: "ADP", width: 106, height: 70 },
-  { src: "/assets/clients/pravikara.svg", alt: "Hippogenz", width: 70, height: 70 },
-  { src: "/assets/clients/slp.svg", alt: "SPK 2", width: 107, height: 70 },
-  { src: "/assets/clients/client-logo-1.svg", alt: "AMI", width: 93, height: 70 },
-  { src: "/assets/clients/veranda.svg", alt: "AMI", width: 95, height: 70 },
-  { src: "/assets/clients/za.svg", alt: "AMI", width: 95, height: 70 },
-  { src: "/assets/clients/client-logo-2.svg", alt: "AMI", width: 125, height: 70 },
+  { src: "/assets/clients/erhaje.webp", alt: "SPK", width: 60, height: 60 },
+  { src: "/assets/clients/ghanisa.webp", alt: "Porin Group", width: 64, height: 60 },
+  { src: "/assets/clients/hadeha.webp", alt: "RBS", width: 60, height: 60 },
+  { src: "/assets/clients/ihbs.webp", alt: "ADP", width: 60, height: 60 },
+  { src: "/assets/clients/pravikara.webp", alt: "Hippogenz", width: 60, height: 60 },
+  { src: "/assets/clients/slp.webp", alt: "SPK 2", width: 60, height: 60 },
+  { src: "/assets/clients/client-logo-1.webp", alt: "AMI", width: 60, height: 60 },
+  { src: "/assets/clients/veranda.webp", alt: "AMI", width: 60, height: 60 },
+  { src: "/assets/clients/za.webp", alt: "AMI", width: 60, height: 60 },
+  { src: "/assets/clients/client-logo-2.webp", alt: "AMI", width: 107, height: 60 },
 ];
 ---
 
@@ -17,12 +17,12 @@ const logos = [
   <div class="nerimo-marquee-track">
     {logos.map((logo) => (
       <div class="logo-item">
-        <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} decoding="async" loading="lazy" />
+        <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} decoding="async" loading="lazy" fetchpriority="low" />
       </div>
     ))}
     {logos.map((logo) => (
       <div class="logo-item" aria-hidden="true">
-        <img src={logo.src} alt="" width={logo.width} height={logo.height} decoding="async" loading="lazy" />
+        <img src={logo.src} alt="" width={logo.width} height={logo.height} decoding="async" loading="lazy" fetchpriority="low" />
       </div>
     ))}
   </div>

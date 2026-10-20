@@ -25,7 +25,7 @@ import LogoMarquee from '../components/LogoMarquee.astro';
           <img
             src="/assets/heroes/contact-hero.webp"
             srcset="/assets/heroes/contact-hero-480w.webp 480w, /assets/heroes/contact-hero.webp 680w"
-            sizes="(max-width: 768px) 92vw, 680px"
+            sizes="(max-width: 768px) 260px, 680px"
             alt="Kontak Eiko Visual"
             width="680"
             height="380"
@@ -58,7 +58,7 @@ import LogoMarquee from '../components/LogoMarquee.astro';
   <section class="contact-main-section">
     <div class="container contact-main-grid">
       <div class="contact-info-stack">
-        <a href="mailto:project@eikovisual.com" class="count-box contact-info-card">
+        <!--email_off--><a href="mailto:project@eikovisual.com" class="count-box contact-info-card">
           <div class="count-box-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E431" stroke-width="2">
               <rect x="2" y="4" width="20" height="16" rx="3"/>
@@ -66,10 +66,10 @@ import LogoMarquee from '../components/LogoMarquee.astro';
             </svg>
           </div>
           <div>
-            <span class="contact-card-label"></span>
-            <h2></h2>
+            <span class="contact-card-label">Email</span>
+            <h2><!--email_off-->project@eikovisual.com<!--/email_off--></h2>
           </div>
-        </a>
+        </a><!--/email_off-->
 
         <a href="tel:+6285870339246" class="count-box contact-info-card">
           <div class="count-box-icon">
@@ -78,8 +78,8 @@ import LogoMarquee from '../components/LogoMarquee.astro';
             </svg>
           </div>
           <div>
-            <span class="contact-card-label"></span>
-            <h2></h2>
+            <span class="contact-card-label">Phone</span>
+            <h2>+62 858 7033 9246</h2>
           </div>
         </a>
 
@@ -91,8 +91,8 @@ import LogoMarquee from '../components/LogoMarquee.astro';
             </svg>
           </div>
           <div>
-            <span class="contact-card-label"></span>
-            <h2></h2>
+            <span class="contact-card-label">Working Hours</span>
+            <h2>Monday - Friday (9 AM - 5 PM)</h2>
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ import LogoMarquee from '../components/LogoMarquee.astro';
       <div class="contact-form-panel">
         <div class="contact-form-top">
           <div class="get-in-touch-badge">
-            <img src="/assets/icons/sparkle-plus.webp" alt="" width="36" height="36" />
+            <img src="/assets/icons/sparkle-plus.webp" alt="" width="36" height="36" loading="lazy" />
             <span>Get in touch</span>
           </div>
           <div class="floating-badge">
@@ -111,6 +111,7 @@ import LogoMarquee from '../components/LogoMarquee.astro';
               alt=""
               width="34"
               height="34"
+              loading="lazy"
             />
           </div>
         </div>
@@ -141,7 +142,7 @@ import LogoMarquee from '../components/LogoMarquee.astro';
             <textarea id="c-message" name="message" rows="5" placeholder="Tell Us More About Projects..."></textarea>
           </div>
 
-          <a href="mailto:project@eikovisual.com" class="eiko-btn" data-mailto-link>
+          <!--email_off--><a href="mailto:project@eikovisual.com" class="eiko-btn" data-mailto-link>
             <span>Contact Us</span>
             <span class="btn-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -149,7 +150,7 @@ import LogoMarquee from '../components/LogoMarquee.astro';
                 <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-          </a>
+          </a><!--/email_off-->
         </form>
       </div>
     </div>
@@ -159,13 +160,14 @@ import LogoMarquee from '../components/LogoMarquee.astro';
     document.querySelectorAll('[data-mailto-form]').forEach((form) => {
       const link = form.querySelector('[data-mailto-link]');
       if (!link) return;
+      const baseMailto = 'mailto:project' + '@eikovisual.com';
       const updateMailto = () => {
         const name = (form.querySelector('[name="name"]')?.value || '').trim();
         const phone = (form.querySelector('[name="phone"]')?.value || '').trim();
         const email = (form.querySelector('[name="email"]')?.value || '').trim();
         const message = (form.querySelector('[name="message"]')?.value || '').trim();
         if (!name && !phone && !email && !message) {
-          link.setAttribute('href', 'mailto:project@eikovisual.com');
+          link.setAttribute('href', baseMailto);
           return;
         }
         const subject = name ? `Inquiry from ${name} - Eiko Visual` : 'Project Inquiry - Eiko Visual';
@@ -176,14 +178,14 @@ import LogoMarquee from '../components/LogoMarquee.astro';
         if (message) bodyLines.push(`\nMessage:\n${message}`);
         link.setAttribute(
           'href',
-          `mailto:project@eikovisual.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
+          `${baseMailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
         );
       };
       form.addEventListener('input', updateMailto);
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         updateMailto();
-        window.location.href = link.getAttribute('href') || 'mailto:project@eikovisual.com';
+        window.location.href = link.getAttribute('href') || baseMailto;
       });
     });
   </script>

@@ -68,7 +68,7 @@ const {
             <textarea id="mf-message" name="message" rows="5" placeholder="Tell Us More About Projects..."></textarea>
           </div>
 
-          <a href="mailto:project@eikovisual.com" class="eiko-btn" data-mailto-link>
+          <!--email_off--><a href="mailto:project@eikovisual.com" class="eiko-btn" data-mailto-link>
             <span>Contact Us</span>
             <span class="btn-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -76,7 +76,7 @@ const {
                 <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-          </a>
+          </a><!--/email_off-->
         </form>
       </div>
     </div>
@@ -87,13 +87,14 @@ const {
   document.querySelectorAll('[data-mailto-form]').forEach((form) => {
     const link = form.querySelector('[data-mailto-link]');
     if (!link) return;
+    const baseMailto = 'mailto:project' + '@eikovisual.com';
     const updateMailto = () => {
       const name = (form.querySelector('[name="name"]')?.value || '').trim();
       const phone = (form.querySelector('[name="phone"]')?.value || '').trim();
       const email = (form.querySelector('[name="email"]')?.value || '').trim();
       const message = (form.querySelector('[name="message"]')?.value || '').trim();
       if (!name && !phone && !email && !message) {
-        link.setAttribute('href', 'mailto:project@eikovisual.com');
+        link.setAttribute('href', baseMailto);
         return;
       }
       const subject = name ? `Inquiry from ${name} - Eiko Visual` : 'Project Inquiry - Eiko Visual';
@@ -104,14 +105,14 @@ const {
       if (message) bodyLines.push(`\nMessage:\n${message}`);
       link.setAttribute(
         'href',
-        `mailto:project@eikovisual.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
+        `${baseMailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
       );
     };
     form.addEventListener('input', updateMailto);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       updateMailto();
-      window.location.href = link.getAttribute('href') || 'mailto:project@eikovisual.com';
+      window.location.href = link.getAttribute('href') || baseMailto;
     });
   });
 </script>
