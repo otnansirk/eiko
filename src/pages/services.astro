@@ -68,6 +68,8 @@ const serviceFaqs = [
 <BaseLayout
   title="Services - Eiko Visual - Your Branding Partner"
   description="Brand Development, Website, Digital Marketing, dan Aplikasi Mobile/Web kami kerjakan dalam satu sistem yang sama — supaya hasilnya konsisten dan bisa diukur."
+  preloadImage="/assets/heroes/services-hero.webp"
+  preloadImageSrcset="/assets/heroes/services-hero-480w.webp 480w, /assets/heroes/services-hero.webp 680w"
 >
   <!-- Hero Section -->
   <section class="page-hero starry-bg">
@@ -75,10 +77,12 @@ const serviceFaqs = [
       <div class="hero-left">
         <div class="hero-img-wrap">
           <img
-            src="/assets/heroes/services-hero.jpg"
+            src="/assets/heroes/services-hero.webp"
+            srcset="/assets/heroes/services-hero-480w.webp 480w, /assets/heroes/services-hero.webp 680w"
+            sizes="(max-width: 768px) 92vw, 680px"
             alt="Layanan Eiko Visual"
-            width="800"
-            height="500"
+            width="680"
+            height="380"
             fetchpriority="high"
           />
         </div>
@@ -140,9 +144,9 @@ const serviceFaqs = [
           </div>
 
           <div class="service-box service-row-card">
-            <h3>{row.title}</h3>
+            <h2>{row.title}</h2>
             <p>{row.description}</p>
-            <a href={row.href} class="eiko-btn">
+            <a href={row.href} class="eiko-btn" aria-label={`Selengkapnya tentang ${row.title}`}>
               <span>Selengkapnya</span>
               <span class="btn-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">

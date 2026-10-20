@@ -31,6 +31,7 @@ const Content = rendered?.Content;
     title={entry.data.seoTitle}
     description={entry.data.metaDescription || entry.data.summaryText}
     ogImage={entry.data.cardImage}
+    preloadImage={entry.data.topGallery[0]}
   >
     <!-- Project Hero -->
     <section class="project-hero starry-bg">
@@ -76,7 +77,7 @@ const Content = rendered?.Content;
                 src={imgUrl}
                 alt={`${entry.data.title} - Gallery ${idx + 1}`}
                 fetchpriority={idx === 0 ? "high" : undefined}
-                loading={idx === 0 ? undefined : "lazy"}
+                width="760" height="477" decoding="async" loading={idx === 0 ? undefined : "lazy"}
               />
             </div>
           ))}
@@ -84,7 +85,7 @@ const Content = rendered?.Content;
 
         <!-- Ringkasan Proyek -->
         <div class="project-section-block">
-          <h3>Ringkasan Proyek</h3>
+          <h2 class="project-block-heading">Ringkasan Proyek</h2>
           <p>{entry.data.summaryText}</p>
 
           <div class="client-meta-grid">
@@ -107,14 +108,14 @@ const Content = rendered?.Content;
         <div class="project-gallery-2">
           {entry.data.middleGalleryRow1.map((imgUrl: string, idx: number) => (
             <div class="gallery-img-card">
-              <img src={imgUrl} alt={`${entry.data.title} - Showcase ${idx + 1}`} loading="lazy" />
+              <img src={imgUrl} alt={`${entry.data.title} - Showcase ${idx + 1}`} width="760" height="477" loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
 
         <!-- Tantangan Kami -->
         <div class="project-section-block">
-          <h3>Tantangan Kami</h3>
+          <h2 class="project-block-heading">Tantangan Kami</h2>
           <p>{entry.data.challengeText}</p>
 
           <ul class="deliverables-grid">
@@ -132,7 +133,7 @@ const Content = rendered?.Content;
           <div class="project-gallery-2">
             {entry.data.middleGalleryRow2.map((imgUrl: string, idx: number) => (
               <div class="gallery-img-card">
-                <img src={imgUrl} alt={`${entry.data.title} - Detail ${idx + 1}`} loading="lazy" />
+                <img src={imgUrl} alt={`${entry.data.title} - Detail ${idx + 1}`} width="760" height="477" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
@@ -140,7 +141,7 @@ const Content = rendered?.Content;
 
         <!-- Solusi Kami -->
         <div class="project-section-block">
-          <h3>{entry.data.solutionHeading}</h3>
+          <h2 class="project-block-heading">{entry.data.solutionHeading}</h2>
           <p set:html={entry.data.solutionHtml} />
 
           <div class="value-points-grid">
@@ -148,7 +149,7 @@ const Content = rendered?.Content;
               <div class="value-point-card">
                 <div class="vp-check">✓</div>
                 <div>
-                  <h4>{vp.title}</h4>
+                  <h3>{vp.title}</h3>
                   <p>{vp.description}</p>
                 </div>
               </div>
@@ -177,8 +178,8 @@ const Content = rendered?.Content;
               .filter((p) => entry.data.relatedArticleSlugs?.includes(p.id))
               .map((post) => (
                 <article class="related-card">
-                  <a href={`/${post.id}/`} class="related-img">
-                    <img src={post.data.featuredImage} alt={post.data.title} loading="lazy" />
+                  <a href={`/${post.id}/`} class="related-img" aria-label={`Baca artikel: ${post.data.title}`}>
+                    <img src={post.data.featuredImage} alt={post.data.title} width="640" height="360" loading="lazy" decoding="async" />
                   </a>
                   <div class="related-body">
                     <span class="blog-cat-pill">{post.data.category}</span>
@@ -196,6 +197,7 @@ const Content = rendered?.Content;
     title={entry.data.seoTitle}
     description={entry.data.description}
     ogImage={entry.data.featuredImage}
+    preloadImage={entry.data.featuredImage}
   >
     <!-- Blog Post Hero -->
     <article class="blog-post-page">
@@ -235,7 +237,10 @@ const Content = rendered?.Content;
           <img
             src={entry.data.featuredImage}
             alt={entry.data.title}
+            width="800"
+            height="450"
             fetchpriority="high"
+            decoding="async"
           />
         </div>
 
@@ -408,6 +413,11 @@ const Content = rendered?.Content;
     font-weight: 700;
   }
 
+  .project-block-heading {
+    font-size: 28px;
+  }
+
+  .value-point-card h3,
   .value-point-card h4 {
     font-size: 18px;
     margin-bottom: 6px;

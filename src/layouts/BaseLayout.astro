@@ -8,6 +8,9 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  preloadImage?: string;
+  preloadImageSrcset?: string;
+  preloadImageSizes?: string;
 }
 
 const {
@@ -15,7 +18,12 @@ const {
   description = "Eiko Visual adalah studio branding, web development, & digital marketing. Kami siap bantu kembangkan bisnis Anda. Konsultasi gratis!",
   ogImage = "/assets/branding/og-image.png",
   canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString(),
+  preloadImage,
+  preloadImageSrcset,
+  preloadImageSizes = "(max-width: 768px) 92vw, 680px",
 } = Astro.props;
+
+const googleFontsUrl = "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Manrope:wght@500;600;700&family=Open+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap";
 ---
 
 <!DOCTYPE html>
@@ -27,6 +35,24 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+
+    {preloadImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={preloadImage}
+        imagesrcset={preloadImageSrcset}
+        imagesizes={preloadImageSrcset ? preloadImageSizes : undefined}
+        fetchpriority="high"
+      />
+    )}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={googleFontsUrl} media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href={googleFontsUrl} />
+    </noscript>
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />

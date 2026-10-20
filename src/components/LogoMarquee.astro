@@ -1,15 +1,15 @@
 ---
 const logos = [
-  { src: "/assets/clients/erhaje.svg", alt: "SPK" },
-  { src: "/assets/clients/ghanisa.svg", alt: "Porin Group" },
-  { src: "/assets/clients/hadeha.svg", alt: "RBS" },
-  { src: "/assets/clients/ihbs.svg", alt: "ADP" },
-  { src: "/assets/clients/pravikara.svg", alt: "Hippogenz" },
-  { src: "/assets/clients/slp.svg", alt: "SPK 2" },
-  { src: "/assets/clients/client-logo-1.svg", alt: "AMI" },
-  { src: "/assets/clients/veranda.svg", alt: "AMI" },
-  { src: "/assets/clients/za.svg", alt: "AMI" },
-  { src: "/assets/clients/client-logo-2.svg", alt: "AMI" },
+  { src: "/assets/clients/erhaje.svg", alt: "SPK", width: 70, height: 70 },
+  { src: "/assets/clients/ghanisa.svg", alt: "Porin Group", width: 73, height: 70 },
+  { src: "/assets/clients/hadeha.svg", alt: "RBS", width: 70, height: 70 },
+  { src: "/assets/clients/ihbs.svg", alt: "ADP", width: 106, height: 70 },
+  { src: "/assets/clients/pravikara.svg", alt: "Hippogenz", width: 70, height: 70 },
+  { src: "/assets/clients/slp.svg", alt: "SPK 2", width: 107, height: 70 },
+  { src: "/assets/clients/client-logo-1.svg", alt: "AMI", width: 93, height: 70 },
+  { src: "/assets/clients/veranda.svg", alt: "AMI", width: 95, height: 70 },
+  { src: "/assets/clients/za.svg", alt: "AMI", width: 95, height: 70 },
+  { src: "/assets/clients/client-logo-2.svg", alt: "AMI", width: 125, height: 70 },
 ];
 ---
 
@@ -17,12 +17,12 @@ const logos = [
   <div class="nerimo-marquee-track">
     {logos.map((logo) => (
       <div class="logo-item">
-        <img src={logo.src} alt={logo.alt} decoding="async" loading="lazy" />
+        <img src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} decoding="async" loading="lazy" />
       </div>
     ))}
     {logos.map((logo) => (
       <div class="logo-item" aria-hidden="true">
-        <img src={logo.src} alt={logo.alt} decoding="async" loading="lazy" />
+        <img src={logo.src} alt="" width={logo.width} height={logo.height} decoding="async" loading="lazy" />
       </div>
     ))}
   </div>

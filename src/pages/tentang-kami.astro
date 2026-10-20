@@ -46,10 +46,12 @@ const teamMembers = [
       <div class="hero-left">
         <div class="hero-img-wrap">
           <img
-            src="/assets/heroes/about-hero.jpg"
+            src="/assets/heroes/about-hero.webp"
+            srcset="/assets/heroes/about-hero-480w.webp 480w, /assets/heroes/about-hero.webp 680w"
+            sizes="(max-width: 768px) 92vw, 680px"
             alt="Tentang Eiko Visual"
-            width="800"
-            height="500"
+            width="680"
+            height="380"
             fetchpriority="high"
           />
         </div>
@@ -107,7 +109,7 @@ const teamMembers = [
           <img src="/assets/icons/sparkle-plus.webp" alt="" width="36" height="36" />
           <span>Misi &amp; Visi Kami</span>
         </div>
-        <h3 class="gradient-para mission-statement">
+        <h2 class="gradient-para mission-statement">
           Kami punya tujuan yang jelas: setiap proyek dirancang berdasarkan target bisnis Anda, lalu diterapkan secara konsisten di semua media dari branding, website, sampai pemasaran digitalnya supaya lebih mudah menghasilkan pelanggan baru.
         </h3>
       </div>
@@ -186,8 +188,8 @@ const teamMembers = [
       <div class="team-grid">
         {teamMembers.map((member) => (
           <div class="team-card">
-            <h5>{member.name}</h5>
-            <h6>{member.role}</h6>
+            <h3>{member.name}</h3>
+            <p class="team-role">{member.role}</p>
           </div>
         ))}
       </div>

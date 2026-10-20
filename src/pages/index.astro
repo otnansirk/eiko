@@ -51,6 +51,8 @@ const homeFaqs = [
   title="Jasa Branding dan Web Development - Eiko Visual"
   description="Eiko Visual adalah studio branding, web development, & digital marketing. Kami siap bantu kembangkan bisnis Anda. Konsultasi gratis!"
   ogImage="/assets/branding/og-image.png"
+  preloadImage="/assets/heroes/home-hero.webp"
+  preloadImageSrcset="/assets/heroes/home-hero-480w.webp 480w, /assets/heroes/home-hero.webp 680w"
 >
   <!-- Hero Section -->
   <section class="hero-section starry-bg">
@@ -69,10 +71,12 @@ const homeFaqs = [
 
         <div class="hero-image-card">
           <img
-            src="/assets/heroes/home-hero.jpg"
+            src="/assets/heroes/home-hero.webp"
+            srcset="/assets/heroes/home-hero-480w.webp 480w, /assets/heroes/home-hero.webp 680w"
+            sizes="(max-width: 768px) 92vw, 680px"
             alt="Satu Sistem Branding dan Web Development Eiko Visual"
-            width="800"
-            height="450"
+            width="680"
+            height="383"
             fetchpriority="high"
             decoding="async"
           />
@@ -175,9 +179,9 @@ const homeFaqs = [
       </div>
 
       <div class="stats-statement-wrap">
-        <h3 class="gradient-para stats-statement">
+        <h2 class="gradient-para stats-statement">
           Brand yang konsisten lebih mudah diingat, lebih dipercaya, dan lebih sering dipilih. Eiko Visual menyatukan identitas, website, dan pemasaran digital Anda dalam satu arah yang sama.
-        </h3>
+        </h2>
         <a href="/tentang-kami/" class="eiko-btn">
           <span>Tentang Kami</span>
           <span class="btn-icon">
@@ -265,9 +269,10 @@ const homeFaqs = [
               <img
                 src={project.data.cardImage}
                 alt={project.data.cardTitle}
-                width="800"
-                height="502"
+                width="520"
+                height="327"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="project-box-content">
@@ -278,7 +283,11 @@ const homeFaqs = [
                   <span class="project-tag">{tag}</span>
                 ))}
               </div>
-              <a href={`/${project.data.slug}/`} class="eiko-btn eiko-btn-outline">
+              <a
+                href={`/${project.data.slug}/`}
+                class="eiko-btn eiko-btn-outline"
+                aria-label={`Baca Studi Kasus ${project.data.cardTitle}`}
+              >
                 <span>Baca Studi Kasus</span>
                 <span class="btn-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">

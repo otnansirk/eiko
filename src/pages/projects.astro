@@ -5,31 +5,31 @@ import ContactSection from '../components/ContactSection.astro';
 
 const portfolioCards = [
   {
-    image: "/assets/projects/babah-rot/babah-rot-showcase.png",
+    image: "/assets/projects/babah-rot/babah-rot-showcase.webp",
     category: "Brand Development",
     title: "Bumi Babah Rot",
     href: "/babah-rot-project-details/",
   },
   {
-    image: "/assets/projects/unsuda/unsuda-card.png",
+    image: "/assets/projects/unsuda/unsuda-card.webp",
     category: "Brand Strategy",
     title: "Universitas Sunan Drajat",
     href: "/unsuda-project-details/",
   },
   {
-    image: "/assets/projects/sakoo/sakoo-card.jpg",
+    image: "/assets/projects/sakoo/sakoo-card.webp",
     category: "Web Apps",
     title: "Sakoo Apps",
     href: "/sakoo-apps-project-details/",
   },
   {
-    image: "/assets/projects/bismillah/bismillah-card.png",
+    image: "/assets/projects/bismillah/bismillah-card.webp",
     category: "Brand Development",
     title: "PT Bismillah Cahaya Utama",
     href: "/bismillah-cahaya-utama-project-details/",
   },
   {
-    image: "/assets/projects/pravikara/pravikara-card.png",
+    image: "/assets/projects/pravikara/pravikara-card.webp",
     category: "Brand Strategy",
     title: "Pravikara Innovation Consulting",
     href: "/pravikira-project-details/",
@@ -40,6 +40,8 @@ const portfolioCards = [
 <BaseLayout
   title="Projects - Eiko Visual - Your Branding Partner"
   description="Jelajahi berbagai portofolio proyek branding, pengembangan website, dan strategi pemasaran digital yang telah kami kerjakan untuk membantu pertumbuhan bisnis klien."
+  preloadImage="/assets/heroes/projects-hero.webp"
+  preloadImageSrcset="/assets/heroes/projects-hero-480w.webp 480w, /assets/heroes/projects-hero.webp 680w"
 >
   <!-- Hero Section -->
   <section class="page-hero starry-bg">
@@ -57,10 +59,12 @@ const portfolioCards = [
         </div>
         <div class="hero-img-wrap">
           <img
-            src="/assets/heroes/projects-hero.jpg"
+            src="/assets/heroes/projects-hero.webp"
+            srcset="/assets/heroes/projects-hero-480w.webp 480w, /assets/heroes/projects-hero.webp 680w"
+            sizes="(max-width: 768px) 92vw, 680px"
             alt="Portofolio Proyek Eiko Visual"
-            width="800"
-            height="500"
+            width="680"
+            height="380"
             fetchpriority="high"
           />
         </div>
@@ -107,10 +111,10 @@ const portfolioCards = [
         {portfolioCards.map((card) => (
           <article class="portfolio-card">
             <div class="portfolio-card-img">
-              <img src={card.image} alt={card.title} loading="lazy" />
+              <img src={card.image} alt={card.title} width="520" height="327" loading="lazy" decoding="async" />
             </div>
             <div class="portfolio-card-body">
-              <h4 class="gradient-para portfolio-cat">{card.category}</h4>
+              <p class="gradient-para portfolio-cat">{card.category}</p>
               <h3>{card.title}</h3>
               <a href={card.href} class="eiko-btn">
                 <span>Selengkapnya</span>

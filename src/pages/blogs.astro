@@ -10,6 +10,8 @@ const posts = await getCollection('blog');
 <BaseLayout
   title="Blogs - Eiko Visual - Your Branding Partner"
   description="Kumpulan artikel dari tim kami untuk membantu Anda memahami cara membangun brand yang konsisten, website yang bekerja, dan strategi digital yang tepat sasaran."
+  preloadImage="/assets/heroes/blogs-hero.webp"
+  preloadImageSrcset="/assets/heroes/blogs-hero-480w.webp 480w, /assets/heroes/blogs-hero.webp 680w"
 >
   <!-- Hero Section -->
   <section class="page-hero starry-bg">
@@ -17,10 +19,12 @@ const posts = await getCollection('blog');
       <div class="hero-left">
         <div class="hero-img-wrap">
           <img
-            src="/assets/heroes/blogs-hero.jpg"
+            src="/assets/heroes/blogs-hero.webp"
+            srcset="/assets/heroes/blogs-hero-480w.webp 480w, /assets/heroes/blogs-hero.webp 680w"
+            sizes="(max-width: 768px) 92vw, 680px"
             alt="Blog & Artikel Eiko Visual"
-            width="800"
-            height="450"
+            width="680"
+            height="371"
             fetchpriority="high"
           />
         </div>
@@ -63,15 +67,15 @@ const posts = await getCollection('blog');
         {posts.map((post) => (
           <article class="blog-card">
             <a href={`/${post.id}/`} class="blog-card-img">
-              <img src={post.data.featuredImage} alt={post.data.title} loading="lazy" />
+              <img src={post.data.featuredImage} alt={post.data.title} width="800" height="425" loading="lazy" decoding="async" />
             </a>
             <div class="blog-card-content">
               <span class="blog-category">{post.data.category}</span>
-              <h3 class="blog-card-title">
+              <h2 class="blog-card-title">
                 <a href={`/${post.id}/`}>{post.data.title}</a>
-              </h3>
+              </h2>
               <p class="blog-card-excerpt">{post.data.description}</p>
-              <a href={`/${post.id}/`} class="eiko-btn eiko-btn-outline">
+              <a href={`/${post.id}/`} class="eiko-btn eiko-btn-outline" aria-label={`Baca Artikel: ${post.data.title}`}>
                 <span>Baca Artikel</span>
                 <span class="btn-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
