@@ -11,7 +11,7 @@ const blog = defineCollection({
     category: z.string().default('Branding'),
     author: z.string().default('Eiko Visual'),
     authorRole: z.string().default('Brand Strategist'),
-    authorAvatar: z.string().default('/assets/blog/author-avatar.png'),
+    authorAvatar: z.string().default('/assets/blog/author-avatar.webp'),
     featuredImage: z.string(),
     ctaHeading: z.string().optional(),
     ctaDescription: z.string().optional(),
