@@ -5,4 +5,7 @@ export default defineConfig({
   site: 'https://www.eikovisual.com',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
+  build: {
+    inlineStylesheets: 'always',
+  },
 });

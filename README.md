@@ -80,9 +80,9 @@ Blog posts are managed via **Astro Content Collections** inside `src/content/blo
 
 1. **Add your images** (featured image and any inline article images) to `public/assets/blog/`—for example:
    ```text
-   public/assets/blog/my-new-article-cover.jpg
+   public/assets/blog/my-new-article-cover.webp
    ```
-   Reference it in Markdown as `/assets/blog/my-new-article-cover.jpg`.
+   Reference it in Markdown as `/assets/blog/my-new-article-cover.webp`.
 
 2. **Create a new `.md` file** in `src/content/blog/`.
    The filename becomes the URL slug. For example:
@@ -103,8 +103,8 @@ date: "2026-10-20"
 category: "Branding"
 author: "Eiko Visual"
 authorRole: "Brand Strategist"
-authorAvatar: "/assets/blog/author-avatar.png"
-featuredImage: "/assets/blog/my-new-article-cover.jpg"
+authorAvatar: "/assets/blog/author-avatar.webp"
+featuredImage: "/assets/blog/my-new-article-cover.webp"
 ctaHeading: "Ingin Brand Perusahaan Anda Tampil Lebih Profesional?"
 ctaDescription: "Diskusikan kebutuhan branding dan website perusahaan Anda bersama tim Eiko Visual."
 faqs:
@@ -140,7 +140,7 @@ Lanjutkan isi artikel Anda di sini...
 | `category` | `string` | No | Category badge (default: `"Branding"`). |
 | `author` | `string` | No | Author name (default: `"Eiko Visual"`). |
 | `authorRole` | `string` | No | Author role subtitle (default: `"Brand Strategist"`). |
-| `authorAvatar` | `string` | No | Local path to author avatar (default: `"/assets/blog/author-avatar.png"`). |
+| `authorAvatar` | `string` | No | Local path to author avatar (default: `"/assets/blog/author-avatar.webp"`). |
 | `featuredImage` | `string` | Yes | Local path to the cover image under `public/assets/blog/`. |
 | `ctaHeading` | `string` | No | Optional custom heading for the bottom contact section. |
 | `ctaDescription` | `string` | No | Optional custom description for the bottom contact section. |
@@ -173,7 +173,7 @@ metaDescription: "Studi kasus perancangan identitas visual dan website untuk PT 
 slug: "contoh-karya-project-details"
 cardTitle: "PT Contoh Karya Nusantara"
 cardSummary: "Merancang ulang identitas visual dan sistem profil perusahaan untuk meningkatkan kepercayaan mitra B2B."
-cardImage: "/assets/projects/contoh-karya/contoh-card.png"
+cardImage: "/assets/projects/contoh-karya/contoh-card.webp"
 cardTags:
   - "Brand Identity"
   - "Company Profile"
@@ -184,15 +184,15 @@ yearBadge: "©2026"
 heroTitlePrefix: "PT Contoh Karya"
 heroTitleHighlight: "Nusantara."
 topGallery:
-  - "/assets/projects/contoh-karya/contoh-top-1.png"
-  - "/assets/projects/contoh-karya/contoh-top-2.png"
+  - "/assets/projects/contoh-karya/contoh-top-1.webp"
+  - "/assets/projects/contoh-karya/contoh-top-2.webp"
 summaryText: "Ringkasan latar belakang proyek, profil klien, dan tujuan utama dari perancangan identitas visual ini."
 clientName: "PT Contoh Karya Nusantara"
 clientScope: "Branding & Web Design"
 projectDate: "Oktober 2026"
 middleGalleryRow1:
-  - "/assets/projects/contoh-karya/contoh-mid-1.png"
-  - "/assets/projects/contoh-karya/contoh-mid-2.png"
+  - "/assets/projects/contoh-karya/contoh-mid-1.webp"
+  - "/assets/projects/contoh-karya/contoh-mid-2.webp"
 challengeText: "Penjelasan tantangan yang dihadapi klien sebelum bekerja sama dengan Eiko Visual."
 deliverables:
   - "Logo & Sistem Identitas Visual"
@@ -200,8 +200,8 @@ deliverables:
   - "Desain Company Profile"
   - "Website Korporat Responsif"
 middleGalleryRow2:
-  - "/assets/projects/contoh-karya/contoh-mid-3.png"
-  - "/assets/projects/contoh-karya/contoh-mid-4.png"
+  - "/assets/projects/contoh-karya/contoh-mid-3.webp"
+  - "/assets/projects/contoh-karya/contoh-mid-4.webp"
 solutionHeading: "Solusi Kami"
 solutionHtml: "<p>Kami menyusun sistem identitas visual yang tegas, modern, dan mudah diterapkan di berbagai media komunikasi perusahaan.</p>"
 valuePoints:
