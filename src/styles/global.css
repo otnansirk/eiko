@@ -14,7 +14,9 @@
   --accent-blue-deep: #1A5FFF;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -35,7 +37,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Space Grotesk", sans-serif;
   color: #FFFFFF;
   margin: 0;
@@ -129,7 +136,7 @@ img {
   z-index: 0;
 }
 
-.starry-bg > * {
+.starry-bg>* {
   position: relative;
   z-index: 1;
 }
@@ -137,11 +144,11 @@ img {
 /* Gradient Typography Classes (1:1 with Elementor) */
 .has-gradient-text span,
 .text-orange-gradient {
-  font-family: "Playfair Display", Georgia, serif;
+  /* font-family: "Playfair Display", Georgia, serif;
   font-weight: 500;
-  font-style: italic;
+  font-style: italic; */
   letter-spacing: -0.03em;
-  background: linear-gradient(180deg, #FF5100 54.15%, #FFFFFF 100%);
+  background: linear-gradient(90deg, #cad3f8 0%, #417BFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -175,8 +182,13 @@ img {
 
 /* Floating Cursor Badges */
 @keyframes glowDrift {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-6px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-6px);
+  }
 }
 
 .floating-badge {
@@ -220,10 +232,25 @@ img {
 
 /* Buttons (.myBTN & .btn-project) */
 @keyframes slideTextUp {
-  0% { transform: translateX(0); opacity: 1; }
-  50% { transform: translateX(-100%); opacity: 0; }
-  51% { transform: translateX(100%); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  51% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .eiko-btn {
@@ -351,8 +378,13 @@ img {
 }
 
 @keyframes marqueeScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Count Boxes (.count-boxes) */
@@ -564,6 +596,7 @@ img {
   .count-boxes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .project-box {
     grid-template-columns: 1fr;
     padding: 28px;
@@ -574,15 +607,18 @@ img {
   .count-boxes-grid {
     grid-template-columns: 1fr;
   }
+
   .service-box,
   .count-box {
     padding: 28px 24px;
     border-radius: 28px;
   }
+
   .faq-summary {
     padding: 18px 20px;
     font-size: 16px;
   }
+
   .faq-body {
     padding: 0 20px 20px 20px;
   }

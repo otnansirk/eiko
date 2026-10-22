@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import LogoMarquee from '../components/LogoMarquee.astro';
-import FaqSection from '../components/FaqSection.astro';
-import ContactSection from '../components/ContactSection.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LogoMarquee from "../components/LogoMarquee.astro";
+import FaqSection from "../components/FaqSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import { getCollection } from "astro:content";
 
-const allProjects = await getCollection('projects');
+const allProjects = await getCollection("projects");
 const featuredProjects = allProjects
   .filter((p) => p.data.featuredOnHome)
   .sort((a, b) => a.data.order - b.data.order);
@@ -13,31 +13,41 @@ const featuredProjects = allProjects
 const homeFaqs = [
   {
     question: "Kenapa konsistensi brand penting bagi perusahaan?",
-    answer: "<p>Semakin besar perusahaan, semakin banyak tim yang membuat materi sendiri-sendiri. Tanpa standar yang sama, brand yang terbentuk tidak mudah diingat, dan tampilan yang beragam menunjukkan perusahaan yang tampak kurang terorganisir.</p>",
+    answer:
+      "<p>Semakin besar perusahaan, semakin banyak tim yang membuat materi sendiri-sendiri. Tanpa standar yang sama, brand yang terbentuk tidak mudah diingat, dan tampilan yang beragam menunjukkan perusahaan yang tampak kurang terorganisir.</p>",
     open: true,
   },
   {
-    question: "Bagaimana desain UI/UX membuat website dan aplikasi lebih mudah digunakan?",
-    answer: "<p>Desain UI/UX memastikan pengguna langsung paham apa yang harus dilakukan. Pengalaman yang mulus menumbuhkan kepercayaan, dan membuat lebih banyak orang menyelesaikan tindakan penting seperti mendaftar, mengisi formulir, atau membeli.</p>",
+    question:
+      "Bagaimana desain UI/UX membuat website dan aplikasi lebih mudah digunakan?",
+    answer:
+      "<p>Desain UI/UX memastikan pengguna langsung paham apa yang harus dilakukan. Pengalaman yang mulus menumbuhkan kepercayaan, dan membuat lebih banyak orang menyelesaikan tindakan penting seperti mendaftar, mengisi formulir, atau membeli.</p>",
   },
   {
-    question: "Bisakah kami memesan satu layanan saja, misalnya website atau branding?",
-    answer: "<p>Bisa. Tapi hasil terbaik muncul saat brand, website, dan pemasaran digital berjalan bersama dalam satu arah — karena itulah pelanggan Anda melihat brand yang sama, di mana pun mereka bertemu Anda.</p>",
+    question:
+      "Bisakah kami memesan satu layanan saja, misalnya website atau branding?",
+    answer:
+      "<p>Bisa. Tapi hasil terbaik muncul saat brand, website, dan pemasaran digital berjalan bersama dalam satu arah — karena itulah pelanggan Anda melihat brand yang sama, di mana pun mereka bertemu Anda.</p>",
   },
   {
     question: "Berapa biaya yang harus disiapkan?",
-    answer: "<p>Biaya bergantung pada layanan dan ruang lingkup pekerjaan. Setelah konsultasi, kami kirim penawaran yang jelas dan rinci, tanpa biaya tersembunyi.</p>",
+    answer:
+      "<p>Biaya bergantung pada layanan dan ruang lingkup pekerjaan. Setelah konsultasi, kami kirim penawaran yang jelas dan rinci, tanpa biaya tersembunyi.</p>",
   },
   {
     question: "Berapa lama proses pengerjaannya?",
-    answer: "<p>Durasi bergantung pada layanan dan kebutuhan proyek. Kami sampaikan estimasi waktu sejak awal, sebelum pekerjaan dimulai.</p>",
+    answer:
+      "<p>Durasi bergantung pada layanan dan kebutuhan proyek. Kami sampaikan estimasi waktu sejak awal, sebelum pekerjaan dimulai.</p>",
   },
   {
-    question: "Kami sudah punya logo atau website lama. Apakah masih bisa dikerjakan?",
-    answer: "<p>Bisa. Kami mulai dengan audit untuk melihat apa yang masih layak dipertahankan dan apa yang perlu diperbarui.</p>",
+    question:
+      "Kami sudah punya logo atau website lama. Apakah masih bisa dikerjakan?",
+    answer:
+      "<p>Bisa. Kami mulai dengan audit untuk melihat apa yang masih layak dipertahankan dan apa yang perlu diperbarui.</p>",
   },
   {
-    question: "Apakah optimasi SEO dan digital marketing di Eiko Visual mengikuti panduan resmi dari Google?",
+    question:
+      "Apakah optimasi SEO dan digital marketing di Eiko Visual mengikuti panduan resmi dari Google?",
     answer: `<p>Ya, layanan analisis digital marketing kami disesuaikan dengan standar <a href="https://developers.google.com/search" target="_blank" rel="noopener">Google Search Central</a> untuk hasil pencarian optimal.</p>`,
   },
   {
@@ -106,14 +116,33 @@ const homeFaqs = [
         <div class="pill-badge">Studio Branding &amp; Digital</div>
         <h1 class="hero-title">Satu Brand, Satu Sistem, di Semua Touchpoint</h1>
         <p class="hero-desc">
-          Eiko Visual menyediakan layanan <strong>branding dan web development</strong> yang terintegrasi untuk perusahaan menengah. Kami membangun identitas, website, dan pemasaran digital dalam satu sistem yang selaras dan terukur.
+          Eiko Visual menyediakan layanan <strong
+            >branding dan web development</strong
+          > yang terintegrasi untuk perusahaan menengah. Kami membangun identitas,
+          website, dan pemasaran digital dalam satu sistem yang selaras dan terukur.
         </p>
         <a href="/contact/" class="eiko-btn">
           <span>Konsultasi Sekarang</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
@@ -127,9 +156,29 @@ const homeFaqs = [
       <div class="count-boxes-grid">
         <div class="count-box">
           <div class="count-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M5.13812 5.55745L12.7749 10.4947C13.1516 10.7382 13.4606 11.068 13.6743 11.4551C13.8881 11.8421 13.9999 12.2743 14 12.7134V26.6665C14 26.9079 13.9325 27.1447 13.8046 27.3518C13.6767 27.5589 13.4932 27.7284 13.2737 27.8423C13.0542 27.9562 12.8069 28.0101 12.5583 27.9984C12.3096 27.9867 12.069 27.9098 11.8619 27.7758L4.22512 22.8399C3.84816 22.5963 3.53908 22.2662 3.32535 21.8789C3.11162 21.4916 2.99986 21.0592 3 20.6199L3 6.66677C2.99996 6.42538 3.06751 6.18852 3.19542 5.98144C3.32334 5.77436 3.50683 5.60483 3.72632 5.49096C3.94581 5.37708 4.19307 5.32312 4.44171 5.33483C4.69035 5.34654 4.93105 5.42348 5.13812 5.55745ZM9.226 2.82416C9.44555 2.71025 9.69287 2.65628 9.94158 2.66802C10.1903 2.67976 10.431 2.75677 10.6381 2.89083L18.2749 7.82809C18.6516 8.07153 18.9606 8.40141 19.1743 8.78844C19.3881 9.17548 19.4999 9.6077 19.5 10.0467V23.9999C19.5 24.2412 19.4325 24.4781 19.3046 24.6852C19.1767 24.8923 18.9932 25.0618 18.7737 25.1757C18.5542 25.2896 18.3069 25.3435 18.0583 25.3318C17.8096 25.3201 17.569 25.2431 17.3619 25.1092L16.0625 24.2692V12.7134C16.0624 11.9451 15.8667 11.1887 15.4927 10.5114C15.1188 9.83411 14.5782 9.2568 13.9189 8.83074L8.5 5.32679V4.00014C8.4999 3.75876 8.56738 3.52188 8.69524 3.31477C8.8231 3.10766 9.00654 2.93809 9.226 2.82416ZM16.1381 0.224197L23.7749 5.16146C24.1516 5.4049 24.4606 5.73478 24.6743 6.12182C24.8881 6.50885 24.9999 6.94107 25 7.38009V21.3332C25 21.5746 24.9325 21.8115 24.8046 22.0186C24.6767 22.2256 24.4932 22.3952 24.2737 22.509C24.0542 22.6229 23.8069 22.6769 23.5583 22.6652C23.3096 22.6535 23.069 22.5765 22.8619 22.4425L21.5625 21.6026V10.0467C21.5624 9.27845 21.3667 8.5221 20.9927 7.84479C20.6188 7.16748 20.0782 6.59017 19.4189 6.16411L14 2.66016V1.33351C14 1.09213 14.0675 0.855258 14.1954 0.648178C14.3233 0.441099 14.5068 0.271577 14.7263 0.157699C14.9458 0.043821 15.1931 -0.0101409 15.4417 0.00157044C15.6904 0.0132817 15.931 0.0902268 16.1381 0.224197Z" fill="url(#home_stat_1)"/>
-              <defs><linearGradient id="home_stat_1" x1="14" y1="0" x2="14" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#00AA25"/><stop offset="1" stop-color="#00E431"/></linearGradient></defs>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M5.13812 5.55745L12.7749 10.4947C13.1516 10.7382 13.4606 11.068 13.6743 11.4551C13.8881 11.8421 13.9999 12.2743 14 12.7134V26.6665C14 26.9079 13.9325 27.1447 13.8046 27.3518C13.6767 27.5589 13.4932 27.7284 13.2737 27.8423C13.0542 27.9562 12.8069 28.0101 12.5583 27.9984C12.3096 27.9867 12.069 27.9098 11.8619 27.7758L4.22512 22.8399C3.84816 22.5963 3.53908 22.2662 3.32535 21.8789C3.11162 21.4916 2.99986 21.0592 3 20.6199L3 6.66677C2.99996 6.42538 3.06751 6.18852 3.19542 5.98144C3.32334 5.77436 3.50683 5.60483 3.72632 5.49096C3.94581 5.37708 4.19307 5.32312 4.44171 5.33483C4.69035 5.34654 4.93105 5.42348 5.13812 5.55745ZM9.226 2.82416C9.44555 2.71025 9.69287 2.65628 9.94158 2.66802C10.1903 2.67976 10.431 2.75677 10.6381 2.89083L18.2749 7.82809C18.6516 8.07153 18.9606 8.40141 19.1743 8.78844C19.3881 9.17548 19.4999 9.6077 19.5 10.0467V23.9999C19.5 24.2412 19.4325 24.4781 19.3046 24.6852C19.1767 24.8923 18.9932 25.0618 18.7737 25.1757C18.5542 25.2896 18.3069 25.3435 18.0583 25.3318C17.8096 25.3201 17.569 25.2431 17.3619 25.1092L16.0625 24.2692V12.7134C16.0624 11.9451 15.8667 11.1887 15.4927 10.5114C15.1188 9.83411 14.5782 9.2568 13.9189 8.83074L8.5 5.32679V4.00014C8.4999 3.75876 8.56738 3.52188 8.69524 3.31477C8.8231 3.10766 9.00654 2.93809 9.226 2.82416ZM16.1381 0.224197L23.7749 5.16146C24.1516 5.4049 24.4606 5.73478 24.6743 6.12182C24.8881 6.50885 24.9999 6.94107 25 7.38009V21.3332C25 21.5746 24.9325 21.8115 24.8046 22.0186C24.6767 22.2256 24.4932 22.3952 24.2737 22.509C24.0542 22.6229 23.8069 22.6769 23.5583 22.6652C23.3096 22.6535 23.069 22.5765 22.8619 22.4425L21.5625 21.6026V10.0467C21.5624 9.27845 21.3667 8.5221 20.9927 7.84479C20.6188 7.16748 20.0782 6.59017 19.4189 6.16411L14 2.66016V1.33351C14 1.09213 14.0675 0.855258 14.1954 0.648178C14.3233 0.441099 14.5068 0.271577 14.7263 0.157699C14.9458 0.043821 15.1931 -0.0101409 15.4417 0.00157044C15.6904 0.0132817 15.931 0.0902268 16.1381 0.224197Z"
+                fill="url(#home_stat_1)"></path>
+              <defs
+                ><linearGradient
+                  id="home_stat_1"
+                  x1="14"
+                  y1="0"
+                  x2="14"
+                  y2="28"
+                  gradientUnits="userSpaceOnUse"
+                  ><stop stop-color="#00AA25"></stop><stop
+                    offset="1"
+                    stop-color="#00E431"></stop></linearGradient
+                ></defs
+              >
             </svg>
           </div>
           <div>
@@ -140,12 +189,42 @@ const homeFaqs = [
 
         <div class="count-box">
           <div class="count-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M11.0832 18.6667C6.57284 18.6667 2.9165 15.0104 2.9165 10.5C2.9165 5.98971 6.57284 2.33337 11.0832 2.33337C15.5935 2.33337 19.2498 5.98971 19.2498 10.5" fill="url(#home_stat_2a)"/>
-              <path d="M25.6665 10.5H10.4998V25.6667H25.6665V10.5Z" fill="url(#home_stat_2b)"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M11.0832 18.6667C6.57284 18.6667 2.9165 15.0104 2.9165 10.5C2.9165 5.98971 6.57284 2.33337 11.0832 2.33337C15.5935 2.33337 19.2498 5.98971 19.2498 10.5"
+                fill="url(#home_stat_2a)"></path>
+              <path
+                d="M25.6665 10.5H10.4998V25.6667H25.6665V10.5Z"
+                fill="url(#home_stat_2b)"></path>
               <defs>
-                <linearGradient id="home_stat_2a" x1="14.2915" y1="2.33337" x2="14.2915" y2="25.6667" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD51A"/><stop offset="1" stop-color="#FFA01A"/></linearGradient>
-                <linearGradient id="home_stat_2b" x1="14.2915" y1="2.33337" x2="14.2915" y2="25.6667" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD51A"/><stop offset="1" stop-color="#FFA01A"/></linearGradient>
+                <linearGradient
+                  id="home_stat_2a"
+                  x1="14.2915"
+                  y1="2.33337"
+                  x2="14.2915"
+                  y2="25.6667"
+                  gradientUnits="userSpaceOnUse"
+                  ><stop stop-color="#FFD51A"></stop><stop
+                    offset="1"
+                    stop-color="#FFA01A"></stop></linearGradient
+                >
+                <linearGradient
+                  id="home_stat_2b"
+                  x1="14.2915"
+                  y1="2.33337"
+                  x2="14.2915"
+                  y2="25.6667"
+                  gradientUnits="userSpaceOnUse"
+                  ><stop stop-color="#FFD51A"></stop><stop
+                    offset="1"
+                    stop-color="#FFA01A"></stop></linearGradient
+                >
               </defs>
             </svg>
           </div>
@@ -157,9 +236,29 @@ const homeFaqs = [
 
         <div class="count-box">
           <div class="count-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M4.93341 5.26316L5.83342 8.98785L4.93341 12.6964L8.28341 14.7045L10.3334 17.9595L14.1667 17.085L18.0001 17.9595L20.0501 14.7045L23.4001 12.6964L22.5001 8.98785L23.4001 5.26316L20.0667 3.25506L18.0001 0L14.1667 0.890688L10.3501 0.0161943L8.26675 3.25506L4.93341 5.26316ZM14.1834 15.5304C12.4153 15.5304 10.7196 14.8479 9.46937 13.6331C8.21913 12.4183 7.51675 10.7706 7.51675 9.05263C7.51675 7.33463 8.21913 5.68699 9.46937 4.47218C10.7196 3.25737 12.4153 2.5749 14.1834 2.5749C17.8501 2.5749 20.8334 5.47368 20.8334 9.03644C20.8334 12.6316 17.8501 15.5304 14.1834 15.5304ZM14.1501 13.9109C11.3834 13.9109 9.16675 11.7409 9.16675 9.05263C9.16675 6.38057 11.3834 4.19433 14.1501 4.19433C16.9167 4.19433 19.1667 6.38057 19.1667 9.05263C19.1667 11.7409 16.9167 13.9109 14.1501 13.9109ZM20.5501 15.6923L18.4167 19.3198L14.9501 18.5587L19.1667 28L21.5001 24.4372H25.6667L20.5501 15.6923ZM7.71675 15.8057L9.80008 19.4494L13.3501 18.6235L9.16675 28L6.83342 24.4372H2.66675L7.71675 15.8057Z" fill="url(#home_stat_3)"/>
-              <defs><linearGradient id="home_stat_3" x1="14.1667" y1="0" x2="14.1667" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#417BFF"/><stop offset="1" stop-color="#1A5FFF"/></linearGradient></defs>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M4.93341 5.26316L5.83342 8.98785L4.93341 12.6964L8.28341 14.7045L10.3334 17.9595L14.1667 17.085L18.0001 17.9595L20.0501 14.7045L23.4001 12.6964L22.5001 8.98785L23.4001 5.26316L20.0667 3.25506L18.0001 0L14.1667 0.890688L10.3501 0.0161943L8.26675 3.25506L4.93341 5.26316ZM14.1834 15.5304C12.4153 15.5304 10.7196 14.8479 9.46937 13.6331C8.21913 12.4183 7.51675 10.7706 7.51675 9.05263C7.51675 7.33463 8.21913 5.68699 9.46937 4.47218C10.7196 3.25737 12.4153 2.5749 14.1834 2.5749C17.8501 2.5749 20.8334 5.47368 20.8334 9.03644C20.8334 12.6316 17.8501 15.5304 14.1834 15.5304ZM14.1501 13.9109C11.3834 13.9109 9.16675 11.7409 9.16675 9.05263C9.16675 6.38057 11.3834 4.19433 14.1501 4.19433C16.9167 4.19433 19.1667 6.38057 19.1667 9.05263C19.1667 11.7409 16.9167 13.9109 14.1501 13.9109ZM20.5501 15.6923L18.4167 19.3198L14.9501 18.5587L19.1667 28L21.5001 24.4372H25.6667L20.5501 15.6923ZM7.71675 15.8057L9.80008 19.4494L13.3501 18.6235L9.16675 28L6.83342 24.4372H2.66675L7.71675 15.8057Z"
+                fill="url(#home_stat_3)"></path>
+              <defs
+                ><linearGradient
+                  id="home_stat_3"
+                  x1="14.1667"
+                  y1="0"
+                  x2="14.1667"
+                  y2="28"
+                  gradientUnits="userSpaceOnUse"
+                  ><stop stop-color="#417BFF"></stop><stop
+                    offset="1"
+                    stop-color="#1A5FFF"></stop></linearGradient
+                ></defs
+              >
             </svg>
           </div>
           <div>
@@ -170,9 +269,29 @@ const homeFaqs = [
 
         <div class="count-box">
           <div class="count-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M0.581836 6.93857L11.5009 11.8919C11.8196 12.0367 12.1801 12.0367 12.4989 11.8919L23.4179 6.93857C24.1937 6.58654 24.1937 5.4142 23.4179 5.06217L12.4993 0.10842C12.3427 0.0368162 12.1725 -0.000244141 12.0004 -0.000244141C11.8282 -0.000244141 11.658 0.0368162 11.5014 0.10842L0.581836 5.0617C-0.193945 5.41373 -0.193945 6.58654 0.581836 6.93857ZM23.4184 11.0767L20.6954 9.84248L13.1186 13.277C12.7642 13.4378 12.3878 13.5194 12.0001 13.5194C11.6125 13.5194 11.2365 13.4378 10.8817 13.277L3.30527 9.84248L0.581836 11.0767C-0.193945 11.4283 -0.193945 12.6001 0.581836 12.9517L11.5009 17.9012C11.8196 18.0456 12.1801 18.0456 12.4989 17.9012L23.4184 12.9517C24.1942 12.6001 24.1942 11.4283 23.4184 11.0767ZM23.4184 17.0673L20.7057 15.8378L13.1186 19.277C12.7642 19.4378 12.3878 19.5194 12.0001 19.5194C11.6125 19.5194 11.2365 19.4378 10.8817 19.277L3.29496 15.8378L0.581836 17.0673C-0.193945 17.4189 -0.193945 18.5908 0.581836 18.9423L11.5009 23.8919C11.8196 24.0362 12.1801 24.0362 12.4989 23.8919L23.4184 18.9423C24.1942 18.5908 24.1942 17.4189 23.4184 17.0673Z" fill="url(#home_stat_4)"/>
-              <defs><linearGradient id="home_stat_4" x1="12.0001" y1="-0.000244141" x2="12.0001" y2="24.0001" gradientUnits="userSpaceOnUse"><stop stop-color="#FF8B55"/><stop offset="1" stop-color="#FF5100"/></linearGradient></defs>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M0.581836 6.93857L11.5009 11.8919C11.8196 12.0367 12.1801 12.0367 12.4989 11.8919L23.4179 6.93857C24.1937 6.58654 24.1937 5.4142 23.4179 5.06217L12.4993 0.10842C12.3427 0.0368162 12.1725 -0.000244141 12.0004 -0.000244141C11.8282 -0.000244141 11.658 0.0368162 11.5014 0.10842L0.581836 5.0617C-0.193945 5.41373 -0.193945 6.58654 0.581836 6.93857ZM23.4184 11.0767L20.6954 9.84248L13.1186 13.277C12.7642 13.4378 12.3878 13.5194 12.0001 13.5194C11.6125 13.5194 11.2365 13.4378 10.8817 13.277L3.30527 9.84248L0.581836 11.0767C-0.193945 11.4283 -0.193945 12.6001 0.581836 12.9517L11.5009 17.9012C11.8196 18.0456 12.1801 18.0456 12.4989 17.9012L23.4184 12.9517C24.1942 12.6001 24.1942 11.4283 23.4184 11.0767ZM23.4184 17.0673L20.7057 15.8378L13.1186 19.277C12.7642 19.4378 12.3878 19.5194 12.0001 19.5194C11.6125 19.5194 11.2365 19.4378 10.8817 19.277L3.29496 15.8378L0.581836 17.0673C-0.193945 17.4189 -0.193945 18.5908 0.581836 18.9423L11.5009 23.8919C11.8196 24.0362 12.1801 24.0362 12.4989 23.8919L23.4184 18.9423C24.1942 18.5908 24.1942 17.4189 23.4184 17.0673Z"
+                fill="url(#home_stat_4)"></path>
+              <defs
+                ><linearGradient
+                  id="home_stat_4"
+                  x1="12.0001"
+                  y1="-0.000244141"
+                  x2="12.0001"
+                  y2="24.0001"
+                  gradientUnits="userSpaceOnUse"
+                  ><stop stop-color="#FF8B55"></stop><stop
+                    offset="1"
+                    stop-color="#FF5100"></stop></linearGradient
+                ></defs
+              >
             </svg>
           </div>
           <div>
@@ -184,14 +303,32 @@ const homeFaqs = [
 
       <div class="stats-statement-wrap">
         <h2 class="gradient-para stats-statement">
-          Brand yang konsisten lebih mudah diingat, lebih dipercaya, dan lebih sering dipilih. Eiko Visual menyatukan identitas, website, dan pemasaran digital Anda dalam satu arah yang sama.
+          Brand yang konsisten lebih mudah diingat, lebih dipercaya, dan lebih
+          sering dipilih. Eiko Visual menyatukan identitas, website, dan
+          pemasaran digital Anda dalam satu arah yang sama.
         </h2>
         <a href="/tentang-kami/" class="eiko-btn">
           <span>Tentang Kami</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
@@ -204,14 +341,32 @@ const homeFaqs = [
     <div class="container">
       <div class="section-header-row">
         <h2 class="has-gradient-text">
-          Satu Brand, Empat Layanan yang <span>Saling Menguatkan</span>
+          Website dan Aplikasi Berkinerja Tinggi yang Menghasilkan <span
+            >Konversi</span
+          >
         </h2>
         <a href="/services/" class="eiko-btn">
           <span>Lihat Semua Layanan</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
@@ -220,8 +375,16 @@ const homeFaqs = [
       <div class="services-4-grid">
         <a href="/brand-development-details/" class="service-box">
           <div class="service-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <path d="M22.7874 8.85042L18.4505 4.07988L17.9751 0.656968C17.9349 0.367363 17.7324 0.126304 17.4541 0.036675C17.1758 -0.0529539 16.8707 0.0247414 16.6691 0.236448L14.7884 2.21098C11.2393 3.14469 8.71806 4.97175 7.29232 7.64391C6.19001 9.70989 5.76584 12.3124 6.06565 15.1702C6.16737 16.1398 6.33474 16.9829 6.48937 17.6211H17.4745V16.0976C17.4745 15.9389 17.4249 15.784 17.3326 15.6549L15.5146 13.1095C15.2772 12.7772 15.2823 12.3343 15.5274 12.0076C15.78 11.6709 16.2293 11.545 16.6201 11.7012L19.7928 12.9703C20.5251 13.2633 21.3482 13.0462 21.8408 12.4304L22.8601 11.1562C23.4089 10.4702 23.3783 9.50047 22.7874 8.85042Z" fill="#FFD51A"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+              fill="none"
+            >
+              <path
+                d="M22.7874 8.85042L18.4505 4.07988L17.9751 0.656968C17.9349 0.367363 17.7324 0.126304 17.4541 0.036675C17.1758 -0.0529539 16.8707 0.0247414 16.6691 0.236448L14.7884 2.21098C11.2393 3.14469 8.71806 4.97175 7.29232 7.64391C6.19001 9.70989 5.76584 12.3124 6.06565 15.1702C6.16737 16.1398 6.33474 16.9829 6.48937 17.6211H17.4745V16.0976C17.4745 15.9389 17.4249 15.784 17.3326 15.6549L15.5146 13.1095C15.2772 12.7772 15.2823 12.3343 15.5274 12.0076C15.78 11.6709 16.2293 11.545 16.6201 11.7012L19.7928 12.9703C20.5251 13.2633 21.3482 13.0462 21.8408 12.4304L22.8601 11.1562C23.4089 10.4702 23.3783 9.50047 22.7874 8.85042Z"
+                fill="#FFD51A"></path>
             </svg>
           </div>
           <h3>Branding</h3>
@@ -229,9 +392,19 @@ const homeFaqs = [
 
         <a href="/aplikasi-mobile-details/" class="service-box">
           <div class="service-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M0.581836 6.93857L11.5009 11.8919C11.8196 12.0367 12.1801 12.0367 12.4989 11.8919L23.4179 6.93857C24.1937 6.58654 24.1937 5.4142 23.4179 5.06217L12.4993 0.10842C12.18 0 11.82 0 11.5014 0.10842L0.581836 5.0617C-0.193945 5.41373 -0.193945 6.58654 0.581836 6.93857Z" fill="#417BFF"/>
-              <path d="M23.4184 11.0767L20.6954 9.84248L13.1186 13.277C12.4 13.6 11.6 13.6 10.8817 13.277L3.30527 9.84248L0.581836 11.0767C-0.193945 11.4283 -0.193945 12.6001 0.581836 12.9517L11.5009 17.9012C11.8196 18.0456 12.1801 18.0456 12.4989 17.9012L23.4184 12.9517C24.1942 12.6001 24.1942 11.4283 23.4184 11.0767Z" fill="#1A5FFF"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M0.581836 6.93857L11.5009 11.8919C11.8196 12.0367 12.1801 12.0367 12.4989 11.8919L23.4179 6.93857C24.1937 6.58654 24.1937 5.4142 23.4179 5.06217L12.4993 0.10842C12.18 0 11.82 0 11.5014 0.10842L0.581836 5.0617C-0.193945 5.41373 -0.193945 6.58654 0.581836 6.93857Z"
+                fill="#417BFF"></path>
+              <path
+                d="M23.4184 11.0767L20.6954 9.84248L13.1186 13.277C12.4 13.6 11.6 13.6 10.8817 13.277L3.30527 9.84248L0.581836 11.0767C-0.193945 11.4283 -0.193945 12.6001 0.581836 12.9517L11.5009 17.9012C11.8196 18.0456 12.1801 18.0456 12.4989 17.9012L23.4184 12.9517C24.1942 12.6001 24.1942 11.4283 23.4184 11.0767Z"
+                fill="#1A5FFF"></path>
             </svg>
           </div>
           <h3>Aplikasi Mobile/Web</h3>
@@ -239,9 +412,16 @@ const homeFaqs = [
 
         <a href="/digital-marketing-details/" class="service-box">
           <div class="service-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="14" r="10" stroke="#00E431" stroke-width="2.5"/>
-              <circle cx="14" cy="14" r="4" fill="#00AA25"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <circle cx="14" cy="14" r="10" stroke="#00E431" stroke-width="2.5"
+              ></circle>
+              <circle cx="14" cy="14" r="4" fill="#00AA25"></circle>
             </svg>
           </div>
           <h3>Digital Marketing</h3>
@@ -249,8 +429,16 @@ const homeFaqs = [
 
         <a href="/web-development-details/" class="service-box">
           <div class="service-box-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M26.121 2.09239C22.7238 1.10911 15.3229 3.89982 11.3133 7.90786C9.36475 10.2102 6.89178 10.1922 5.83795 10.6515C2.86459 11.9602 1.99889 15.3749 1.75771 16.8438L7.10943 16.9297L9.33521 20.5079L10.5389 25.6534C12.6176 25.9952 16.0383 25.1295 17.3393 22.1561C18.6112 18.06 19.3836 17.4078 20.095 16.6923C24.1172 12.6903 26.8921 5.45458 26.121 2.09239Z" fill="#FF5100"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+            >
+              <path
+                d="M26.121 2.09239C22.7238 1.10911 15.3229 3.89982 11.3133 7.90786C9.36475 10.2102 6.89178 10.1922 5.83795 10.6515C2.86459 11.9602 1.99889 15.3749 1.75771 16.8438L7.10943 16.9297L9.33521 20.5079L10.5389 25.6534C12.6176 25.9952 16.0383 25.1295 17.3393 22.1561C18.6112 18.06 19.3836 17.4078 20.095 16.6923C24.1172 12.6903 26.8921 5.45458 26.121 2.09239Z"
+                fill="#FF5100"></path>
             </svg>
           </div>
           <h3>Web Development</h3>
@@ -267,51 +455,90 @@ const homeFaqs = [
       </h2>
 
       <div class="projects-stack">
-        {featuredProjects.map((project) => (
-          <div class="project-box">
-            <div class="project-box-img">
-              <img
-                src={project.data.cardImage}
-                alt={project.data.cardTitle}
-                width="520"
-                height="327"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="project-box-content">
-              <h3>{project.data.cardTitle}</h3>
-              <p class="project-summary" set:html={project.data.cardSummary} />
-              <div class="project-tags">
-                {project.data.cardTags.map((tag) => (
-                  <span class="project-tag">{tag}</span>
-                ))}
+        {
+          featuredProjects.map((project) => (
+            <div class="project-box">
+              <div class="project-box-img">
+                <img
+                  src={project.data.cardImage}
+                  alt={project.data.cardTitle}
+                  width="520"
+                  height="327"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <a
-                href={`/${project.data.slug}/`}
-                class="eiko-btn eiko-btn-outline"
-                aria-label={`Baca Studi Kasus ${project.data.cardTitle}`}
-              >
-                <span>Baca Studi Kasus</span>
-                <span class="btn-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
+              <div class="project-box-content">
+                <h3>{project.data.cardTitle}</h3>
+                <p
+                  class="project-summary"
+                  set:html={project.data.cardSummary}
+                />
+                <div class="project-tags">
+                  {project.data.cardTags.map((tag) => (
+                    <span class="project-tag">{tag}</span>
+                  ))}
+                </div>
+                <a
+                  href={`/${project.data.slug}/`}
+                  class="eiko-btn eiko-btn-outline"
+                  aria-label={`Baca Studi Kasus ${project.data.cardTitle}`}
+                >
+                  <span>Baca Studi Kasus</span>
+                  <span class="btn-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M3.33203 8H12.6654"
+                        stroke="#030208"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                        stroke="#030208"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
 
       <div class="projects-cta-center">
         <a href="/projects/" class="eiko-btn">
           <span>Lihat Semua Proyek</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
@@ -329,30 +556,64 @@ const homeFaqs = [
         <a href="/services/" class="eiko-btn">
           <span>Lihat Semua Layanan</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
       </div>
 
       <div class="workflow-grid">
-        {[
-          { step: "Step 01", title: "Riset & Strategi", color: "#01C32A" },
-          { step: "Step 02", title: "Konsep & Arah Kreatif", color: "#FF5100" },
-          { step: "Step 03", title: "Perancangan & Penyempurnaan", color: "#417BFF" },
-          { step: "Step 04", title: "Uji Coba & Penyesuaian", color: "#00E431" },
-          { step: "Step 05", title: "Peluncuran & Pendampingan", color: "#FF8B55" },
-        ].map((item) => (
-          <div class="service-box workflow-card">
-            <div class="service-box-icon">
-              <span class="workflow-dot" style={`background:${item.color}`}></span>
+        {
+          [
+            { step: "Step 01", title: "Riset & Strategi", color: "#01C32A" },
+            {
+              step: "Step 02",
+              title: "Konsep & Arah Kreatif",
+              color: "#FF5100",
+            },
+            {
+              step: "Step 03",
+              title: "Perancangan & Penyempurnaan",
+              color: "#417BFF",
+            },
+            {
+              step: "Step 04",
+              title: "Uji Coba & Penyesuaian",
+              color: "#00E431",
+            },
+            {
+              step: "Step 05",
+              title: "Peluncuran & Pendampingan",
+              color: "#FF8B55",
+            },
+          ].map((item) => (
+            <div class="service-box workflow-card">
+              <div class="service-box-icon">
+                <span class="workflow-dot" style={`background:${item.color}`} />
+              </div>
+              <h3>{item.title}</h3>
+              <span class="workflow-step-badge">{item.step}</span>
             </div>
-            <h3>{item.title}</h3>
-            <span class="workflow-step-badge">{item.step}</span>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -427,11 +688,11 @@ const homeFaqs = [
   .hero-desc {
     font-size: 17px;
     line-height: 1.7;
-    color: #A7A7A7;
+    color: #a7a7a7;
   }
 
   .hero-desc strong {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .stats-section {
@@ -488,7 +749,7 @@ const homeFaqs = [
 
   .project-summary {
     margin-top: 12px;
-    color: #A7A7A7;
+    color: #a7a7a7;
     line-height: 1.7;
   }
 
@@ -526,7 +787,7 @@ const homeFaqs = [
     margin-top: 12px;
     font-size: 14px;
     font-weight: 600;
-    color: #A7A7A7;
+    color: #a7a7a7;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 40px;
     padding: 6px 14px;
