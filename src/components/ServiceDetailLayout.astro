@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import LogoMarquee from './LogoMarquee.astro';
-import FaqSection from './FaqSection.astro';
-import ContactSection from './ContactSection.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LogoMarquee from "./LogoMarquee.astro";
+import FaqSection from "./FaqSection.astro";
+import ContactSection from "./ContactSection.astro";
 
 interface FeatureItem {
   title: string;
@@ -117,9 +117,25 @@ const {
       <a href={heroCtaHref} class="eiko-btn" target="_blank" rel="noopener">
         <span>Konsultasi Sekarang</span>
         <span class="btn-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M3.33203 8H12.6654"
+              stroke="#030208"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M8 3.33203L12.6667 7.9987L8 12.6654"
+              stroke="#030208"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </span>
       </a>
@@ -144,7 +160,8 @@ const {
   <section class="value-prop-section">
     <div class="container value-prop-inner">
       <h2 class="has-gradient-text">
-        {valuePropPrefix} <span>{valuePropHighlight}</span>
+        {valuePropPrefix}
+        <span>{valuePropHighlight}</span>
       </h2>
       <h3 class="gradient-para value-prop-sub">{valuePropSubheading}</h3>
     </div>
@@ -158,101 +175,149 @@ const {
       </h2>
 
       <div class="features-4-grid">
-        {features.map((feat) => (
-          <div class="service-box feature-card">
-            <div class="service-box-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#417BFF" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+        {
+          features.map((feat) => (
+            <div class="service-box feature-card">
+              <div class="service-box-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#417BFF"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>{feat.title}</h3>
+              <p>{feat.description}</p>
             </div>
-            <h3>{feat.title}</h3>
-            <p>{feat.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- Optional Projects Showcase (e.g. Brand Development) -->
-  {projects && projects.length > 0 && (
-    <section class="service-projects-section">
-      <div class="container">
-        <h2 class="has-gradient-text section-title-mb">
-          Beberapa <span>Projects Kami.</span>
-        </h2>
-        <div class="projects-2-grid">
-          {projects.map((proj) => (
-            <a href={proj.href} class="service-project-card">
-              <div class="sp-img">
-                <img src={proj.image} alt={proj.title} width="520" height="327" loading="lazy" decoding="async" />
-              </div>
-              <div class="sp-info">
-                <h5>{proj.category}</h5>
-                <h3>{proj.title}</h3>
-              </div>
-            </a>
-          ))}
+  {
+    projects && projects.length > 0 && (
+      <section class="service-projects-section">
+        <div class="container">
+          <h2 class="has-gradient-text section-title-mb">
+            Beberapa <span>Projects Kami.</span>
+          </h2>
+          <div class="projects-2-grid">
+            {projects.map((proj) => (
+              <a href={proj.href} class="service-project-card">
+                <div class="sp-img">
+                  <img
+                    src={proj.image}
+                    alt={proj.title}
+                    width="520"
+                    height="327"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="sp-info">
+                  <h5>{proj.category}</h5>
+                  <h3>{proj.title}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  )}
+      </section>
+    )
+  }
 
   <!-- Section 4: Kategori Layanan -->
   <section class="categories-section">
     <div class="container">
       <h2 class="has-gradient-text section-title-mb">
-        {categoriesHeadingPrefix} <span>{categoriesHeadingHighlight}</span>
+        {categoriesHeadingPrefix}
+        <span>{categoriesHeadingHighlight}</span>
       </h2>
 
       <div class="categories-stack">
-        {categories.map((cat) => (
-          <div class="category-card">
-            <div class="category-header">
-              <div class="floating-badge">
-                <img
-                  class="badge-cursor-icon"
-                  src="/assets/icons/cursor-orange.webp"
-                  alt=""
-                  width="32"
-                  height="32"
-                />
-                <span class="floating-badge-orange">{cat.badge}</span>
+        {
+          categories.map((cat) => (
+            <div class="category-card">
+              <div class="category-header">
+                <div class="floating-badge">
+                  <img
+                    class="badge-cursor-icon"
+                    src="/assets/icons/cursor-orange.webp"
+                    alt=""
+                    width="32"
+                    height="32"
+                  />
+                  <span class="floating-badge-orange">{cat.badge}</span>
+                </div>
+                <h3>{cat.title}</h3>
+                <p set:html={cat.description} />
               </div>
-              <h3>{cat.title}</h3>
-              <p set:html={cat.description} />
+
+              <div class="category-columns">
+                <div class="cat-col">
+                  <h4>Cocok untuk siapa:</h4>
+                  <ul class="cat-list">
+                    {cat.suitableFor.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="cat-col">
+                  <h4>{cat.scopeLabel || "Cakupan Layanan Meliputi:"}</h4>
+                  <ul class="cat-list scope-list">
+                    {cat.scopeItems.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <a
+                href={cat.ctaHref}
+                class="eiko-btn"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>Konsultasi Sekarang</span>
+                <span class="btn-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.33203 8H12.6654"
+                      stroke="#030208"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                      stroke="#030208"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
             </div>
-
-            <div class="category-columns">
-              <div class="cat-col">
-                <h4>Cocok untuk siapa:</h4>
-                <ul class="cat-list">
-                  {cat.suitableFor.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div class="cat-col">
-                <h4>{cat.scopeLabel || "Cakupan Layanan Meliputi:"}</h4>
-                <ul class="cat-list scope-list">
-                  {cat.scopeItems.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <a href={cat.ctaHref} class="eiko-btn" target="_blank" rel="noopener">
-              <span>Konsultasi Sekarang</span>
-              <span class="btn-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -267,63 +332,106 @@ const {
         <a href="/services/" class="eiko-btn">
           <span>Lihat Semua Layanan</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
       </div>
 
       <div class="steps-grid">
-        {steps.map((step, idx) => (
-          <div class="service-box step-card">
-            <span class="step-num">0{idx + 1}</span>
-            <h3>{step.title}</h3>
-            <p>{step.description}</p>
-          </div>
-        ))}
+        {
+          steps.map((step, idx) => (
+            <div class="service-box step-card">
+              <span class="step-num">0{idx + 1}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- Optional Support Services -->
-  {supportServices && supportServices.length > 0 && (
-    <section class="support-services-section">
-      <div class="container">
-        <h2 class="has-gradient-text section-title-mb">
-          Lengkapi Website Anda dengan <span>Layanan Pendukung</span>
-        </h2>
-        <div class="support-2-grid">
-          {supportServices.map((sup) => (
-            <div class="service-box support-card">
-              <div class="floating-badge">
-                <img
-                  class="badge-cursor-icon"
-                  src="/assets/icons/cursor-orange.webp"
-                  alt=""
-                  width="32"
-                  height="32"
-                />
-                <span class="floating-badge-orange">{sup.badge}</span>
+  {
+    supportServices && supportServices.length > 0 && (
+      <section class="support-services-section">
+        <div class="container">
+          <h2 class="has-gradient-text section-title-mb">
+            Lengkapi Website Anda dengan <span>Layanan Pendukung</span>
+          </h2>
+          <div class="support-2-grid">
+            {supportServices.map((sup) => (
+              <div class="service-box support-card">
+                <div class="floating-badge">
+                  <img
+                    class="badge-cursor-icon"
+                    src="/assets/icons/cursor-orange.webp"
+                    alt=""
+                    width="32"
+                    height="32"
+                  />
+                  <span class="floating-badge-orange">{sup.badge}</span>
+                </div>
+                <h3>{sup.title}</h3>
+                <p>{sup.description}</p>
+                <a
+                  href={sup.href}
+                  class="eiko-btn"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span>{sup.buttonText}</span>
+                  <span class="btn-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M3.33203 8H12.6654"
+                        stroke="#030208"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                        stroke="#030208"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
               </div>
-              <h3>{sup.title}</h3>
-              <p>{sup.description}</p>
-              <a href={sup.href} class="eiko-btn" target="_blank" rel="noopener">
-                <span>{sup.buttonText}</span>
-                <span class="btn-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  )}
+      </section>
+    )
+  }
 
   <!-- FAQ Section -->
   {faqs.length > 0 && <FaqSection faqs={faqs} />}
@@ -335,20 +443,40 @@ const {
         Layanan Lain yang <span>Bisa Melengkapi</span>
       </h2>
       <div class="related-services-grid">
-        {relatedServices.map((rel) => (
-          <div class="service-box related-service-card">
-            <h3>{rel.title}</h3>
-            <a href={rel.href} class="eiko-btn eiko-btn-outline">
-              <span>Lihat Layanan</span>
-              <span class="btn-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
-          </div>
-        ))}
+        {
+          relatedServices.map((rel) => (
+            <div class="service-box related-service-card">
+              <h3>{rel.title}</h3>
+              <a href={rel.href} class="eiko-btn eiko-btn-outline">
+                <span>Lihat Layanan</span>
+                <span class="btn-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.33203 8H12.6654"
+                      stroke="#030208"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                      stroke="#030208"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -378,7 +506,7 @@ const {
     max-width: 780px;
     font-size: 18px;
     line-height: 1.7;
-    color: #A7A7A7;
+    color: #a7a7a7;
   }
 
   .hero-marquee-block {
@@ -413,9 +541,9 @@ const {
 
   .value-prop-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
-    max-width: 960px;
+    /* max-width: 960px; */
   }
 
   .value-prop-sub {
@@ -467,7 +595,7 @@ const {
   }
 
   .sp-info h5 {
-    color: #417BFF;
+    color: #417bff;
     font-size: 14px;
     margin-bottom: 6px;
   }
@@ -505,7 +633,7 @@ const {
   .cat-col h4 {
     font-size: 18px;
     margin-bottom: 16px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .cat-list {
@@ -518,14 +646,14 @@ const {
   .cat-list li {
     position: relative;
     padding-left: 24px;
-    color: #A7A7A7;
+    color: #a7a7a7;
   }
 
   .cat-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #00E431;
+    color: #00e431;
     font-weight: 700;
   }
 
@@ -556,7 +684,7 @@ const {
     height: 44px;
     border-radius: 50%;
     background: rgba(65, 123, 255, 0.15);
-    color: #417BFF;
+    color: #417bff;
     font-weight: 700;
     font-size: 16px;
   }
