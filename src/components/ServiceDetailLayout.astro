@@ -652,12 +652,14 @@ const {
   }
 
   .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
   }
 
   .step-card {
+    flex: 0 1 calc((100% - 48px) / 3);
     gap: 14px;
   }
 
@@ -695,6 +697,9 @@ const {
     .category-columns,
     .related-services-grid {
       grid-template-columns: 1fr;
+    }
+    .step-card {
+      flex: 1 1 100%;
     }
     .category-card {
       padding: 32px 24px;

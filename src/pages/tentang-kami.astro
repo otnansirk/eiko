@@ -34,10 +34,26 @@ const aboutFaqs = [
 ];
 
 const teamMembers = [
-  { name: "Riyan Ilham", role: "Brand Strategist" },
-  { name: "Febi Grasinaz", role: "Founder & Digital Marketing" },
-  { name: "Krisnanto", role: "Full-Stack Developer" },
-  { name: "Firmansyah", role: "Graphic Designer" },
+  {
+    name: "Riyan Ilham",
+    role: "Brand Strategist",
+    image: "/assets/team/riyan-ilham.webp",
+  },
+  {
+    name: "Febi Grasinaz",
+    role: "Founder & Digital Marketing",
+    image: "/assets/team/febi-grasinaz.webp",
+  },
+  {
+    name: "Krisnanto",
+    role: "Full-Stack Developer",
+    image: "/assets/team/krisnanto.webp",
+  },
+  {
+    name: "Taufik Saputra",
+    role: "Graphic Designer",
+    image: "/assets/team/taufik_saputra.webp",
+  },
 ];
 ---
 
@@ -355,7 +371,10 @@ const teamMembers = [
       <div class="team-grid">
         {
           teamMembers.map((member) => (
-            <div class="team-card">
+            <div
+              class="team-card team-box"
+              style={`background-image: url('${member.image}');`}
+            >
               <h3>{member.name}</h3>
               <p class="team-role">{member.role}</p>
             </div>
@@ -523,35 +542,59 @@ const teamMembers = [
   .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 4px;
   }
 
   .team-card {
-    background-color: #121117;
-    border: 1px solid rgba(234, 234, 234, 0.14);
-    border-radius: 28px;
-    padding: 36px 28px;
-    text-align: center;
-    transition:
-      transform 0.3s ease,
-      border-color 0.3s ease;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 480px;
+    gap: 8px;
+    border-radius: 20px;
+    padding: 32px;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: left;
   }
 
-  .team-card:hover {
-    transform: translateY(-8px);
-    border-color: #1a5fff;
+  .team-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 39.08%,
+      rgba(18, 17, 23, 0.7) 70.19%,
+      #121117 100%
+    );
+    z-index: -1;
+    border-radius: inherit;
   }
 
-  .team-card h5 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 8px;
+  .team-card h3 {
+    font-family: "Space Grotesk", var(--font-sans);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin: 0;
   }
 
-  .team-card h6 {
+  .team-card .team-role {
+    font-family: "Space Grotesk", var(--font-sans);
     font-size: 14px;
     font-weight: 400;
+    line-height: 24px;
     color: #a7a7a7;
+    margin: 0;
   }
 
   @media (max-width: 1024px) {
@@ -562,6 +605,9 @@ const teamMembers = [
     }
     .team-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+    .team-card {
+      min-height: 380px;
     }
   }
 
