@@ -397,19 +397,34 @@ img {
 .count-box {
   position: relative;
   border-radius: 40px;
-  padding: 36px 34px;
-  background-color: rgba(18, 17, 23, 0.65);
-  border: 1px solid rgba(234, 234, 234, 0.16);
+  padding: 38px 40px 52px;
+  background-color: transparent;
+  border: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  justify-content: flex-start;
+  gap: 64px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.count-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #EAEAEA 0%, rgba(255, 255, 255, 0) 100%) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0) border-box;
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0) border-box;
+  mask-composite: exclude;
+  border: 1px solid transparent;
+  opacity: 0.22;
+  pointer-events: none;
+  border-radius: inherit;
 }
 
 .count-box:hover {
   transform: translateY(-10px);
-  background-color: #121117;
-  border-color: #1A5FFF;
+  background-color: rgba(18, 17, 23, 0.5);
 }
 
 .count-box-icon {
@@ -421,13 +436,20 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.count-box-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .count-box-number {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: #FFFFFF;
 }
@@ -435,10 +457,10 @@ img {
 .count-box-title {
   font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: #A7A7A7;
 }
 
 /* Service Box (.service-box) */
