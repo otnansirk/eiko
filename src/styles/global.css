@@ -228,6 +228,9 @@ img {
   height: 34px;
   object-fit: contain;
   animation: glowDrift 4s ease-in-out infinite alternate;
+  position: absolute;
+  left: 4rem;
+  top: 1.9rem;
 }
 
 /* Buttons (.myBTN & .btn-project) */

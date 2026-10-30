@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import LogoMarquee from '../components/LogoMarquee.astro';
-import FaqSection from '../components/FaqSection.astro';
-import ContactSection from '../components/ContactSection.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LogoMarquee from "../components/LogoMarquee.astro";
+import FaqSection from "../components/FaqSection.astro";
+import ContactSection from "../components/ContactSection.astro";
 
 const serviceRows = [
   {
@@ -88,13 +88,6 @@ const serviceFaqs = [
         </div>
         <div class="trusted-row">
           <span class="floating-badge-yellow">Dipercaya oleh</span>
-          <img
-            class="badge-cursor-icon"
-            src="/assets/icons/cursor-yellow.webp"
-            alt=""
-            width="34"
-            height="34"
-          />
         </div>
         <LogoMarquee />
       </div>
@@ -112,14 +105,32 @@ const serviceFaqs = [
         </div>
         <h1 class="has-gradient-text">Layanan Kami Saling Terhubung</h1>
         <p>
-          Brand Development, Website, Digital Marketing, dan Aplikasi Mobile/Web kami kerjakan dalam satu sistem yang sama — supaya hasilnya konsisten dan bisa diukur.
+          Brand Development, Website, Digital Marketing, dan Aplikasi Mobile/Web
+          kami kerjakan dalam satu sistem yang sama — supaya hasilnya konsisten
+          dan bisa diukur.
         </p>
         <a href="/contact/" class="eiko-btn">
           <span>Jadwalkan Diskusi</span>
           <span class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.33203 8H12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                stroke="#030208"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </span>
         </a>
@@ -130,34 +141,51 @@ const serviceFaqs = [
   <!-- 4 Service Rows -->
   <section class="services-list-section">
     <div class="container services-rows">
-      {serviceRows.map((row) => (
-        <div class="service-row">
-          <div class="service-row-badge">
-            <img
-              class="badge-cursor-icon"
-              src="/assets/icons/cursor-orange.webp"
-              alt=""
-              width="34"
-              height="34"
-            />
-            <span class="floating-badge-orange">{row.badge}</span>
-          </div>
+      {
+        serviceRows.map((row) => (
+          <div class="service-row">
+            <div class="service-row-badge">
+              <span class="floating-badge-orange">{row.badge}</span>
+            </div>
 
-          <div class="service-box service-row-card">
-            <h2>{row.title}</h2>
-            <p>{row.description}</p>
-            <a href={row.href} class="eiko-btn" aria-label={`Selengkapnya tentang ${row.title}`}>
-              <span>Selengkapnya</span>
-              <span class="btn-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
+            <div class="service-box service-row-card">
+              <h2>{row.title}</h2>
+              <p>{row.description}</p>
+              <a
+                href={row.href}
+                class="eiko-btn"
+                aria-label={`Selengkapnya tentang ${row.title}`}
+              >
+                <span>Selengkapnya</span>
+                <span class="btn-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.33203 8H12.6654"
+                      stroke="#030208"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 3.33203L12.6667 7.9987L8 12.6654"
+                      stroke="#030208"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
@@ -221,8 +249,8 @@ const serviceFaqs = [
 
   .service-row {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 32px;
+    /* grid-template-columns: 280px 1fr; */
+    gap: 3px;
     align-items: center;
   }
 
@@ -230,6 +258,7 @@ const serviceFaqs = [
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    position: relative;
   }
 
   .service-row-card {
