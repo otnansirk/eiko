@@ -7,7 +7,7 @@ Official static website for **Eiko Visual** (`https://www.eikovisual.com`), rebu
 ## Table of Contents
 
 1. [How to Run Locally](#1-how-to-run-locally)
-2. [How to Deploy](#2-how-to-deploy)
+2. [How to Deploy](#2-how-toow -deploy)
 3. [How to Add a Blog / Article](#3-how-to-add-a-blog--article)
 4. [How to Add a Project](#4-how-to-add-a-project)
 5. [Project Structure](#5-project-structure)
