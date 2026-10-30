@@ -35,9 +35,25 @@ const {
       <a href={leftButtonHref} class="eiko-btn">
         <span>{leftButtonText}</span>
         <span class="btn-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3.33203 8H12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 3.33203L12.6667 7.9987L8 12.6654" stroke="#030208" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M3.33203 8H12.6654"
+              stroke="#030208"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M8 3.33203L12.6667 7.9987L8 12.6654"
+              stroke="#030208"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </span>
       </a>
@@ -45,27 +61,69 @@ const {
 
     <div class="faq-right">
       <h2 class="has-gradient-text faq-right-heading">
-        {rightHeadingPrefix} <span>{rightHeadingHighlight}</span> {rightHeadingSuffix}
+        {rightHeadingPrefix}
+        <span>{rightHeadingHighlight}</span>
+        {rightHeadingSuffix}
       </h2>
 
       <div class="faq-accordion-list">
-        {faqs.map((item, idx) => (
-          <details class="faq-card" name="eiko-faq" open={item.open !== undefined ? item.open : idx === defaultOpenIndex}>
-            <summary class="faq-summary">
-              <span>{item.question}</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg class="faq-icon-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 5.00098V19.001" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4.99805 12H18.998" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <svg class="faq-icon-minus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M4.99805 12H18.998" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </summary>
-            <div class="faq-body" set:html={item.answer} />
-          </details>
-        ))}
+        {
+          faqs.map((item, idx) => (
+            <details
+              class="faq-card"
+              name="eiko-faq"
+              open={
+                item.open !== undefined ? item.open : idx === defaultOpenIndex
+              }
+            >
+              <summary class="faq-summary">
+                <span>{item.question}</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg
+                    class="faq-icon-plus"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 5.00098V19.001"
+                      stroke="#A7A7A7"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M4.99805 12H18.998"
+                      stroke="#A7A7A7"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    class="faq-icon-minus"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.99805 12H18.998"
+                      stroke="#A7A7A7"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body" set:html={item.answer} />
+            </details>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -86,7 +144,11 @@ const {
   .faq-left-card {
     background-color: #121117;
     background-image:
-      linear-gradient(180deg, rgba(18, 17, 23, 0.35) 0%, rgba(18, 17, 23, 0.92) 100%),
+      linear-gradient(
+        180deg,
+        rgba(18, 17, 23, 0.35) 0%,
+        rgba(18, 17, 23, 0.92) 100%
+      ),
       url("/assets/heroes/faq-astronaut.webp");
     background-size: cover;
     background-position: center;
@@ -104,7 +166,7 @@ const {
     font-size: 32px;
     font-weight: 600;
     line-height: 1.25;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .faq-right-heading {
